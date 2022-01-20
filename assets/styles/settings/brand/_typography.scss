@@ -6,9 +6,9 @@
 @import "functions";
 
 $base-sizes: (
-    "mobile": ("base_size": 16px, "scale_value": 1.135, "break_point": 0),
+    "mobile": ("base_size": 17px, "scale_value": 1.145, "break_point": 0),
     "tablet": ("base_size": 17px, "scale_value": 1.145, "break_point": $tablet),
-    "desktop": ("base_size": 17px, "scale_value": 1.165, "break_point": $desktop)
+    "desktop": ("base_size": 18px, "scale_value": 1.165, "break_point": $desktop)
 ) !default;
 
 $family-sans-serif: "Sara", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -45,10 +45,28 @@ html {
     }
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: $black;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
 @mixin breakpoint_typography($base, $calculated_sizes) {
     body {
         font-size: $base;
-        line-height: 1.525;
+        line-height: 178%;
     }
 
     .has-text-lead {
@@ -133,23 +151,21 @@ html {
 
 $link-outline-color: #78726d;
 
-a {
-    text-underline-offset: .125rem;
+main {
+    a {
+        text-underline-offset: .125rem;
 
-    &:hover {
-        color: $link-hover !important;
-    }
+        &:focus {
+            outline: .125rem dotted $link-outline-color !important;
+            outline-offset: .125rem;
+            text-decoration: none !important;
+        }
 
-    &:focus {
-        outline: .125rem dotted $link-outline-color !important;
-        outline-offset: .125rem;
-        text-decoration: none !important;
-    }
-
-    &:active {
-        outline: none !important;
-        color: bulmaLighten($black, 5%) !important;
-        text-decoration: none;
+        &:active {
+            outline: none !important;
+            color: $color-taide-tiili !important;
+            text-decoration: none;
+        }
     }
 }
 
@@ -157,6 +173,7 @@ a {
     &__content {
         > p {
             > a {
+                color: $color-taide-tiili;
                 text-decoration: underline;
             }
         }
@@ -170,9 +187,7 @@ a {
 
     @if ($base-size-breakpoint == "mobile") {
         @include breakpoint_typography($calc-base_size, $calculated_sizes);
-    }
-
-    @else {
+    } @else {
         $breakpoint: map-get($base-size-values, "break_point");
 
         @include from($breakpoint) {

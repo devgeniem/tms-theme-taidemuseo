@@ -1,88 +1,45 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: $color-sarahilden-gray;
-$button-secondary-border-color: #f1eeeb;
+$button-primary-border-color: $primary;
+$button-secondary-border-color: $button-primary-border-color;
 
 .button {
-    border-radius: 0 !important;
-
     &:hover,
-    &:focus {
+    &.is-hovered,
+    &:focus,
+    &.is-focused {
         box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
+        color: $primary-invert !important;
     }
 
-    &.is-primary {
+    .icon {
+        fill: currentColor !important;
+        color: inherit;
+    }
+
+    &:focus,
+    &.is-focused {
         border-color: $button-primary-border-color !important;
-
-        .icon {
-            fill: $button-primary-border-color !important;
-        }
-
-        &:hover,
-        &.is-hovered {
-            border-color: $white !important;
-            background-color: $black !important;
-        }
-
-        &:focus,
-        &.is-focused {
-            border-color: $button-primary-border-color !important;
-            outline: .125rem dotted $black !important;
-            outline-offset: .25rem !important;
-            background-color: $black !important;
-        }
-
-        &:active,
-        &.is-active {
-            border-color: $button-primary-border-color !important;
-            outline: none !important;
-            background-color: $black !important;
-            box-shadow: none;
-            color: $white !important;
-
-            .icon {
-                fill: currentColor !important;
-            }
-        }
+        outline: .125rem dotted $black !important;
+        outline-offset: .25rem !important;
     }
 
     &.is-secondary {
-        border-color: $button-secondary-border-color !important;
-        background-color: $black !important;
-        color: $white !important;
-
-        .icon {
-            fill: $button-secondary-border-color !important;
-        }
-
         &:hover,
-        &.is-hovered {
-            border-color: $black !important;
-            background-color: $white !important;
-        }
-
+        &.is-hovered,
         &:focus,
         &.is-focused {
-            border-color: $button-secondary-border-color !important;
-            outline: .125rem dotted $black !important;
-            outline-offset: .25rem !important;
-        }
-
-        &:active,
-        &.is-active {
-            border-color: $button-secondary-border-color !important;
-            outline: none !important;
-            background-color: $white !important;
-            box-shadow: none;
-            color: $black !important;
+            border-color: $color-taide-tiili !important;
+            background-color: $color-taide-tiili !important;
+            color: $primary-invert !important;
 
             .icon {
                 fill: currentColor !important;
             }
         }
-    }
 
-    &.is-small {
-        border-radius: 0 !important;
+        &:focus,
+        &.is-focused {
+        }
     }
 }
