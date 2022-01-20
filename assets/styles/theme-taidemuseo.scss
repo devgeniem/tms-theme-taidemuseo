@@ -1,0 +1,64 @@
+/* !*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+@import "themes/includes";
+
+$primary: $color-black;
+$primary-invert: $color-white;
+$primary-light: bulmaLighten($primary, 15);
+$primary-light-invert: $color-white;
+$primary-dark: $color-black;
+$primary-dark-invert: $color-white;
+
+$secondary: $primary;
+$secondary-invert: $primary-invert;
+$secondary-light: $primary-light;
+$secondary-light-invert: $primary-light-invert;
+$secondary-dark: $primary-dark;
+$secondary-dark-invert: $primary-dark-invert;
+
+$light: #f1eeeb;
+$light-invert: $black;
+$dark: $primary-dark;
+$dark-invert: $primary-dark-invert;
+
+$divider: $color-vaalean-harmaa;
+$divider-invert: $color-tumma-harmaa;
+
+$text: $black;
+$link: $primary;
+$link-hover: bulmaLighten($black, 20%);
+
+$colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
+
+$colors: (
+    "primary": $colors-palette-primary,
+    "secondary": $colors-palette-primary,
+    "white": ($color-white, $color-black),
+    "black": ($color-black, $color-white),
+    "light": ($light, $light-invert),
+);
+
+$button-colors: (
+    "primary": ($white, $black, $white, $black),
+    "secondary": ($black, $color-white, $black, $color-white),
+);
+
+$color-background-primary-light--opaque-light: $secondary;
+$button-border-radius: 0;
+
+$secondary-navbar-item-font-weight: 400;
+$navbar-item-navbar-link-color: $black;
+$navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
+
+$fly-out-nav-trigger-icon-hover: $primary;
+$fly-out-nav-primary-link: $link;
+$fly-out-nav-primary-link-hover: $link-hover;
+$fly-out-nav-primary-dropdown-active-background: $light;
+$fly-out-nav-secondary-border-color: $light;
+$fly-out-nav-secondary-link: $link;
+$fly-out-nav-secondary-link-hover: $link-hover;
+
+@import "../../../tms-theme-base/assets/styles/main";
+@import "main";

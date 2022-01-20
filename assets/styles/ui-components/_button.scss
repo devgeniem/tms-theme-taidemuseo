@@ -1,0 +1,88 @@
+// stylelint-disable declaration-no-important
+
+$button-primary-border-color: $color-sarahilden-gray;
+$button-secondary-border-color: #f1eeeb;
+
+.button {
+    border-radius: 0 !important;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
+    }
+
+    &.is-primary {
+        border-color: $button-primary-border-color !important;
+
+        .icon {
+            fill: $button-primary-border-color !important;
+        }
+
+        &:hover,
+        &.is-hovered {
+            border-color: $white !important;
+            background-color: $black !important;
+        }
+
+        &:focus,
+        &.is-focused {
+            border-color: $button-primary-border-color !important;
+            outline: .125rem dotted $black !important;
+            outline-offset: .25rem !important;
+            background-color: $black !important;
+        }
+
+        &:active,
+        &.is-active {
+            border-color: $button-primary-border-color !important;
+            outline: none !important;
+            background-color: $black !important;
+            box-shadow: none;
+            color: $white !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+    }
+
+    &.is-secondary {
+        border-color: $button-secondary-border-color !important;
+        background-color: $black !important;
+        color: $white !important;
+
+        .icon {
+            fill: $button-secondary-border-color !important;
+        }
+
+        &:hover,
+        &.is-hovered {
+            border-color: $black !important;
+            background-color: $white !important;
+        }
+
+        &:focus,
+        &.is-focused {
+            border-color: $button-secondary-border-color !important;
+            outline: .125rem dotted $black !important;
+            outline-offset: .25rem !important;
+        }
+
+        &:active,
+        &.is-active {
+            border-color: $button-secondary-border-color !important;
+            outline: none !important;
+            background-color: $white !important;
+            box-shadow: none;
+            color: $black !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+    }
+
+    &.is-small {
+        border-radius: 0 !important;
+    }
+}
