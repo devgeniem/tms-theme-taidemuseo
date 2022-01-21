@@ -1,0 +1,29 @@
+.pill {
+    padding-bottom: $theme-spacing-quarter;
+    border-width: 1px !important;
+    background-color: $primary;
+    color: $primary-invert;
+    font-size: 1.1rem !important;
+    letter-spacing: .06rem;
+    text-transform: uppercase;
+    text-decoration: none !important;
+
+    .icon {
+        fill: currentColor !important;
+        color: inherit !important;
+    }
+
+    &:focus,
+    &:active {
+        &:hover {
+            color: $primary-invert !important;
+        }
+    }
+
+    &.is-active {
+        &:hover {
+            background-color: $primary-invert !important;
+            color: $primary !important;
+        }
+    }
+}

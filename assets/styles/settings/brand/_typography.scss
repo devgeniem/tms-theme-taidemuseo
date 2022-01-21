@@ -8,12 +8,11 @@
 $base-sizes: (
     "mobile": ("base_size": 17px, "scale_value": 1.145, "break_point": 0),
     "tablet": ("base_size": 17px, "scale_value": 1.145, "break_point": $tablet),
-    "desktop": ("base_size": 18px, "scale_value": 1.165, "break_point": $desktop)
+    "desktop": ("base_size": 18px, "scale_value": 1.1875, "break_point": $desktop)
 ) !default;
 
-$family-sans-serif: "Sara", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-
-$family-primary: "Sara", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-sans-serif: "ff-good-headline-web-pro-con", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-primary: "unit", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-secondary: $family-sans-serif;
 
 $font-family-header: $family-secondary;
@@ -38,11 +37,7 @@ $size-7: rem(14px, $base-size);
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7;
 
 html {
-    font-size: 16px;
-
-    @include from($tablet) {
-        font-size: 17px;
-    }
+    font-size: 18px;
 }
 
 h1,
@@ -58,6 +53,9 @@ h5,
 h6,
 .h6 {
     color: $black;
+    font-weight: $weight-normal;
+    letter-spacing: .01em;
+    text-transform: uppercase;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
@@ -70,10 +68,10 @@ h6,
     }
 
     .has-text-lead {
-        font-family: $family-sans-serif;
+        color: $black;
         font-size: map-get($calculated_sizes, "h6") !important;
-        font-weight: 600;
-        line-height: 1.62;
+        font-weight: 500;
+        line-height: 153%;
     }
 
     .has-text-large {
@@ -92,7 +90,6 @@ h6,
     .h1 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h1") !important;
-        font-weight: 800;
         line-height: 1.22;
         text-transform: uppercase;
         hyphens: auto;
@@ -102,7 +99,6 @@ h6,
     .h2 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h2") !important;
-        font-weight: 800;
         line-height: 1.2;
         text-transform: uppercase;
         hyphens: auto;
@@ -112,7 +108,6 @@ h6,
     .h3 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h3") !important;
-        font-weight: 800;
         line-height: 1.22;
         text-transform: uppercase;
         hyphens: auto;
@@ -122,7 +117,6 @@ h6,
     .h4 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h4") !important;
-        font-weight: 800;
         line-height: 1.22;
         text-transform: uppercase;
         hyphens: auto;
@@ -132,7 +126,6 @@ h6,
     .h5 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h5") !important;
-        font-weight: $weight-semibold;
         line-height: 1.22;
         text-transform: uppercase;
         hyphens: auto;
@@ -142,7 +135,6 @@ h6,
     .h6 {
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h6") !important;
-        font-weight: $weight-semibold;
         line-height: 1.22;
         text-transform: uppercase;
         hyphens: auto;
@@ -152,7 +144,7 @@ h6,
 $link-outline-color: #78726d;
 
 main {
-    a {
+    a:not(.pill):not(.button) {
         text-underline-offset: .125rem;
 
         &:focus {

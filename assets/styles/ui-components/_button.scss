@@ -3,13 +3,19 @@
 $button-primary-border-color: $primary;
 $button-secondary-border-color: $button-primary-border-color;
 
+
 .button {
+    font-size: 1.15rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .06rem !important;
+    text-transform: uppercase;
+
     &:hover,
     &.is-hovered,
     &:focus,
     &.is-focused {
         box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
-        color: $primary-invert !important;
+        color: $primary !important;
     }
 
     .icon {
@@ -24,7 +30,35 @@ $button-secondary-border-color: $button-primary-border-color;
         outline-offset: .25rem !important;
     }
 
+    &.is-primary {
+        &.is-outlined {
+            &:hover,
+            &:focus {
+                border-color: $primary !important;
+            }
+        }
+    }
+
+    &.is-primary.is-inverted,
+    &.is-primary-invert {
+        border-color: $primary !important;
+        background-color: $primary-invert !important;
+        color: $primary !important;
+
+        &:hover,
+        &:focus {
+            border-color: $primary !important;
+        }
+    }
+
     &.is-secondary {
+        background-color: $white !important;
+        color: $black !important;
+
+        .icon {
+            fill: currentColor !important;
+        }
+
         &:hover,
         &.is-hovered,
         &:focus,
@@ -37,9 +71,17 @@ $button-secondary-border-color: $button-primary-border-color;
                 fill: currentColor !important;
             }
         }
+    }
 
-        &:focus,
-        &.is-focused {
+    &.is-outlined {
+        border-color: $white !important;
+        background-color: transparent !important;
+        color: $white !important;
+
+        &:hover,
+        &:focus {
+            background-color: $white !important;
+            color: $black !important;
         }
     }
 }

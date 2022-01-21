@@ -42,7 +42,6 @@ $colors: (
 );
 
 $button-colors: (
-    //"primary": ($white, $black, $white, $black),
     "primary": ($black, $white, $black, $white),
     "secondary": ($black, $color-white, $black, $color-white),
 );
@@ -50,8 +49,18 @@ $button-colors: (
 $color-background-primary-light--opaque-light: $secondary;
 $button-font-weight: $weight-semibold;
 $button-border-radius: 2rem;
+$button-text-invert: $color-white;
+$button-border-invert: $button-text-invert;
+$button-background-invert: $button-text-invert;
 
-//$pill-border-radius: 0;
+$pill-color: $primary-invert;
+$pill-color-active: $primary-invert;
+$pill-color-active-hover: $primary;
+$pill-background-color: $primary;
+$pill-color-focus: $pill-color;
+$pill-background-color-focus: $pill-background-color;
+$pill-background-color-active: $primary-invert;
+$pill-border-color-hover: $primary;
 $pill-outlined-color: $black;
 
 $pagination-item-color: $black;
