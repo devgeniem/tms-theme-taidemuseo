@@ -1,0 +1,14 @@
+.sibling-navigation {
+    &__item {
+        &:focus {
+            outline-offset: .25rem;
+            outline: .125rem dotted $black;
+        }
+    }
+
+    &__item:not(.is-current) {
+        &:hover {
+            color: $white;
+        }
+    }
+}
