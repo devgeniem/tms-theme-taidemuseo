@@ -76,8 +76,10 @@ $sibling-navigation-item-background-color: $black;
 $sibling-navigation-item-active-color: $black;
 
 $secondary-navbar-item-font-weight: 400;
-$navbar-item-navbar-link-color: $black;
+$navbar-item-navbar-link-color: $white;
 $navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
+$navbar-item-grid-item-border-color: $color-ui-border;
+$navbar-item-navbar-active-bg-color: $black;
 
 $fly-out-nav-trigger-icon-hover: $primary;
 $fly-out-nav-primary-link: $link;

@@ -1,0 +1,51 @@
+.fly-out-nav {
+    .icon--close {
+        fill: $black !important;
+    }
+
+    &__inner {
+        box-shadow: 0 .0588rem .5rem rgba($black, .1);
+    }
+
+    .dropdown-toggler:focus {
+        outline: 2px dotted $black;
+    }
+
+    .navbar-item {
+        letter-spacing: .01em;
+    }
+
+    .menu-item-secondary {
+        letter-spacing: .05em;
+    }
+
+    .navbar-dropdown {
+        @include keep-vertical-spacing;
+
+        > .navbar-item {
+            margin: $theme-spacing $theme-spacing-oneandhalf;
+            padding-right: 0;
+            padding-left: 0;
+            border-bottom: 1px solid $color-sarahilden-gray;
+
+            &:hover,
+            &:focus {
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    .search-form {
+        align-items: normal !important;
+
+        &__input {
+            height: 100%;
+            border: 1px solid $black !important;
+            background-color: $white !important;
+        }
+    }
+
+    .search-form-wrapper .h4 {
+        color: $black !important;
+    }
+}

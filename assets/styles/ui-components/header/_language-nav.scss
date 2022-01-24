@@ -1,0 +1,17 @@
+.language-nav {
+    .dropdown-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 1px solid $light;
+    }
+}
+
+.lang-nav {
+    &--horizontal {
+        a.has-text-primary-invert {
+            &:hover {
+                color: $primary-invert !important;
+            }
+        }
+    }
+}

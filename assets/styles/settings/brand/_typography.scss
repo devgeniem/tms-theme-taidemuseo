@@ -61,6 +61,10 @@ h6,
     hyphens: auto;
 }
 
+body {
+    margin: 0;
+}
+
 @mixin breakpoint_typography($base, $calculated_sizes) {
     body {
         font-size: $base;
