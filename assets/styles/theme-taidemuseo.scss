@@ -28,7 +28,7 @@ $divider: $color-vaalean-harmaa;
 $divider-invert: $color-tumma-harmaa;
 
 $text: $color-tekstin-vari;
-$link: $primary;
+$link: $color-taide-tiili;
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
 $colors-palette-secondary: ($white, $black);
@@ -68,6 +68,8 @@ $pagination-item-color-current: $white;
 $pagination-item-background-color: $color-taide-secondary;
 $pagination-item-background-color-hover: $pagination-item-background-color;
 $pagination-item-background-color-focus: $pagination-item-background-color;
+
+$tms-breadcrumb-item-color-link: $link;
 
 $sibling-navigation-item-active-border-color: $border-light;
 $sibling-navigation-item-color: $white;
