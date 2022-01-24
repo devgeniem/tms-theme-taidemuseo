@@ -1,9 +1,12 @@
 .fly-out-nav {
-    .icon--close {
-        fill: $black !important;
+    .dropdown-toggler {
+        .icon {
+            fill: $color-taide-tiili !important;
+        }
     }
 
     &__inner {
+        background-color: $color-taide-dark !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
     }
 
@@ -26,7 +29,7 @@
             margin: $theme-spacing $theme-spacing-oneandhalf;
             padding-right: 0;
             padding-left: 0;
-            border-bottom: 1px solid $color-sarahilden-gray;
+            border-bottom: 1px solid $color-ui-border;
 
             &:hover,
             &:focus {
@@ -43,9 +46,16 @@
             border: 1px solid $black !important;
             background-color: $white !important;
         }
+
+        .button {
+            &:hover,
+            &:focus {
+                border-color: $white !important;
+            }
+        }
     }
 
-    .search-form-wrapper .h4 {
-        color: $black !important;
+    .menu-item-secondary__link {
+        font-size: 1.223rem !important;
     }
 }

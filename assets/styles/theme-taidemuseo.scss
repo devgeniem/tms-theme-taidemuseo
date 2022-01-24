@@ -81,13 +81,14 @@ $navbar-item-has-dropdown-active: $navbar-item-navbar-link-color;
 $navbar-item-grid-item-border-color: $color-ui-border;
 $navbar-item-navbar-active-bg-color: $black;
 
-$fly-out-nav-trigger-icon-hover: $primary;
-$fly-out-nav-primary-link: $link;
-$fly-out-nav-primary-link-hover: $link-hover;
-$fly-out-nav-primary-dropdown-active-background: $light;
-$fly-out-nav-secondary-border-color: $light;
-$fly-out-nav-secondary-link: $link;
-$fly-out-nav-secondary-link-hover: $link-hover;
+$fly-out-nav-trigger-icon: $white;
+$fly-out-nav-trigger-icon-hover: $color-taide-tiili;
+$fly-out-nav-primary-link: $white;
+$fly-out-nav-primary-link-hover: $white;
+$fly-out-nav-primary-dropdown-active-background: $black;
+$fly-out-nav-secondary-border-color: $color-ui-border;
+$fly-out-nav-secondary-link: $fly-out-nav-primary-link;
+$fly-out-nav-secondary-link-hover: $fly-out-nav-primary-link-hover;
 $fly-out-nav-search-button-icon: currentColor;
 
 @import "../../../tms-theme-base/assets/styles/main";

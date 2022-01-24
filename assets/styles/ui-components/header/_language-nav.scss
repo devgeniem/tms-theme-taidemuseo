@@ -4,13 +4,40 @@
         padding-bottom: 0;
         border: 1px solid $light;
     }
+
+    .dropdown-trigger {
+        .button {
+            padding: .25rem 1.25rem !important;
+        }
+
+        .icon {
+            display: block !important;
+        }
+    }
 }
 
 .lang-nav {
     &--horizontal {
-        a.has-text-primary-invert {
+        a {
+            border-color: $white !important;
+
+            &.has-text-primary {
+                color: $color-vaalean-harmaa !important;
+            }
+
+            &.has-text-primary-invert {
+                &:hover {
+                    color: $primary-invert !important;
+                }
+            }
+
             &:hover {
-                color: $primary-invert !important;
+                background-color: $link-hover !important;
+            }
+
+            &:focus {
+                outline-offset: .2rem;
+                outline: .125rem dotted $white !important;
             }
         }
     }

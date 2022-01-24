@@ -37,12 +37,14 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array Array of customized colors.
      */
     public function header( $colors ) : array {
-        $colors['nav']['container']            = 'has-background-primary has-border-primary has-border-top-1 has-border-bottom-1';
-        $colors['search_popup_container']      = 'has-background-primary has-text-primary-invert';
+        $colors['nav']['container']            = 'has-background-primary has-border-primary';
+        $colors['search_popup_container']      = 'has-text-primary-invert';
         $colors['lang_nav']['link__default']   = 'has-text-primary';
         $colors['lang_nav']['link__active']    = 'has-background-primary has-text-primary-invert';
-        $colors['lang_nav']['dropdown_toggle'] = 'is-primary';
-        $colors['fly_out_nav']['inner']        = 'has-background-light has-text-primary';
+        $colors['lang_nav']['dropdown_toggle'] = 'is-outlined is-small';
+        $colors['fly_out_nav']['inner']        = 'has-text-primary-invert';
+        $colors['fly_out_nav']['search_title'] = 'has-text-white';
+        $colors['search_button']               = 'is-primary-invert';
 
         return $colors;
     }
