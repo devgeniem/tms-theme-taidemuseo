@@ -55,10 +55,20 @@ h6,
     color: $black;
     font-weight: $weight-normal;
     letter-spacing: .01em;
-    text-transform: uppercase;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    text-transform: uppercase;
 }
 
 @mixin breakpoint_typography($base, $calculated_sizes) {
@@ -127,7 +137,6 @@ h6,
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h5") !important;
         line-height: 1.22;
-        text-transform: uppercase;
         hyphens: auto;
     }
 
@@ -136,7 +145,6 @@ h6,
         font-family: $font-family-header;
         font-size: map-get($calculated_sizes, "h6") !important;
         line-height: 1.22;
-        text-transform: uppercase;
         hyphens: auto;
     }
 }
