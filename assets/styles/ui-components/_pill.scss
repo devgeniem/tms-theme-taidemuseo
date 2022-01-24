@@ -13,11 +13,13 @@
         color: inherit !important;
     }
 
-    &:focus,
-    &:active {
-        &:hover {
-            color: $primary-invert !important;
-        }
+    &:hover {
+        color: $primary !important;
+        background-color: $primary-invert !important;
+    }
+
+    &:focus {
+        outline: .125rem dotted $black !important;
     }
 
     &.is-active {
