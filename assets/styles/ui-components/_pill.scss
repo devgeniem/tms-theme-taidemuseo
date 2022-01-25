@@ -13,13 +13,15 @@
         color: inherit !important;
     }
 
-    &:hover {
-        color: $primary !important;
-        background-color: $primary-invert !important;
-    }
+    &:not(span) {
+        &:hover {
+            color: $primary !important;
+            background-color: $primary-invert !important;
+        }
 
-    &:focus {
-        outline: .125rem dotted $black !important;
+        &:focus {
+            outline: .125rem dotted $black !important;
+        }
     }
 
     &.is-active {

@@ -217,18 +217,18 @@ class ArtistGroup {
         $tab = ( new Field\Tab( $strings['tab'] ) )
             ->set_placement( 'left' );
 
-//        $artwork_field = ( new Field\PostObject( $strings['artwork']['title'] ) )
-//            ->set_key( "${key}_artwork" )
-//            ->set_name( 'artwork' )
-//            ->set_post_types( [ PostType\Artwork::SLUG ] )
-//            ->allow_multiple()
-//            ->set_default_value( null )
-//            ->allow_null()
-//            ->set_instructions( $strings['artwork']['instructions'] );
-//
-//        $tab->add_fields( [
-//            $artwork_field,
-//        ] );
+        $artwork_field = ( new Field\PostObject( $strings['artwork']['title'] ) )
+            ->set_key( "${key}_artwork" )
+            ->set_name( 'artwork' )
+            ->set_post_types( [ PostType\Artwork::SLUG ] )
+            ->allow_multiple()
+            ->set_default_value( null )
+            ->allow_null()
+            ->set_instructions( $strings['artwork']['instructions'] );
+
+        $tab->add_fields( [
+            $artwork_field,
+        ] );
 
         return $tab;
     }

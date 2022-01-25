@@ -7,8 +7,8 @@ namespace TMS\Theme\Taidemuseo;
 
 use Closure;
 use PageArtist;
+use PageArtwork;
 use TMS\Theme\Base\Interfaces\Controller;
-use function add_filter;
 
 /**
  * Class ThemeSupports
@@ -41,6 +41,9 @@ class ThemeSupports implements Controller {
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
         $vars[] = PageArtist::FILTER_QUERY_VAR;
         $vars[] = PageArtist::ORDERBY_QUERY_VAR;
+
+        $vars[] = PageArtwork::SEARCH_QUERY_VAR;
+        $vars[] = PageArtwork::FILTER_QUERY_VAR;
 
         return $vars;
     }
