@@ -1,7 +1,7 @@
-art<section class="section related-artwork pt-0">
+<section class="section related-artwork pt-6 pt-10-desktop">
     <div class="container">
         <div class="columns">
-            <div class="column is-10 is-offset-1 pt-10 has-border-top-1 has-border-primary">
+            <div class="column is-8-desktop is-offset-2-desktop">
                 <h2 class="mt-0 mb-8">
                     {title|s}
                 </h2>
@@ -30,7 +30,7 @@ art<section class="section related-artwork pt-0">
 
                                 {?artwork_type}
                                     <div>
-                                        <span class="pill is-primary is-family-primary has-text-weight-normal">
+                                        <span class="pill">
                                             {artwork_type|s}
                                         </span>
                                     </div>

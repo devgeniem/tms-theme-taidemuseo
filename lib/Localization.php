@@ -6,6 +6,8 @@
 namespace TMS\Theme\Taidemuseo;
 
 use TMS\Theme\Taidemuseo\Taxonomy\ArtistCategory;
+use TMS\Theme\Taidemuseo\Taxonomy\ArtworkLocation;
+use TMS\Theme\Taidemuseo\Taxonomy\ArtworkType;
 
 /**
  * Class Localization
@@ -46,7 +48,7 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
 
         // Coming soon:
         // $post_types[ PostType\Exhibition::SLUG ] = PostType\Exhibition::SLUG;
-        // $post_types[ PostType\Artwork::SLUG ]    = PostType\Artwork::SLUG;
+        $post_types[ PostType\Artwork::SLUG ] = PostType\Artwork::SLUG;
 
         return $post_types;
     }
@@ -60,11 +62,9 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
      * @return array The modified tax_types -array.
      */
     protected function add_tax_to_polylang( $tax_types, $is_settings ) : array { // phpcs:ignore
-        $tax_types[ ArtistCategory::SLUG ] = ArtistCategory::SLUG;
-
-        // Coming soon:
-        // $tax_types[ ArtworkLocation::SLUG ] = ArtworkLocation::SLUG;
-        // $tax_types[ ArtworkType::SLUG ]     = ArtworkType::SLUG;
+        $tax_types[ ArtistCategory::SLUG ]  = ArtistCategory::SLUG;
+        $tax_types[ ArtworkLocation::SLUG ] = ArtworkLocation::SLUG;
+        $tax_types[ ArtworkType::SLUG ]     = ArtworkType::SLUG;
 
         return $tax_types;
     }
