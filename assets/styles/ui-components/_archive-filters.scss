@@ -1,0 +1,44 @@
+.page-template-page-artwork,
+.page-template-page-artist,
+.archive {
+    .filters {
+        .h6 {
+            text-transform: none !important;
+        }
+    }
+
+    .filters-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $theme-spacing;
+
+        @include from($tablet) {
+            flex-direction: row;
+            align-items: end;
+        }
+
+        select,
+        input[type="text"] {
+            max-height: 2.375rem;
+
+            @include from($desktop) {
+                max-height: 3rem;
+            }
+        }
+
+        select {
+            @include from($widescreen) {
+                min-width: 12.5rem;
+            }
+        }
+
+        input[type="text"] {
+            width: 100%;
+
+            @include from($widescreen) {
+                min-width: 17.5rem;
+            }
+        }
+    }
+
+}
