@@ -25,6 +25,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             '__return_false',
         );
 
+        add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
+
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
     }
