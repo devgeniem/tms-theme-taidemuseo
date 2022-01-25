@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const SpriteLoaderPlugin = require( 'svg-sprite-loader/plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
@@ -186,6 +187,9 @@ if ( isProduction ) {
             },
         } ),
     ];
+
+    // Delete distribution folder for production build.
+    allPlugins.push( new CleanWebpackPlugin( { } ) );
 
 }
 
