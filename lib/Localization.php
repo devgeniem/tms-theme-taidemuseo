@@ -5,7 +5,7 @@
 
 namespace TMS\Theme\Taidemuseo;
 
-use TMS\Theme\taidemuseo\Taxonomy\ArtistCategory;
+use TMS\Theme\Taidemuseo\Taxonomy\ArtistCategory;
 
 /**
  * Class Localization
