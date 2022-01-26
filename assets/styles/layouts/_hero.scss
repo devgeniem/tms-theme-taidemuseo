@@ -1,0 +1,29 @@
+.hero {
+    height: auto !important;
+    &__background-container {
+        @include hero-height;
+    }
+
+    &__inner {
+        // @include from($desktop) {
+        //     max-width: 85%;
+        //     margin: 0 auto -4.75rem;
+        //     transform: translateY(-4.75rem);
+        // }
+
+        // @include from(1550px) {
+        //     max-width: 100%;
+        // }
+
+        position: static;
+        transform: none;
+    }
+
+    h1 {
+        // max-width: 20ch;
+
+        @include from($desktop) {
+            font-size: 3.38rem !important; // sass-lint:disable-line no-important
+        }
+    }
+}

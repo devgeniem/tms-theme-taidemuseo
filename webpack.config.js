@@ -190,7 +190,6 @@ if ( isProduction ) {
 
     // Delete distribution folder for production build.
     allPlugins.push( new CleanWebpackPlugin( { } ) );
-
 }
 
 module.exports = [
