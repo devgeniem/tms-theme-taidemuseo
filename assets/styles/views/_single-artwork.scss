@@ -3,6 +3,12 @@
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        color: $primary;
+
+        &:hover,
+        &:focus {
+            color: $link;
+        }
 
         &:not(:last-child) {
             margin-bottom: $theme-spacing-three-quarters;
