@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column is-8-desktop is-offset-2-desktop">
                 <h2 class="mt-0 mb-8">
-                    {title|s}
+                    {Strings.s.artwork.related_art|s}
                 </h2>
 
                 {#artwork}
