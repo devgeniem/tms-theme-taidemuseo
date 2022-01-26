@@ -1,3 +1,11 @@
+.pagination {
+    .arrow {
+        .icon {
+            fill: $black !important;
+        }
+    }
+}
+
 .pagination-item {
     &__link {
         align-items: center;

@@ -1,5 +1,4 @@
 .pill {
-    padding-bottom: $theme-spacing-quarter;
     border-width: 1px !important;
     background-color: $primary;
     color: $primary-invert;
@@ -7,6 +6,7 @@
     letter-spacing: .06rem;
     text-transform: uppercase;
     text-decoration: none !important;
+    font-weight: $weight-normal !important;
 
     .icon {
         fill: currentColor !important;
