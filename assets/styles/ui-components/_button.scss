@@ -10,6 +10,7 @@ $button-secondary-border-color: $button-primary-border-color;
     letter-spacing: .06rem !important;
     text-transform: uppercase;
     border-color: $primary !important;
+    padding: .5rem 1.5rem;
 
     &:hover,
     &.is-hovered,
