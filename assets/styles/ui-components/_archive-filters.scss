@@ -5,6 +5,20 @@
         .h6 {
             text-transform: none !important;
         }
+
+        &--submit {
+            @include from($tablet) {
+                margin-top: auto;
+            }
+        }
+
+        &--sort-by-container {
+            select {
+                @include from($tablet) {
+                    height: 100%;
+                }
+            }
+        }
     }
 
     .filters-wrapper {
@@ -14,7 +28,7 @@
 
         @include from($tablet) {
             flex-direction: row;
-            align-items: end;
+            align-items: stretch;
         }
 
         select,
