@@ -23,9 +23,15 @@
     }
 
     &.is-active {
-        &:hover {
-            background-color: $primary-invert !important;
-            color: $primary !important;
+        &:not(span) {
+            &:focus {
+                color: $white !important;
+            }
+
+            &:hover {
+                background-color: $primary-invert !important;
+                color: $primary !important;
+            }
         }
     }
 }
