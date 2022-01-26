@@ -1,21 +1,10 @@
 .sibling-navigation {
-    &__item {
-        text-transform: uppercase;
+    &__items {
+        margin: 0 !important;
+        gap: $theme-spacing;
 
-        &:hover {
-            text-decoration: none;
-        }
-
-        &:focus {
-            outline-offset: .25rem;
-            outline: .125rem dotted $black;
-        }
-    }
-
-    &__item:not(.is-current) {
-        &:hover {
-            color: $black;
-            background-color: $white;
+        @include from($desktop) {
+            gap: $theme-spacing-oneandhalf;
         }
     }
 }
