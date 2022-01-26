@@ -28,10 +28,6 @@
                                 </a>
                             </h2>
 
-                            <div class="has-text-small">
-                                {fields.year|s}
-                            </div>
-
                             {?artist}
                                 <div class="has-text-small">
                                     {artist|s}
