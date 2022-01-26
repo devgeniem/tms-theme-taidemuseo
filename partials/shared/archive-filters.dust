@@ -1,9 +1,9 @@
 <div class="columns is-multiline">
     <div class="column">
-        <div class="pb-4 mb-4">
+        <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
             <div class="columns is-desktop filters">
                 {?filters}
-                    <div class="column is-12-tablet is-4-desktop">
+                    <div class="column {filters_container_classes|s}">
                         <div class="mb-4">
                             <h2 class="is-block h6 mb-3">
                                 {strings.filter|s}

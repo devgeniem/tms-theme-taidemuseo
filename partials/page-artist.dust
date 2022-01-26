@@ -5,7 +5,7 @@
         <main class="main-content section" id="main-content">
             <div class="container">
                 {>"shared/archive-view-title" /}
-                {>"shared/archive-filters" /}
+                {>"shared/archive-filters" filters_container_classes="is-12-tablet is-4-desktop" /}
 
                 {?results.summary}
                     <p role="status">{results.summary|s}</p>
@@ -17,7 +17,7 @@
                             <div class="columns is-mobile is-variable is-4-desktop">
                                 <div class="column">
                                     <div
-                                        class="inner p-4 p-5-desktop keep-vertical-spacing has-border has-border-1">
+                                        class="inner p-4 p-5-desktop keep-vertical-spacing has-border has-border-1 has-border-gray">
                                         <h2 class="h4 mt-4 mb-1 has-line-height-tight">
                                             {?link}
                                                 <a href="{link.url|s}" class="has-text-black">
