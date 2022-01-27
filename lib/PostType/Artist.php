@@ -8,7 +8,6 @@ namespace TMS\Theme\Taidemuseo\PostType;
 use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
-use TMS\Theme\Taidemuseo\Taxonomy\ArtistCategory;
 use WP_Query;
 
 /**
@@ -273,10 +272,7 @@ class Artist implements PostType {
             if ( false === strpos( $artist_field, $artist_name ) ) {
                 $artist_field = $artist_field . ' ' . $artist_name;
 
-                wp_update_post( [
-                    'ID'           => $artwork->ID,
-                    'post_content' => $artist_field,
-                ] );
+                update_post_meta( $artwork->ID, 'artists', $artist_field );
             }
         }
     }
@@ -297,19 +293,8 @@ class Artist implements PostType {
             return;
         }
 
-        $artist_name = $this->get_artist_name( $post_id );
-
         foreach ( $artworks as $artwork ) {
-            $artist_field = get_the_content( null, false, $artwork->ID );
-
-            if ( false !== strpos( $artist_field, $artist_name ) ) {
-                $artist_field = str_replace( $artist_name, ' ', $artist_field );
-
-                wp_update_post( [
-                    'ID'           => $artwork->ID,
-                    'post_content' => $artist_field,
-                ] );
-            }
+            update_post_meta( $artwork->ID, 'artists', '' );
         }
     }
 

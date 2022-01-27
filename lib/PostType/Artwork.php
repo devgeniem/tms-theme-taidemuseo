@@ -8,6 +8,7 @@ namespace TMS\Theme\Taidemuseo\PostType;
 use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
+use WP_Post;
 
 /**
  * Artwork CPT
@@ -72,6 +73,8 @@ class Artwork implements PostType {
             10,
             3
         );
+
+        add_filter( 'redipress/post_object', Closure::fromCallable( [ $this, 'handle_redipress_index' ] ) );
     }
 
     /**
@@ -227,5 +230,20 @@ class Artwork implements PostType {
         ];
 
         return $breadcrumbs;
+    }
+
+    /**
+     * Add artists meta field into redipress index.
+     *
+     * @param WP_Post $post_item WP_Post object.
+     *
+     * @return WP_Post WP_Post object.
+     */
+    public function handle_redipress_index( $post_item ) {
+        if ( $post_item->post_type === self::SLUG && $post_item->post_status === 'publish' ) {
+            $post_item->artists = get_post_meta( $post_item->ID, 'artists', true );
+        }
+
+        return $post_item;
     }
 }
