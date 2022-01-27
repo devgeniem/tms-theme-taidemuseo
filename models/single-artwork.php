@@ -66,6 +66,23 @@ class SingleArtwork extends SingleArtist {
         return $info_rows;
     }
 
+    /**
+     * Get related artwork.
+     *
+     * @return array|null
+     */
+    public function artwork() : ?array {
+        $artwork    = parent::artwork();
+        $current_id = get_the_ID();
+
+        if ( empty( $artwork ) ) {
+            return null;
+        }
+
+        return array_filter( $artwork, function ( $item ) use ( $current_id ) {
+            return $item->ID !== $current_id;
+        } );
+    }
 
     /**
      * Get info group artwork location.
