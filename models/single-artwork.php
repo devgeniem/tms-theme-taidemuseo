@@ -277,14 +277,6 @@ class SingleArtwork extends SingleArtist {
 
             if ( in_array( $current_id, $artwork_ids, true ) ) {
                 foreach ( $artworks as $artwork ) {
-                    if ( $artwork->ID === $current_id ) {
-                        continue;
-                    }
-
-                    if ( ! isset( $map[ $artist->ID ] ) ) {
-                        $map[ $artist->ID ] = [];
-                    }
-
                     $map[ $artist->ID ][] = $artwork;
                 }
             }
