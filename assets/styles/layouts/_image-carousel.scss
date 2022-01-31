@@ -1,0 +1,98 @@
+.image-carousel {
+
+    &__item {
+        .has-shape-round {
+            display: inline-block;
+            overflow: hidden;
+
+            img {
+                object-fit: contain;
+                clip-path: circle(closest-side);
+            }
+        }
+    }
+
+    &__modal-control{
+
+        &.slick-arrow {
+            background-color: transparent;
+            border:none;
+
+            .icon {
+                fill: $white;
+            }
+        }
+    }
+
+    &__items--modal {
+
+        .slick-list {
+            max-height: 100%;
+            overflow-y: auto;
+        }
+
+        @include until($tablet) {
+            .slick-prev {
+                left:0;
+            }
+
+            .slick-next {
+                right: 0;
+            }
+        }
+
+        .slick-slide {
+            padding:0 !important;
+        }
+       
+        .image-carousel__item {
+            height: 80vh;
+            display: flex !important;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+    
+        .img-wrapper{
+            flex:2 1 auto;
+            max-height: 100%;
+            height:auto;
+            min-width: 0;
+            min-height: 50%;
+            display: flex;
+            align-items: flex-end;
+
+            img{
+                max-width: 100%;
+                max-height: 100% !important;
+                min-height: 100px;
+                object-fit: contain;
+            }
+        }
+    
+        .image-block__meta {
+            flex:1 1 auto;
+            width: 100%;
+        }
+        
+
+    }
+
+    
+}
+
+.modal-content {
+
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+}
