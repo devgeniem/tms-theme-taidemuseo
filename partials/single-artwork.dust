@@ -70,7 +70,7 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" list_column_classes="is-10 is-offset-1" title=Strings.s.artwork.related_art /}
+                {>"shared/artwork-list" list_column_classes="is-8 is-offset-1" title=Strings.s.artwork.related_art /}
             {/artwork}
         {/SingleArtwork}
     </main>
