@@ -225,7 +225,8 @@ class HeroLayout extends Layout {
             ->set_key( "${key}_${group}_text" )
             ->set_name( "${group}_text" )
             ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['text']['instructions'] );
+            ->set_instructions( $strings['text']['instructions'] )
+            ->set_new_lines( 'br' );
 
         $button_field = ( new Field\Link( $strings['button']['label'] ) )
             ->set_key( "${key}_${group}_button" )
