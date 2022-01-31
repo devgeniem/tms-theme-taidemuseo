@@ -40,10 +40,6 @@
                 right: 0;
             }
         }
-
-        .slick-slide {
-            padding:0 !important;
-        }
        
         .image-carousel__item {
             height: 80vh;
@@ -81,18 +77,6 @@
     
 }
 
-.modal-content {
-
-    a {
-        color: $white;
-        text-decoration: underline;
-
-        &:hover {
-            color: $white !important;
-        }
-
-        &:focus {
-            outline-color: $white !important;
-        }
-    }
+.slick-track .modal-trigger:focus {
+    outline: 0.125rem dotted #000000;
 }
