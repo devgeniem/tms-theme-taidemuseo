@@ -9,7 +9,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <div class="is-center p-8 pr-8-desktop pl-8-desktop has-text-centered">
+                    <div class="is-center p-8 pr-8-tablet pl-8-tablet pr-2 pl-2 has-text-centered">
                         {?title}
                             <h1 class="h1 mt-0 mr-auto mb-5 ml-auto no-hyphens has-text-secondary-invert">
                                 {title|s}
