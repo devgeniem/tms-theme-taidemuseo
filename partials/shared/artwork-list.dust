@@ -9,7 +9,7 @@
                 {#artwork}
                     <div class="related-artwork__item container mb-4">
                         <div class="columns">
-                            <div class="column is-3">
+                            <div class="column is-3 is-5-desktop">
                                 {?image_id}
                                     <div class="entry__figure image is-4by3">
                                         {@image id=image_id size="large" class="objectfit-image" /}
@@ -17,7 +17,7 @@
                                 {/image_id}
                             </div>
 
-                            <div class="column is-5">
+                            <div class="column is-5 is-7-desktop">
                                 <h3 class="mt-0 mb-5">
                                     <a href="{permalink}" class="has-text-primary">{post_title|s}</a>
                                 </h3>
