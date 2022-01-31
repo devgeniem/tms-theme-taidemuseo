@@ -13,8 +13,11 @@
                                 </h1>
 
                                 {?hero_image}
-                                    <div
-                                        class="entry__hero-image mt-6 has-background-primary has-text-primary-invert has-background-cover" {@inlinebg url=hero_image /}></div>
+                                    <div class="has-text-centered">
+                                        <img class="entry__hero-image mt-6 mr-auto ml-auto" src="{hero_image}" alt=""
+                                             aria-hidden="true"
+                                             tabindex="-1">
+                                    </div>
 
                                     {?hero_image_credits}
                                         <div class="has-text-right is-size-7">
