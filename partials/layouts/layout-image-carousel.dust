@@ -55,7 +55,7 @@
         <div class="modal-background"></div>
 
         <button
-            class="button button--icon modal-close-button is-flex is-align-self-flex-end image-carousel__modal-control" aria-label="{translations.close}">
+            class="button button--icon modal-close-button is-flex is-align-self-flex-end image-carousel__modal-control">
             <span class="modal-close-button__text">{translations.close}</span>
             {>"ui/icon" icon="close" class="icon--medium" /}
         </button>
