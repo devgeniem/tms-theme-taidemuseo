@@ -1,0 +1,16 @@
+.modaal-close {
+
+    &:focus:before, 
+    &:focus:after, 
+    &:hover:before, 
+    &:hover:after {
+        background: $black;
+    }
+
+    &:focus {
+        outline: 0.25rem dotted $white;
+        outline-offset: 0.25rem
+    }
+}
+
+
