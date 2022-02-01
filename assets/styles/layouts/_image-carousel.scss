@@ -1,5 +1,12 @@
 .image-carousel {
 
+    &__description {
+        a {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+
     &__item {
         .has-shape-round {
             display: inline-block;
