@@ -6,6 +6,7 @@
 namespace TMS\Theme\Taidemuseo\PostType;
 
 use Closure;
+use Geniem\RediPress\Entity\TextField;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
 use WP_Post;
@@ -74,7 +75,28 @@ class Artwork implements PostType {
             3
         );
 
-        add_filter( 'redipress/post_object', Closure::fromCallable( [ $this, 'handle_redipress_index' ] ) );
+        add_filter( 'redipress/schema_fields', function ( $fields ) {
+            $fields[] = new TextField( [
+                'name'     => 'artists',
+                'sortable' => true,
+            ] );
+
+            return $fields;
+        }, PHP_INT_MAX, 1 );
+
+        add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
+            if ( $post->post_type === Artwork::SLUG ) {
+                $value = get_post_meta( $post_id, 'artists', true );
+            }
+
+            return $value;
+        }, 10, 3 );
+
+        add_filter( 'redipress/search_fields', function ( $fields ) {
+            $fields[] = 'artists';
+
+            return $fields;
+        } );
     }
 
     /**
@@ -230,20 +252,5 @@ class Artwork implements PostType {
         ];
 
         return $breadcrumbs;
-    }
-
-    /**
-     * Add artists meta field into redipress index.
-     *
-     * @param WP_Post $post_item WP_Post object.
-     *
-     * @return WP_Post WP_Post object.
-     */
-    public function handle_redipress_index( $post_item ) {
-        if ( $post_item->post_type === self::SLUG && $post_item->post_status === 'publish' ) {
-            $post_item->artists = get_post_meta( $post_item->ID, 'artists', true );
-        }
-
-        return $post_item;
     }
 }

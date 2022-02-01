@@ -9,6 +9,7 @@ use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
 use WP_Query;
+use function do_action;
 
 /**
  * Artist CPT
@@ -267,12 +268,13 @@ class Artist implements PostType {
         $artist_name = $this->get_artist_name( $post_id );
 
         foreach ( $artworks as $artwork ) {
-            $artist_field = get_the_content( null, false, $artwork->ID );
+            $artist_field = get_post_meta( $artwork->ID, 'artists', true );
 
             if ( false === strpos( $artist_field, $artist_name ) ) {
                 $artist_field = $artist_field . ' ' . $artist_name;
 
                 update_post_meta( $artwork->ID, 'artists', $artist_field );
+                do_action( 'redipress/index_post', $artwork->ID, $artwork );
             }
         }
     }
@@ -293,8 +295,15 @@ class Artist implements PostType {
             return;
         }
 
+        $artist_name = $this->get_artist_name( $post_id );
+
         foreach ( $artworks as $artwork ) {
-            update_post_meta( $artwork->ID, 'artists', '' );
+            $artist_field = get_post_meta( $artwork->ID, 'artists' );
+
+            if ( false !== strpos( $artist_field, $artist_name ) ) {
+                $artist_field = str_replace( $artist_name, ' ', $artist_field );
+                update_post_meta( $artwork->ID, 'artists', $artist_field );
+            }
         }
     }
 
