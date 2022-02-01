@@ -6,6 +6,7 @@
 namespace TMS\Theme\Taidemuseo\PostType;
 
 use Closure;
+use Geniem\RediPress\Entity\TextField;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
 use WP_Post;
