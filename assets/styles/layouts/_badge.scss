@@ -1,0 +1,68 @@
+.layout-badge {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100px;
+    border-radius: 50%;
+    transform: translateY(-40%);
+
+    @include from($desktop) {
+        top: 64px;
+        width: 125px;
+        transform: translateY(0);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    &__inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: .5ch;
+    }
+
+    &.align-before {
+        left: 0;
+
+        @include from($desktop) {
+            left: -85px;
+        }
+    }
+
+    &.align-after {
+        right: 0;
+
+        @include from($desktop) {
+            right: -85px;
+        }
+    }
+}
+
+.image-banner {
+    .layout-badge {
+        &.align-before {
+            @include from($desktop) {
+                left: 0;
+                transform: translateX(-35%);
+            }
+        }
+
+        &.align-after {
+            @include from($desktop) {
+                right: 0;
+                transform: translateX(35%);
+            }
+        }
+    }
+}
