@@ -9,6 +9,7 @@ use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
 use WP_Query;
+use function do_action;
 
 /**
  * Artist CPT
@@ -273,6 +274,7 @@ class Artist implements PostType {
                 $artist_field = $artist_field . ' ' . $artist_name;
 
                 update_post_meta( $artwork->ID, 'artists', $artist_field );
+                do_action( 'redipress/index_post', $artwork->ID, $artwork );
             }
         }
     }
