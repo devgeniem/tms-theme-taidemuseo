@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-463: Key figures
 - TMS-647: Build optimizations
 - TMS-444: Content page hero
 - TMS-471: Image banner
