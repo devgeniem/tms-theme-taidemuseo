@@ -11,13 +11,30 @@
         .has-shape-round {
             display: inline-block;
             overflow: hidden;
-
+            max-width: 70vw;
+            
             img {
                 object-fit: contain;
                 clip-path: circle(closest-side);
             }
         }
     }
+
+        .slick-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .slick-prev {
+            left: 0.5rem;
+            padding: 0 !important;
+        }
+
+        .slick-next {
+            right: 0.5rem;
+            padding: 0 !important;
+        }
+
 
     &__modal-control{
 
@@ -40,7 +57,7 @@
 
         @include until($tablet) {
             .slick-prev {
-                left:0;
+                left: 0;
             }
 
             .slick-next {
