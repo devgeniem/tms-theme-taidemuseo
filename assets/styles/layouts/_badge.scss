@@ -52,34 +52,3 @@
         }
     }
 }
-
-.image-banner {
-    .layout-badge {
-        
-        top: 0;
-
-        @include from($desktop) {
-            top: 50%;
-        }
-        
-        &.align-before {
-
-            transform: translateX(0) translateY(-20%);
-
-            @include from($desktop) {
-                left: 0;
-                transform: translateX(-35%) translateY(-50%);
-            }
-        }
-
-        &.align-after {
-
-            transform: translateX(0) translateY(-20%);
-
-            @include from($desktop) {
-                right: 0;
-                transform: translateX(35%) translateY(-50%);
-            }
-        }
-    }
-}
