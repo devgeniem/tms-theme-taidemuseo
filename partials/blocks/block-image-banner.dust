@@ -9,7 +9,7 @@
 
         <div class="overlay overlay--dark-40"></div>
 
-        <div class="image-banner__inner is-relative is-absolute-tablet has-top-50-tablet has-right-0-tablet has-left-0-tablet has-transform-y--50-tablet pt-8 pb-8 {?layout_badge.layout_badge_text} pr-12 pl-12 {:else} pr-8 pl-8 pr-12-desktop pl-12-desktop {/layout_badge.layout_badge_text} has-text-centered {align|s}">
+        <div class="image-banner__inner is-relative is-absolute-tablet has-top-50-tablet has-right-0-tablet has-left-0-tablet has-transform-y--50-tablet {?layout_badge.layout_badge_text} pt-12 pb-12 pt-10-tablet pb-10-tablet {:else} pt-8 pb-8 {/layout_badge.layout_badge_text} pr-8 pl-8 pr-12-desktop pl-12-desktop has-text-centered {align|s}">
             {?title}
                 <h2 class="image-banner__title has-text-white mt-0 mb-6">
                     {title|s}
