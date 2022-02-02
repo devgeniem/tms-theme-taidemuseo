@@ -19,7 +19,11 @@
 
         &__text {
             font-size: 1rem;
-            line-height: 1.5;
+            line-height: 1.2;
+
+            @include from($desktop) {
+                font-size: 1.1rem;
+            }
     
             @include from($widescreen) {
                 font-size: 1.3rem;
@@ -28,7 +32,7 @@
         
         &.align-before {
 
-            transform: translateX(0) translateY(-20%);
+            transform: translateX(0) translateY(-30%);
 
             @include from($desktop) {
                 left: 0;
@@ -38,7 +42,7 @@
 
         &.align-after {
 
-            transform: translateX(0) translateY(-20%);
+            transform: translateX(0) translateY(-30%);
 
             @include from($desktop) {
                 right: 0;
