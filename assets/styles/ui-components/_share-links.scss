@@ -1,0 +1,26 @@
+.share-links,
+.entry__share-links {
+    h2 {
+        text-transform: none;
+    }
+    a {
+        // border: 1px solid $link;
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            background-color: $white !important;
+            border: 0.125rem solid $black;
+
+            .icon {
+                fill: $black !important; 
+            }
+        }
+    }
+
+    // .icon {
+    //     fill: $link !important;
+    // }
+}
+
