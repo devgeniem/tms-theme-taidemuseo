@@ -3,13 +3,13 @@
     top: 0;
     z-index: 1;
     overflow: hidden;
-    width: 100px;
+    width: 150px;
     border-radius: 50%;
-    transform: translateY(-40%);
+    transform: translateY(-20%);
 
     @include from($desktop) {
         top: 64px;
-        width: 125px;
+        width: 175px;
         transform: translateY(0);
     }
 
@@ -27,9 +27,13 @@
     }
 
     &__text {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.5;
         margin: .5ch;
+
+        @include from($desktop) {
+            font-size: 1.3rem;
+        }
     }
 
     &.align-before {
@@ -51,17 +55,30 @@
 
 .image-banner {
     .layout-badge {
+        
+        top: 0;
+
+        @include from($desktop) {
+            top: 50%;
+        }
+        
         &.align-before {
+
+            transform: translateX(0) translateY(-20%);
+
             @include from($desktop) {
                 left: 0;
-                transform: translateX(-35%);
+                transform: translateX(-35%) translateY(-50%);
             }
         }
 
         &.align-after {
+
+            transform: translateX(0) translateY(-20%);
+
             @include from($desktop) {
                 right: 0;
-                transform: translateX(35%);
+                transform: translateX(35%) translateY(-50%);
             }
         }
     }

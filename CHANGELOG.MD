@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-471: Image banner
 - TMS-454: Image block
 - TMS-494: Add breadcrumb styles #4
 - TMS-495: Add footer styles #3
