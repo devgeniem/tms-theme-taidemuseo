@@ -1,0 +1,28 @@
+.single-post {
+    .entry {
+        &__share-links {
+            h2 {
+                text-align: left !important;
+            }
+
+            .share-links {
+                justify-content: flex-start !important;
+            }
+        }
+    }
+
+    .related-posts {
+        background-color: $color-taide-secondary !important;
+
+        &__read-more {
+            font-size: 1.2rem;
+            font-family: $family-secondary;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+
+            &:not(:hover) {
+                color: inherit !important;
+            }
+        }
+    }
+}
