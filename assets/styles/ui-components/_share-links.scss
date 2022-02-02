@@ -2,25 +2,41 @@
 .entry__share-links {
     h2 {
         text-transform: none;
+        font-weight: 400;
     }
+
     a {
-        // border: 1px solid $link;
+        background-color: $black;
+        border: 1px solid $black;
+
+        .icon {
+            fill: $white !important;
+        }
 
         &:hover,
         &.is-hovered,
         &:focus,
         &.is-focused {
             background-color: $white !important;
-            border: 0.125rem solid $black;
 
             .icon {
-                fill: $black !important; 
+                fill: $black !important;
             }
         }
     }
 
-    // .icon {
-    //     fill: $link !important;
-    // }
+    .icon {
+        fill: $link !important;
+    }
+}
+
+.entry__share-links {
+    h2 {
+        text-align: right;
+    }
+
+    .share-links {
+        justify-content: center;
+    }
 }
 
