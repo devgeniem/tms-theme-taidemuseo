@@ -55,8 +55,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array
      */
     public function footer( array $classes ) : array {
-        $classes['container']   = 'has-colors-light';
-        $classes['back_to_top'] = 'is-primary';
+        $classes['container']   = '';
+        $classes['back_to_top'] = 'is-outlined';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
 
