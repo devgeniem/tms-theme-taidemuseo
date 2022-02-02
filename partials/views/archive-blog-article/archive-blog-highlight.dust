@@ -1,0 +1,33 @@
+{?highlight}
+    <div class="highlight-article">
+        <a href="{highlight.permalink}" class="has-text-black is-block">
+            <div class="columns is-vcentered is-desktop is-gapless">
+                <div
+                    class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative is-16by9">
+                    {@image id=highlight.featured_image size="large" class="objectfit-image" /}
+                </div>
+
+                <div class="column is-6-desktop is-5-widescreen has-text-secondary-paragraph">
+                    <div class="highlight-article__fields p-5 pt-9-desktop pr-6-desktop pb-9-desktop pl-6-desktop">
+                        {?highlight.post_title}
+                            <h2 class="mt-0 mt-3-desktop mb-4 mb-5-desktop">
+                                {highlight.post_title|s}
+                            </h2>
+                        {/highlight.post_title}
+
+                        {?highlight.category}
+                            <a href="{category.permalink|s}" class="pill">
+                                {highlight.category.name|s}
+                            </a>
+                        {/highlight.category}
+
+                        <div class="entry__excerpt mt-4 mt-5-desktop mb-5-desktop">
+                            <span class="is-block has-text-weight-semibold">{@strtodate value=highlight.post_date /}</span>
+                            {highlight.excerpt|s}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+{/highlight}
