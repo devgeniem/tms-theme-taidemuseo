@@ -27,6 +27,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
+        add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
     }
 
     /**
@@ -59,6 +60,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['back_to_top'] = 'is-primary';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
+
+        return $classes;
+    }
+
+    /**
+     * Search classes.
+     *
+     * @param array $classes Search view classes.
+     *
+     * @return array
+     */
+    public function search_classes( $classes ) : array {
+        $classes['event_search_section'] = '';
 
         return $classes;
     }
