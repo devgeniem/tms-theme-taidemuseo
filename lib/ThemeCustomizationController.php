@@ -72,7 +72,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
     /**
      * Alter subpages classes.
      *
-     * @param $data
+     * @param array $data Block data.
      *
      * @return mixed
      */
