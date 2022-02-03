@@ -42,6 +42,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
+        add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
     }
 
     /**
@@ -156,6 +157,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function search_classes( $classes ) : array {
         $classes['event_search_section'] = '';
+
+        return $classes;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_search_classes( $classes ) : array {
+        $classes['search_form'] = 'events__search-form';
 
         return $classes;
     }
