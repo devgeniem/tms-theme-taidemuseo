@@ -3,14 +3,14 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Muumimuseo\ACF;
+namespace TMS\Theme\Taidemuseo\ACF;
 
 use TMS\Theme\Base\Logger;
 
 /**
  * Class AlterImageCarousel
  *
- * @package TMS\Theme\Muumimuseo\ACF
+ * @package TMS\Theme\Taidemuseo\ACF
  */
 class AlterImageCarousel {
     /**
