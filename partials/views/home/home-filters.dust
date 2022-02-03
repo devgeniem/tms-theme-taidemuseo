@@ -6,7 +6,8 @@
 
         <div>
             {#filters.categories}
-                <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{:else}is-primary-invert{/is_active}">
+                <a href="{url}"
+                   class="pill mr-2 mb-2 {^is_active}is-primary-invert{/is_active}">
                     {?is_active}
                         {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
                     {/is_active}
