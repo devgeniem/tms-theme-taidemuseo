@@ -40,6 +40,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             [ $this, 'alter_block_subpages_data' ],
             30
         );
+
+        add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
     }
 
     /**
@@ -143,5 +145,18 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
 
         return $data;
+    }
+
+    /**
+     * Search classes.
+     *
+     * @param array $classes Search view classes.
+     *
+     * @return array
+     */
+    public function search_classes( $classes ) : array {
+        $classes['event_search_section'] = '';
+
+        return $classes;
     }
 }
