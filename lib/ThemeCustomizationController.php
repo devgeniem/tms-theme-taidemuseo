@@ -27,6 +27,12 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
+
+        add_filter(
+            'tms/acf/block/subpages/data',
+            [ $this, 'alter_block_subpages_data' ],
+            30
+        );
     }
 
     /**
@@ -61,5 +67,31 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['link_icon']   = 'is-secondary';
 
         return $classes;
+    }
+
+    /**
+     * Alter subpages classes.
+     *
+     * @param $data
+     *
+     * @return mixed
+     */
+    public function alter_block_subpages_data( $data ) {
+        if ( empty( $data['subpages'] ) ) {
+            return $data;
+        }
+
+        $icon_colors_map = [
+            'black'     => 'is-secondary-invert',
+            'white'     => 'is-primary',
+            'primary'   => 'is-black-invert',
+            'secondary' => 'is-secondary-invert',
+        ];
+
+        $icon_color_key = $data['background_color'] ?? 'black';
+
+        $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
+
+        return $data;
     }
 }
