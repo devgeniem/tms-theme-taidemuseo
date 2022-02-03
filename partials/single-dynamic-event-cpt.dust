@@ -35,7 +35,7 @@
 
                         <div class="columns">
                             <div class="column">
-                                <div class="columns is-multiline is-variable is-0 is-8-tablet mb-8">
+                                <div class="columns is-multiline is-variable is-0 is-8-desktop mb-8">
                                     <div class="column is-5-desktop is-offset-1-desktop keep-vertical-spacing">
                                         {event.normalized.description|s}
                                     </div>
