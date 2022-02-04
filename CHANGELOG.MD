@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-425: Sibling navigation #14
 - TMS-424: Header #13
 - TMS-448: Image carousel #37
 - TMS-426: Breadcrumbs #15
