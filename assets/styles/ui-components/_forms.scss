@@ -1,0 +1,12 @@
+form {
+    select,
+    input,
+    textarea {
+        border-color: $color-vaalean-harmaa;
+    }
+}
+
+select {
+    background-color: $primary-invert;
+    color: $primary;
+}
