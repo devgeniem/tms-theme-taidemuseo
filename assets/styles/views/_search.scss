@@ -20,20 +20,13 @@
 
     .search-item {
         .breadcrumb {
-            li {
-                &::before {
-                    width: .2rem;
-                    height: .2rem;
-                }
-            }
-
             a {
                 padding: 0 $theme-spacing-three-quarters;
             }
 
             li:first-child {
                 a {
-                    padding: 0 .75rem 0 0;
+                    padding: 0 !important;
                 }
             }
         }
