@@ -30,7 +30,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
 
-        add_filter( 'tms/theme/error404/alignment', fn() => 'has-text-centered has-text-black' );
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
     }
 
