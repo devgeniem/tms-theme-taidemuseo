@@ -44,7 +44,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
         add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
 
-        add_filter( 'tms/theme/error404/alignment', fn() => 'has-text-centered has-text-black' );
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
     }
 
