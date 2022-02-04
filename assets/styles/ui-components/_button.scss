@@ -10,6 +10,7 @@ $button-secondary-border-color: $button-primary-border-color;
     letter-spacing: .06rem !important;
     text-transform: uppercase;
     padding: .5rem 1.5rem;
+    border-color: $primary !important;
 
     &:hover,
     &.is-hovered,
@@ -17,6 +18,16 @@ $button-secondary-border-color: $button-primary-border-color;
     &.is-focused {
         box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
         color: $primary !important;
+
+        &:active {
+            background-color: $black !important;
+            color: $white !important;
+            outline: none !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
     }
 
     .icon {
@@ -49,6 +60,11 @@ $button-secondary-border-color: $button-primary-border-color;
         &:hover,
         &:focus {
             border-color: $primary !important;
+        }
+
+        &:active {
+            background-color: $white !important;
+            color: $black !important;
         }
     }
 
