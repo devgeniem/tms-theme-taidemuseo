@@ -45,6 +45,12 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
 
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
+
+        add_filter( 'tms/acf/block/material/data', function ( $data ) {
+            $data['button_classes'] = 'is-primary';
+
+            return $data;
+        } );
     }
 
     /**
