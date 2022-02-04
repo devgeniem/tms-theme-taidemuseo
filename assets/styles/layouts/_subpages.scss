@@ -2,6 +2,10 @@
     .post-link {
         border: 1px solid $primary;
 
+        .icon {
+            fill: currentColor !important;
+        }
+
         .h5 {
             color: currentColor !important;
             letter-spacing: .01em;
