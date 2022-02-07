@@ -8,11 +8,11 @@
     {@isset key1=caption key2=image_title_and_artist method="OR" }
         <div class="column keep-vertical-spacing image-block__caption">
             {?image_title_and_artist}
-                <span class="is-block">{image_title_and_artist|s}</span>
+                <span class="is-block pt-2 pb-2 mb-0">{image_title_and_artist|s}</span>
             {/image_title_and_artist}
 
             {?caption}
-                <div class="keep-vertical-spacing">
+                <div class="keep-vertical-spacing mt-4">
                     {caption|s}
                 </div>
             {/caption}
