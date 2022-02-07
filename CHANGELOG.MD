@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-474: Sitemap layout
 - TMS-464: Content columns
 - TMS-462: Social media feed
+- TMS-469: Contacts block
 - TMS-434: Single event view #21
 - TMS-436: Post views #26
 - TMS-429: Artworks template #19
