@@ -9,4 +9,8 @@ form {
 select {
     background-color: $primary-invert;
     color: $primary;
+
+    @include until($desktop) {
+        font-size: 1em;
+    }
 }
