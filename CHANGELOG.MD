@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-473: Typography blocks
 - TMS-468: Share links
 - TMS-443: Hero layout
+- TMS-465: Grid
 - TMS-429: Artworks template #19
 - TMS-431: Artist archive #38
 - TMS-425: Sibling navigation #14
