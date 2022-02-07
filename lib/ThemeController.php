@@ -23,7 +23,9 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             PostTypeController::class,
             TaxonomyController::class,
             Localization::class,
+            FormatterController::class,
             ThemeCustomizationController::class,
+            ThemeSupports::class,
         ];
 
         array_walk( $classes, function ( $class ) {
