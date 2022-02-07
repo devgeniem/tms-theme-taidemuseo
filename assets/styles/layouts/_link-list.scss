@@ -12,4 +12,27 @@
         color: inherit;
         fill: currentColor !important;
     }
+
+    .layout-badge {
+        top: -$theme-spacing;
+        left: unset;
+        right: 0;
+
+        @include from($desktop) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &.align-before {
+            @include from($desktop) {
+                left: -8.5rem;
+            }
+        }
+
+        &.align-after {
+            @include from($desktop) {
+                right: -8.5rem;
+            }
+        }
+    }
 }
