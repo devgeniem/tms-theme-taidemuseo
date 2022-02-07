@@ -60,6 +60,10 @@ h6,
     hyphens: auto;
 }
 
+body {
+    margin: 0;
+}
+
 h1,
 .h1,
 h2,
@@ -69,6 +73,11 @@ h3,
 h4,
 .h4 {
     text-transform: uppercase;
+}
+
+.has-text-large {
+    font-size: 1.25rem;
+    font-weight: $weight-medium;
 }
 
 @mixin breakpoint_typography($base, $calculated_sizes) {
@@ -82,10 +91,6 @@ h4,
         font-size: map-get($calculated_sizes, "h6") !important;
         font-weight: 500;
         line-height: 153%;
-    }
-
-    .has-text-large {
-        font-size: 1.1517rem;
     }
 
     .has-text-small {
