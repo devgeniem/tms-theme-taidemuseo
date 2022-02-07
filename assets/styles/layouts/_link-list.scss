@@ -1,0 +1,15 @@
+.link-list {
+    border: 1px solid $black;
+
+    &__title {
+        color: $black;
+        font-weight: $weight-medium;
+        letter-spacing: 0.01rem;
+        text-transform: none;
+    }
+
+    .icon {
+        color: inherit;
+        fill: currentColor !important;
+    }
+}
