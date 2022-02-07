@@ -72,7 +72,6 @@ class LayoutInfoBadge {
             [ $this, 'alter_format' ],
             10
         );
-
     }
 
     /**
