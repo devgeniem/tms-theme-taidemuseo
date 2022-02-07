@@ -64,20 +64,20 @@
         p a {
             color: $white;
             text-decoration: underline;
-    
+
             &:hover {
                 color: $white !important;
             }
-    
+
             &:focus {
                 outline-color: $white !important;
             }
         }
-    
+
         strong {
             font-weight: 400;
         }
-        
+
         .slick-slide {
             padding: 0.588rem;
         }
@@ -89,16 +89,16 @@
                     outline-offset: 0.25rem;
                 }
             }
-        } 
+        }
 
     }
 }
 
 .modaal-close {
 
-    &:focus:before, 
-    &:focus:after, 
-    &:hover:before, 
+    &:focus:before,
+    &:focus:after,
+    &:hover:before,
     &:hover:after {
         background: $black;
     }
@@ -108,4 +108,3 @@
         outline-offset: 0.25rem
     }
 }
-
