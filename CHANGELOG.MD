@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-463: Key figures
 - TMS-647: Build optimizations
+- TMS-444: Content page hero
+- TMS-471: Image banner
+- TMS-454: Image block
 - TMS-466: Image gallery
 - TMS-473: Typography blocks
+- TMS-468: Share links
+- TMS-443: Hero layout
 - TMS-465: Grid
 - TMS-474: Sitemap layout
 - TMS-464: Content columns
