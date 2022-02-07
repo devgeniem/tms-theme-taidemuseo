@@ -11,14 +11,20 @@
         <div class="column is-6-desktop is-5-widescreen has-background-secondary has-text-secondary-invert">
             <div class="highlight-article__fields p-6">
                 {?highlight.post_title}
-                    <h2 class="mt-3 mb-5 mb-10-desktop">
+                    <h2 class="mt-3 mb-5 mb-7-desktop">
                         <a href="{highlight.permalink}" class="has-text-black">
                             {highlight.post_title|s}
                         </a>
                     </h2>
                 {/highlight.post_title}
 
-                <div class="entry__excerpt mt-5 mt-10-desktop mb-5">
+                {?highlight.category}
+                    <a href="{category.permalink|s}" class="pill is-primary">
+                        {highlight.category.name|s}
+                    </a>
+                {/highlight.category}
+
+                <div class="entry__excerpt mt-5 mb-4">
                     <span class="is-block has-text-weight-bold">{@strtodate value=highlight.post_date /}</span>
                     {highlight.excerpt|s}
                 </div>
