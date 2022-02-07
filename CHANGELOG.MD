@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-473: Typography blocks #50
 - TMS-471: Image banner #49
 - TMS-466: Image gallery #48
 - TMS-454: Image block #47

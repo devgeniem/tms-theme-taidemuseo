@@ -185,6 +185,18 @@ main {
     }
 }
 
+.has-text-align-left {
+    text-align: left;
+}
+
+.has-text-align-center {
+    text-align: center;
+}
+
+.has-text-align-right {
+    text-align: right;
+}
+
 @each $base-size-breakpoint, $base-size-values in $base-sizes {
     $calc-base_size: map-get($base-size-values, "base_size");
     $calc-scale_value: map-get($base-size-values, "scale_value");
