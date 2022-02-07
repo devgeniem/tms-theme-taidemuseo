@@ -73,7 +73,11 @@
                 outline-color: $white !important;
             }
         }
-
+    
+        strong {
+            font-weight: 400;
+        }
+        
         .slick-slide {
             padding: 0.588rem;
         }
