@@ -1,5 +1,4 @@
 .pill {
-    padding-bottom: $theme-spacing-quarter;
     border-width: 1px !important;
     background-color: $primary;
     color: $primary-invert;
@@ -7,25 +6,34 @@
     letter-spacing: .06rem;
     text-transform: uppercase;
     text-decoration: none !important;
+    font-weight: $weight-normal !important;
 
     .icon {
         fill: currentColor !important;
         color: inherit !important;
     }
 
-    &:hover {
-        color: $primary !important;
-        background-color: $primary-invert !important;
-    }
+    &:not(span) {
+        &:hover {
+            color: $primary !important;
+            background-color: $primary-invert !important;
+        }
 
-    &:focus {
-        outline: .125rem dotted $black !important;
+        &:focus {
+            outline: .125rem dotted $black !important;
+        }
     }
 
     &.is-active {
-        &:hover {
-            background-color: $primary-invert !important;
-            color: $primary !important;
+        &:not(span) {
+            &:focus {
+                color: $white !important;
+            }
+
+            &:hover {
+                background-color: $primary-invert !important;
+                color: $primary !important;
+            }
         }
     }
 }
