@@ -21,6 +21,10 @@
 .modal-content {
     strong {
         color: $white;
+
+        &.is-block {
+            font-weight: 400;
+        }
     }
 
     a {
