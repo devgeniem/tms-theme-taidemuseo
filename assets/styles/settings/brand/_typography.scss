@@ -78,7 +78,7 @@ h4,
 @mixin breakpoint_typography($base, $calculated_sizes) {
     body {
         font-size: $base;
-        line-height: 178%;
+        line-height: 1.775;
     }
 
     .has-text-lead {
@@ -151,6 +151,10 @@ h4,
         line-height: 1.22;
         hyphens: auto;
     }
+}
+
+.is-size-1 {
+    line-height: 1.35;
 }
 
 $link-outline-color: #78726d;
