@@ -31,6 +31,32 @@ class LayoutInfoBadge {
             10
         );
 
+        add_filter(
+            'tms/acf/layout/_image_banner/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
+
+        add_filter(
+            'tms/acf/layout/image_banner/data',
+            [ $this, 'alter_format' ],
+            10
+        );
+
+        add_filter(
+            'tms/acf/block/image_banner/data',
+            [ $this, 'alter_format' ],
+            10
+        );
+
+        add_filter(
+            'tms/block/image_banner/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
+
     }
 
     /**
