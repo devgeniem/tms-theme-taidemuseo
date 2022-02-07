@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-473: Typography blocks
 - TMS-465: Grid
 - TMS-474: Sitemap layout
+- TMS-464: Content columns
+- TMS-434: Single event view #21
 - TMS-436: Post views #26
 - TMS-429: Artworks template #19
 - TMS-431: Artist archive #38
