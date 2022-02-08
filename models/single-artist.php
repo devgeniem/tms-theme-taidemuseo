@@ -39,7 +39,7 @@ class SingleArtist extends BaseModel {
 
         if ( ! empty( $death_year ) ) {
             array_unshift( $additional_information, [
-                'additional_information_title' => __( 'Death year', 'tms-theme-sara_hilden' ),
+                'additional_information_title' => __( 'Death year', 'tms-theme-taidemuseo' ),
                 'additional_information_text'  => $death_year,
             ] );
         }
@@ -48,7 +48,7 @@ class SingleArtist extends BaseModel {
 
         if ( ! empty( $birth_year ) ) {
             array_unshift( $additional_information, [
-                'additional_information_title' => __( 'Birth year', 'tms-theme-sara_hilden' ),
+                'additional_information_title' => __( 'Birth year', 'tms-theme-taidemuseo' ),
                 'additional_information_text'  => $birth_year,
             ] );
         }

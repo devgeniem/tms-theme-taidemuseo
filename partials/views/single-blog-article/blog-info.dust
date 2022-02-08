@@ -40,10 +40,10 @@
                 </div>
 
                 {@isset key1=blog_description key2=blog_authors method="or"}
-                    <div class="entry__blog-info-expanded pr-5 pl-5 is-hidden"
+                    <div class="entry__blog-info-expanded pt-5 pr-5 pl-5 is-hidden"
                          id="js-archive-description-toggle-target">
                         {?blog_description}
-                            <div class="is-blog-info-grid pb-5">
+                            <div class="is-blog-info-grid pb-5-desktop">
                                 <div class="entry__blog-description-text pl-5-desktop">
                                     <p class="has-text-left-tablet mt-0 mb-5 mb-0-desktop">{blog_description|s}</p>
                                 </div>
@@ -51,7 +51,7 @@
                         {/blog_description}
 
                         {?blog_authors}
-                            <div class="pt-6 {SingleBlogArticle.classes.info_section_authors|s}">
+                            <div class="{SingleBlogArticle.classes.info_section_authors|s}">
                                 {#blog_authors}
                                     <div
                                         class="is-blog-info-grid blog-info-grid-row-0 mt-6 mt-4-tablet mb-6 mb-4-tablet">

@@ -4,7 +4,8 @@
             {@strtodate value=content.post_date /}
         </div>
 
-        <div class="is-flex has-width-100-until-tablet mt-3 mt-0-tablet ml-auto-tablet">
+        <div
+            class="is-flex is-flex-direction-column has-width-100-until-tablet mt-3 mt-0-tablet ml-auto-tablet has-text-right">
             {?content.fields.writing_credits}
                 <div>
                     {Strings.s.single.writing_credits|s}
@@ -13,7 +14,7 @@
             {/content.fields.writing_credits}
 
             {?content.fields.image_credits}
-                <div class="ml-4 ml-6-fullhd">
+                <div>
                     {Strings.s.single.image_credits|s}
                     {content.fields.image_credits|s}
                 </div>
