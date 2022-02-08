@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-476: Error 404 #39
 - TMS-437: Block materials #40
 - TMS-463-2: Key figures #51
 - TMS-647: Build optimizations
