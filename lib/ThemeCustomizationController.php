@@ -26,10 +26,12 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             '__return_false',
         );
 
+        add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
         add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
+        add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
 
         add_filter( 'tms/theme/single_blog/classes', [ $this, 'single_blog_classes' ] );
         add_filter( 'comment_form_submit_button', [ $this, 'comments_submit' ], 15, 0 );
@@ -41,11 +43,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             30
         );
 
-        add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
-        add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
-
         add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
-
         add_filter( 'tms/acf/block/material/data', function ( $data ) {
             $data['button_classes'] = 'is-primary';
 
@@ -85,6 +83,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['back_to_top'] = 'is-outlined';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
+
+        return $classes;
+    }
+
+    /**
+     * Search classes.
+     *
+     * @param array $classes Search view classes.
+     *
+     * @return array
+     */
+    public function search_classes( $classes ) : array {
+        $classes['event_search_section'] = '';
 
         return $classes;
     }
@@ -154,19 +165,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
 
         return $data;
-    }
-
-    /**
-     * Search classes.
-     *
-     * @param array $classes Search view classes.
-     *
-     * @return array
-     */
-    public function search_classes( $classes ) : array {
-        $classes['event_search_section'] = '';
-
-        return $classes;
     }
 
     /**

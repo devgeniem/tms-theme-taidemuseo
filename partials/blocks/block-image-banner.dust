@@ -15,12 +15,6 @@
                     {title|s}
                 </h2>
             {/title}
-
-            
-           
-            
-
-
             {>"ui/button-link" classes="is-primary is-inverted" icon="chevron-right" icon_classes="icon--medium"  /}
         </div>
 

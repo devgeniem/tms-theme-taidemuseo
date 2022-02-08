@@ -23,3 +23,17 @@
         fill: currentColor !important;
     }
 }
+
+.notice-banner {
+    &.has-background-primary {
+        .icon.is-large {
+           fill: $white !important;
+        }
+    }
+
+    &.has-background-secondary {
+        .icon.is-large {
+            fill: $color-taide-tiili !important;
+        }
+    }
+}
