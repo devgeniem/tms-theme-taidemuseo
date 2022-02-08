@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-463-2: Key figures #51
 - TMS-647: Build optimizations
+- TMS-430: Artwork #20
+- TMS-435: Single dynamic event #23
+- TMS-427: Site Footer #27
 - TMS-473: Typography blocks #50
 - TMS-471: Image banner #49
 - TMS-466: Image gallery #48
