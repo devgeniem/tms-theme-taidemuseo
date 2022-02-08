@@ -18,5 +18,11 @@
             <span class="has-text-weight-bold">{@strtodate value=post_date /}</span>
             {excerpt|s}
         </div>
+
+        {?category}
+            <a href="{category.permalink|s}" class="pill {category_link_classes}">
+                {highlight.category.name|s}
+            </a>
+        {/category}
     </article>
 </div>
