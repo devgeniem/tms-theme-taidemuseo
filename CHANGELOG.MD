@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-441: Add blog archive #32
+- TMS-440: Single Blog Article #28
+- TMS-461: Subpages #31
+- TMS-544: Event search #34
+- TMS-476: Error 404 #39
+- TMS-437: Block materials #40
+- TMS-463-2: Key figures #51
+- TMS-647: Build optimizations
+- TMS-430: Artwork #20
 - TMS-435: Single dynamic event #23
 - TMS-427: Site Footer #27
 - TMS-473: Typography blocks #50

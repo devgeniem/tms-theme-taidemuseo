@@ -1,0 +1,77 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        {#SingleArtwork}
+            <section class="section pt-5 pb-10">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-10 is-offset-1">
+                            <article class="entry">
+                                <header class="entry__header mb-6">
+                                    <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                                        {@title /}
+                                    </h1>
+
+                                    {?content.image}
+                                        <div class="entry__figure pt-2">
+                                            {@image id=content.image.id size="single" /}
+                                        </div>
+                                    {/content.image}
+
+                                    {>"shared/artwork-gallery" gallery_data=image_gallery /}
+                                </header>
+
+                                <div class="columns is-desktop">
+                                    <div class="column is-6-desktop">
+                                        <div class="mr-3-tablet">
+                                            {?additional_info}
+                                                {>"shared/additional-info-list" data=additional_info /}
+                                            {/additional_info}
+
+                                            {?artist_links}
+                                                <div class="single-artwork__artist-links">
+                                                    {#artist_links}
+                                                        <a href="{.link}"
+                                                           class="{.classes|s}">
+                                                            <span class="has-width-100">
+                                                                {.text|s}
+                                                            </span>
+
+                                                            {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
+                                                        </a>
+                                                    {/artist_links}
+                                                </div>
+                                            {/artist_links}
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-6-desktop">
+                                        <div
+                                            class="entry__content ml-3-tablet keep-vertical-spacing">
+                                            {@content /}
+
+                                            {?share_links}
+                                                <div class="entry__share-links">
+                                                    <h2 class="h6 mt-6 mb-6 mt-8-desktop mt-10-desktop has-text-right">
+                                                        {Strings.s.share.share_to_social_media|s}
+                                                    </h2>
+
+                                                    {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
+                                                </div>
+                                            {/share_links}
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {?artwork}
+                {>"shared/artwork-list" list_column_classes="is-8 is-offset-1" title=Strings.s.artwork.related_art /}
+            {/artwork}
+        {/SingleArtwork}
+    </main>
+{/content}
