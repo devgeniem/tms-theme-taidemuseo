@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-441: Add blog archive #32
 - TMS-440: Single Blog Article #28
 - TMS-461: Subpages #31
 - TMS-544: Event search #34
