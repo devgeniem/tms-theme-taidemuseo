@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-462: Social media feed
 - TMS-469: Contacts block
 - TMS-472: Notice banner
+- TMS-467: Related contents
+- TMS-474: Sitemap layout #52
 - TMS-450: Add header notice banner #41
 - TMS-543: Search #33
 - TMS-441: Add blog archive #32
