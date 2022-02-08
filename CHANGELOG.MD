@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-450: Add header notice banner #41
 - TMS-543: Search #33
 - TMS-441: Add blog archive #32
 - TMS-440: Single Blog Article #28
