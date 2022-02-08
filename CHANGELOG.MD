@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-461: Subpages #31
 - TMS-544: Event search #34
 - TMS-476: Error 404 #39
 - TMS-437: Block materials #40
