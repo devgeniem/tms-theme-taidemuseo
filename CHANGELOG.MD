@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-463-2: Key figures #51
+- TMS-647: Build optimizations
 - TMS-430: Artwork #20
 - TMS-435: Single dynamic event #23
 - TMS-427: Site Footer #27
