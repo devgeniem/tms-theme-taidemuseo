@@ -9,7 +9,7 @@
                 {/title}
 
                 {?description}
-                    <div class="social-media__description mb-4 is-family-secondary has-text-large">
+                    <div class="social-media__description mb-4 is-family-primary is-size-6">
                         {description|s}
                     </div>
                 {/description}
