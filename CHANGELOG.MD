@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-430: Artwork #20
 - TMS-435: Single dynamic event #23
 - TMS-427: Site Footer #27
 - TMS-473: Typography blocks #50
