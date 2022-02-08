@@ -39,7 +39,7 @@
                         <div class="columns">
                             <div class="column">
                                 {?event.normalized.short_description}
-                                    <div class="entry__content is-content-grid mb-8">
+                                    <div class="entry__content is-content-grid mb-8 has-text-centered">
                                         <p class="mt-6 mb-6 has-text-large">
                                             {event.normalized.short_description|s}
                                         </p>
