@@ -16,5 +16,7 @@
         <div class="image is-square is-clipped">
             {@image id=image.id size="large" class="objectfit-image" /}
         </div>
+        {:else}
+        <div class="image is-square is-clipped has-background-black is-hidden-mobile"></div>
     {/image.id}
 </div>
