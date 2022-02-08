@@ -30,6 +30,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
+
+        add_filter( 'tms/theme/error404/search_link', [ $this, 'error404_search_link' ] );
+        add_filter( 'tms/acf/block/material/data', function ( $data ) {
+            $data['button_classes'] = 'is-primary';
+
+            return $data;
+        } );
     }
 
     /**
@@ -79,5 +86,18 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['search_form'] = 'events__search-form';
 
         return $classes;
+    }
+
+    /**
+     * Override event search link classes.
+     *
+     * @param array $link Link details.
+     *
+     * @return array
+     */
+    public function error404_search_link( $link ) : array {
+        $link['classes'] = '';
+
+        return $link;
     }
 }
