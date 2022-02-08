@@ -25,6 +25,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             '__return_false',
         );
 
+        add_filter( 'tms/theme/search/search_item', [ $this, 'event_search_classes' ] );
         add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
 
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
@@ -70,6 +71,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['back_to_top'] = 'is-outlined';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
+
+        return $classes;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_search_classes( $classes ) : array {
+        $classes['search_form'] = 'events__search-form';
 
         return $classes;
     }
