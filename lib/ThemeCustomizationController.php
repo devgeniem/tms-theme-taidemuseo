@@ -25,6 +25,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             '__return_false',
         );
 
+        add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
+
         add_filter( 'tms/theme/header/colors', [ $this, 'header' ] );
         add_filter( 'tms/theme/footer/colors', [ $this, 'footer' ] );
         add_filter( 'tms/theme/search/search_item', [ $this, 'search_classes' ] );
@@ -38,12 +40,14 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array Array of customized colors.
      */
     public function header( $colors ) : array {
-        $colors['nav']['container']            = 'has-background-primary-invert has-border-primary has-border-top-1 has-border-bottom-1'; // phpcs:ignore
-        $colors['search_popup_container']      = 'has-background-primary-invert has-text-primary';
+        $colors['nav']['container']            = 'has-background-primary has-border-primary';
+        $colors['search_popup_container']      = 'has-text-primary-invert';
         $colors['lang_nav']['link__default']   = 'has-text-primary';
         $colors['lang_nav']['link__active']    = 'has-background-primary has-text-primary-invert';
-        $colors['lang_nav']['dropdown_toggle'] = 'is-primary';
-        $colors['fly_out_nav']['inner']        = 'has-background-light has-text-primary';
+        $colors['lang_nav']['dropdown_toggle'] = 'is-outlined is-small';
+        $colors['fly_out_nav']['inner']        = 'has-text-primary-invert';
+        $colors['fly_out_nav']['search_title'] = 'has-text-white';
+        $colors['search_button']               = 'is-primary-invert';
 
         return $colors;
     }
@@ -56,8 +60,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array
      */
     public function footer( array $classes ) : array {
-        $classes['container']   = 'has-colors-light';
-        $classes['back_to_top'] = 'is-primary';
+        $classes['container']   = '';
+        $classes['back_to_top'] = 'is-outlined';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
 
