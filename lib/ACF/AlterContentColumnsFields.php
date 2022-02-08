@@ -30,10 +30,18 @@ class AlterContentColumnsFields {
      * @return array
      */
     public function alter_fields( array $fields ) : array {
+
+        $strings = [
+            'aspect_ratio' => [
+                'instructions' => 'Tekstiosio / kuvaosio. Ensimmäinen luku on tekstiosion koko, toinen kuvaosion.',
+            ],
+        ];
+
         try {
             unset( $fields['rows']->sub_fields['display_artist'] );
             $fields['rows']->sub_fields['layout']->set_wrapper_width( 50 );
             $fields['rows']->sub_fields['aspect_ratio']->set_wrapper_width( 50 );
+            $fields['rows']->sub_fields['aspect_ratio']->set_instructions( $strings['aspect_ratio']['instructions'] );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
