@@ -20,4 +20,10 @@
             fill: $black !important;
         }
     }
+
+    &__content {
+        .wysiwyg a {
+            text-decoration: underline;
+        }
+    }
 }
