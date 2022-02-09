@@ -1,7 +1,4 @@
 <?php
-/**
- *  Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Taidemuseo\ACF;
 
