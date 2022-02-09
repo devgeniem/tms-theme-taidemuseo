@@ -1,7 +1,7 @@
 <section class="section related-artwork pt-6 pt-10-desktop">
     <div class="container">
         <div class="columns">
-            <div class="column is-8-desktop is-offset-2-desktop">
+            <div class="column {list_column_classes|s}">
                 <h2 class="mt-0 mb-8">
                     {Strings.s.artwork.related_art|s}
                 </h2>
