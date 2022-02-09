@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-462: Social media feed
 - TMS-474: Sitemap layout #52
 - TMS-450: Add header notice banner #41
 - TMS-543: Search #33
