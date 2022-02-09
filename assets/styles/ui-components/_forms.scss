@@ -14,3 +14,105 @@ select {
         font-size: 1em;
     }
 }
+
+.container .gform_wrapper {
+    color: $black;
+
+    select,
+    input,
+    textarea {
+        border-radius: 0;
+        padding: 0.8rem !important;
+    }
+
+    button[type="submit"] {
+        display: inline-flex;
+        justify-content: space-between;
+        &:after {
+            content: "";
+            width: 0.7rem;
+            height: 1rem;
+            display: block;
+            margin-left: 1rem;
+            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="M2.13436 0L0.365646 1.76877L6.09688 7.5L0.365646 13.2312L2.13436 15L9.63436 7.5L2.13436 0Z" stroke="white" fill="white"/></svg>');
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            background-color: white;
+           
+        }
+        &:hover:after {
+            background-color: black;
+        }
+    }
+}
+
+.gfield_checkbox {
+
+    label {
+        
+        &::before {
+            margin-top: 0.25rem;
+        }
+    }
+}
+
+.gfield_label {
+    font-weight: 400 !important;
+}
+
+.gform_drop_area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: 0.125rem dashed $black;
+}
+
+.gform_button_select_files,
+.gform_delete_file {
+    border-color: $black;
+    background-color: transparent;
+    color: $black;
+
+    &:hover {
+        border-color: $white;
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.gform_button_select_files {
+   
+    &:after {
+
+        content: "\002B";
+        font-size: 2rem;
+        line-height: 0.8;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+        font-family: $family-primary;
+        font-weight: 500;
+        display: block;
+    }
+
+}
+
+
+
+.gform_delete_file {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.ginput_preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gform_validation_errors {
+    padding: 0.5rem 3rem;
+}

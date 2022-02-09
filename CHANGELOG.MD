@@ -8,16 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-463: Key figures
-- TMS-647: Build optimizations
-- TMS-466: Image gallery
-- TMS-473: Typography blocks
-- TMS-465: Grid
-- TMS-474: Sitemap layout
-- TMS-464: Content columns
-- TMS-462: Social media feed
-- TMS-469: Contacts block
 - TMS-472: Notice banner
 - TMS-467: Related contents
+- TMS-470: Gravity forms
+- TMS-469: Contacts block #56
+- TMS-465: Grid #55
+- TMS-464: Content columns #54
+- TMS-462: Social media feed #53
 - TMS-474: Sitemap layout #52
 - TMS-450: Add header notice banner #41
 - TMS-543: Search #33
