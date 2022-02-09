@@ -3,8 +3,10 @@
 namespace TMS\Theme\Taidemuseo\PostType;
 
 use Closure;
+use Geniem\RediPress\Entity\TextField;
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Base\Settings;
+use WP_Post;
 
 /**
  * Artwork CPT
@@ -69,6 +71,29 @@ class Artwork implements PostType {
             10,
             3
         );
+
+        add_filter( 'redipress/schema_fields', function ( $fields ) {
+            $fields[] = new TextField( [
+                'name'     => 'artists',
+                'sortable' => true,
+            ] );
+
+            return $fields;
+        }, PHP_INT_MAX, 1 );
+
+        add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
+            if ( $post->post_type === Artwork::SLUG ) {
+                $value = get_post_meta( $post_id, 'artists', true );
+            }
+
+            return $value;
+        }, 10, 3 );
+
+        add_filter( 'redipress/search_fields', function ( $fields ) {
+            $fields[] = 'artists';
+
+            return $fields;
+        } );
     }
 
     /**
