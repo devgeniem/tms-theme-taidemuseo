@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-470: Gravity forms
 - TMS-469: Contacts block #56
 - TMS-465: Grid #55
 - TMS-464: Content columns #54
