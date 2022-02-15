@@ -18,6 +18,13 @@ $secondary-light-invert: $black;
 $secondary-dark: $light;
 $secondary-dark-invert: $white;
 
+$accent: $color-taide-tiili;
+$accent-invert: $black;
+$accent-light: $white;
+$accent-light-invert: $black;
+$accent-dark: $light;
+$accent-dark-invert: $white;
+
 $light: #f1eeeb;
 $light-invert: $black;
 $dark: $primary-dark;
@@ -92,6 +99,8 @@ $fly-out-nav-secondary-border-color: $color-ui-border;
 $fly-out-nav-secondary-link: $fly-out-nav-primary-link;
 $fly-out-nav-secondary-link-hover: $fly-out-nav-primary-link-hover;
 $fly-out-nav-search-button-icon: currentColor;
+
+$duet-color-border: $color-vaalean-harmaa;
 
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";

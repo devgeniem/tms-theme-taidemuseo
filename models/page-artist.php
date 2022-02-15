@@ -1,6 +1,5 @@
 <?php
 /**
- * Copyright (c) 2021. Geniem Oy
  * Template Name: Taiteilija-arkisto
  */
 

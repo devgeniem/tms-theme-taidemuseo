@@ -57,7 +57,7 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" title=Strings.s.artist.related_artwork /}
+                {>"shared/artwork-list" list_column_classes="is-8-desktop is-offset-2-desktop" title=Strings.s.artist.related_artwork /}
             {/artwork}
         {/SingleArtist}
     </main>
