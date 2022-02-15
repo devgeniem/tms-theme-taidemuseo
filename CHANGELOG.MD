@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-472: Notice banner
+- TMS-472: Notice banner #61
+- TMS-459: Table #46
+- TMS-460: Link list #45
+- TMS-458: Quote #44
+- TMS-457: Accordion #43
+- TMS-452: Blog Articles Layout #42
+- TMS-469: Contacts block #56
+- TMS-465: Grid #55
+- TMS-464: Content columns #54
+- TMS-462: Social media feed #53
+- TMS-474: Sitemap layout #52
 - TMS-450: Add header notice banner #41
 - TMS-543: Search #33
 - TMS-441: Add blog archive #32
@@ -36,6 +46,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-468: Share links #30
 - TMS-444: Content page hero #25
 - TMS-443: Hero layout #24
+- TMS-471: Image banner
+- TMS-454: Image block
 - TMS-494: Add breadcrumb styles #4
 - TMS-495: Add footer styles #3
 - TMS-491: Add theme base #1
