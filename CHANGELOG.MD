@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-457: Accordion #43
+- TMS-452: Blog Articles Layout #42
 - TMS-469: Contacts block #56
 - TMS-465: Grid #55
 - TMS-464: Content columns #54
