@@ -43,6 +43,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-468: Share links #30
 - TMS-444: Content page hero #25
 - TMS-443: Hero layout #24
+- TMS-471: Image banner
+- TMS-454: Image block
 - TMS-494: Add breadcrumb styles #4
 - TMS-495: Add footer styles #3
 - TMS-491: Add theme base #1
