@@ -41,8 +41,11 @@ select {
             background-color: white;
            
         }
-        &:hover:after {
-            background-color: black;
+        &:hover,
+        &:focus {
+            &:after {
+                background-color: black;
+            }
         }
     }
 }
@@ -77,7 +80,8 @@ select {
     background-color: transparent;
     color: $black;
 
-    &:hover {
+    &:hover,
+    &:focus {
         border-color: $white;
         background-color: $black;
         color: $white;
@@ -114,5 +118,9 @@ select {
 }
 
 .gform_validation_errors {
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 3rem !important;
+    h2 {
+        text-transform: none;
+        line-height: 1 !important;
+    }
 }
