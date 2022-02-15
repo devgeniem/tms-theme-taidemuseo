@@ -1,0 +1,53 @@
+.image-banner {
+
+    @include tablet-only {
+        min-height: 315px;
+    }
+
+    .layout-badge {
+        
+        width: 120px;
+        top: 0;
+
+        @include from($widescreen) {
+            width: 150px;
+        }
+
+        @include from($desktop) {
+            top: 50%;
+        }
+
+        &__text {
+            font-size: 1rem;
+            line-height: 1.2;
+
+            @include from($desktop) {
+                font-size: 1.1rem;
+            }
+    
+            @include from($widescreen) {
+                font-size: 1.3rem;
+            }
+        }
+        
+        &.align-before {
+
+            transform: translateX(0) translateY(-30%);
+
+            @include from($desktop) {
+                left: 0;
+                transform: translateX(-30%) translateY(-50%);
+            }
+        }
+
+        &.align-after {
+
+            transform: translateX(0) translateY(-30%);
+
+            @include from($desktop) {
+                right: 0;
+                transform: translateX(30%) translateY(-50%);
+            }
+        }
+    }
+}
