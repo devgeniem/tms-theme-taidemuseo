@@ -1,0 +1,25 @@
+.subpages {
+    .post-link {
+        border: 1px solid $primary;
+
+        .icon {
+            fill: currentColor !important;
+        }
+
+        .h5 {
+            color: currentColor !important;
+            letter-spacing: .01em;
+            line-height: 141%;
+            text-transform: none;
+        }
+
+        &.has-background-black {
+            border: 1px solid $black;
+            color: $white !important;
+        }
+
+        &.has-background-image {
+            border: none !important;
+        }
+    }
+}
