@@ -1,9 +1,15 @@
-/*!
- *  Copyright (c) 2022. Geniem Oy
- */
-
 @import "button";
 @import "pill";
+@import "comments";
+@import "footer";
+@import "image-gallery";
+@import "modal";
+@import "forms";
+@import "archive-filters";
+@import "pagination";
+@import "share-links";
+@import "image-gallery";
+@import "additional-info";
 @import "sibling-navigation";
 @import "header/header-top";
 @import "header/fly-out-nav";
@@ -15,3 +21,5 @@
 @import "modal";
 @import "breadcrumbs";
 @import "share-links";
+@import "sitemap";
+@import "duetdatepicker";

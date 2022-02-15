@@ -1,0 +1,25 @@
+.site-header-notice,
+.notice-banner {
+    .notice-banner__content {
+        a {
+            font-weight: $weight-normal !important;
+        }
+    }
+
+    h2 {
+        color: currentColor;
+    }
+
+    &.has-background-primary {
+        background-color: $color-taide-tiili !important;
+        color: $white !important;
+    }
+
+    &.has-background-secondary {
+        border: 1px solid $primary;
+    }
+
+    .icon {
+        fill: currentColor !important;
+    }
+}

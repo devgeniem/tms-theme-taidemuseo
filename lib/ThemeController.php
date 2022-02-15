@@ -1,7 +1,4 @@
 <?php
-/**
- *  Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Taidemuseo;
 
@@ -25,6 +22,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             Localization::class,
             FormatterController::class,
             ThemeCustomizationController::class,
+            ThemeSupports::class,
         ];
 
         array_walk( $classes, function ( $class ) {
