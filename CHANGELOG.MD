@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-467: Related contents #60
+- TMS-438: Add page contacts styles #59
 - TMS-459: Table #46
 - TMS-460: Link list #45
 - TMS-458: Quote #44
