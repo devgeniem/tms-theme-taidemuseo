@@ -48,6 +48,10 @@ select {
             }
         }
     }
+
+
+
+    
 }
 
 .gfield_checkbox {
@@ -76,15 +80,15 @@ select {
 
 .gform_button_select_files,
 .gform_delete_file {
-    border-color: $black;
-    background-color: transparent;
-    color: $black;
+    // border-color: $black !important;
+    // background-color: transparent !important;
+    // color: $black !important;
 
     &:hover,
     &:focus {
-        border-color: $white;
-        background-color: $black;
-        color: $white;
+        border-color: $black !important;
+        background-color: $white !important;
+        color: $black !important;
     }
 }
 
@@ -115,6 +119,9 @@ select {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    strong {
+        font-weight: 500;
+    }
 }
 
 .gform_validation_errors {
