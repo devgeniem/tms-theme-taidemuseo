@@ -80,15 +80,13 @@ select {
 
 .gform_button_select_files,
 .gform_delete_file {
-    // border-color: $black !important;
-    // background-color: transparent !important;
-    // color: $black !important;
-
     &:hover,
     &:focus {
         border-color: $black !important;
         background-color: $white !important;
         color: $black !important;
+        outline: 0.125rem dotted $black !important;
+        outline-offset: 0.25rem !important;
     }
 }
 
