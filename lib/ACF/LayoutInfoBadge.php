@@ -57,6 +57,18 @@ class LayoutInfoBadge {
             2
         );
 
+        add_filter(
+            'tms/block/link_list/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
+
+        add_filter(
+            'tms/acf/block/link_list/data',
+            [ $this, 'alter_format' ],
+            10
+        );
     }
 
     /**
