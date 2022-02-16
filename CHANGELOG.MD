@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-470: Gravity forms
+- TMS-723: Capabilities for Roles
 - TMS-472: Notice banner #61
 - TMS-467: Related contents #60
 - TMS-438: Add page contacts styles #59
