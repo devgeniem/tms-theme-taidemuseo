@@ -15,7 +15,6 @@ use TMS\Theme\Taidemuseo\PostType\Artwork;
  * @package TMS\Theme\Taidemuseo
  */
 class IndexController implements Controller {
-    
     /**
      * Hooks
      */
