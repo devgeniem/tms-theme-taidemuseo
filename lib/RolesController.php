@@ -58,6 +58,18 @@ class RolesController implements Controller {
     ];
 
     /**
+     * Artist Category taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_artist_category_all_capabilities = [
+        'manage_artist_categories',
+        'edit_artist_categories',
+        'delete_artist_categories',
+        'assign_artist_categories',
+    ];
+
+    /**
      * Artwork Type taxonomy
      *
      * @var string[]
@@ -81,7 +93,6 @@ class RolesController implements Controller {
         'assign_artwork_locations',
     ];
 
-
     /**
      * Hooks
      */
@@ -101,6 +112,7 @@ class RolesController implements Controller {
     public function modify_super_administrator_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->artworks_all_capabilities );
+        $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_location_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_type_all_capabilities );
 
@@ -115,6 +127,7 @@ class RolesController implements Controller {
     public function modify_admin_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->artworks_all_capabilities );
+        $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_location_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_type_all_capabilities );
 
@@ -129,6 +142,7 @@ class RolesController implements Controller {
     public function modify_editor_caps( Role $role ) {
         $role->add_caps( $this->artists_all_capabilities );
         $role->add_caps( $this->artworks_all_capabilities );
+        $role->add_caps( $this->taxonomy_artist_category_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_location_all_capabilities );
         $role->add_caps( $this->taxonomy_artwork_type_all_capabilities );
 
@@ -147,6 +161,7 @@ class RolesController implements Controller {
         $role->add_caps( [
             'assign_artwork_locations',
             'assign_artwork_types',
+            'assign_artist_categories',
         ] );
 
         return $role;
@@ -189,6 +204,7 @@ class RolesController implements Controller {
         $role->add_caps( [
             'assign_artwork_locations',
             'assign_artwork_types',
+            'assign_artist_categories',
         ] );
 
         return $role;
