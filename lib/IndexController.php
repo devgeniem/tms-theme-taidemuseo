@@ -15,7 +15,10 @@ use TMS\Theme\Taidemuseo\PostType\Artwork;
  * @package TMS\Theme\Taidemuseo
  */
 class IndexController implements Controller {
-
+    
+    /**
+     * Hooks
+     */
     public function hooks() : void {
         add_filter( 'redipress/schema_fields', function ( $fields ) {
             $fields[] = new TextField( [
