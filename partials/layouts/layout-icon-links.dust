@@ -5,9 +5,9 @@
             <div class="column is-flex is-flex-direction-column has-height-100 p-6">
                 <div class="icon-links__grid">
                     {#rows}
-                        <div class="icon-links__item keep-vertical-spacing">
+                        <div class="icon-links__item mt-5 keep-vertical-spacing">
                             {?icon}
-                                {>"ui/icon" class="icon--xxxlarge has-background-primary is-primary-invert icon--rounded mb-4 has-background-accent is-accent-invert" /}
+                                {>"ui/icon" class="icon--xxxlarge is-primary-invert mb-4 is-accent-invert" /}
                             {/icon}
 
                             {?title}
