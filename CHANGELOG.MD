@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+[1.0.0] - 2022-02-17
+
 - TMS-723: Capabilities for Roles
 - TMS-472: Notice banner #61
 - TMS-467: Related contents #60
