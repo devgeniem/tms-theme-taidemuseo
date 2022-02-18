@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-470: Gravity forms #66
+
 [1.0.0] - 2022-02-17
 
 - TMS-723: Capabilities for Roles
