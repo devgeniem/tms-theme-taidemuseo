@@ -3,7 +3,7 @@
          style="background-image: url({image.sizes.large})">
         {>"shared/layout-before-main-content" /}
 
-        <div class="image is-3by1 is-hidden-mobile">
+        <div class="image is-3by1 is-hidden-mobile is-hidden-tablet-only">
             {@image id=image.id size="large" class="objectfit-image" /}
         </div>
 
