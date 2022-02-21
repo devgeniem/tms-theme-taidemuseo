@@ -148,7 +148,6 @@ class LayoutInfoBadge {
                 ->set_wrapper_width( 60 )
                 ->set_instructions( $strings['text']['instructions'] );
 
-               
             $bg_color_field_field = ( new Field\Select( $strings['background_color']['label'] ) )
                 ->set_key( "${key}_layout_badge_background_color" )
                 ->set_name( 'layout_badge_background_color' )
@@ -160,7 +159,7 @@ class LayoutInfoBadge {
                 ->set_wrapper_width( 20 )
                 ->set_instructions( $strings['background_color']['instructions'] );
 
-            $group->add_fields( [ $align_field, $bg_color_field_field, $text_field  ] );
+            $group->add_fields( [ $align_field, $bg_color_field_field, $text_field ] );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -200,7 +199,7 @@ class LayoutInfoBadge {
 
         $align      = $layout['layout_badge']['layout_badge_align'] ?? 'before';
         $bg_color = $layout['layout_badge']['layout_badge_background_color'] ?? 'white';
-        $color_classes =  $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
+        $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
         $badge_html = dustpress()->render( [
             'partial' => 'layout-badge',
             'type'    => 'html',
