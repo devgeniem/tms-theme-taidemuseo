@@ -197,7 +197,7 @@ class LayoutInfoBadge {
             return $layout;
         }
 
-        $align      = $layout['layout_badge']['layout_badge_align'] ?? 'before';
+        $align    = $layout['layout_badge']['layout_badge_align'] ?? 'before';
         $bg_color = $layout['layout_badge']['layout_badge_background_color'] ?? 'white';
         $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
         $badge_html = dustpress()->render( [
