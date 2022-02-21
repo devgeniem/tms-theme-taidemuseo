@@ -3,14 +3,13 @@
     top: 0;
     z-index: 1;
     overflow: hidden;
-    width: 150px;
+    width: 120px;
     border-radius: 50%;
     transform: translateY(-20%);
 
     @include from($desktop) {
-        top: 50%;
-        width: 175px;
-        // transform: translateY(0);
+        top: 175px;
+        width: 160px;
     }
 
     &::after {
@@ -27,11 +26,14 @@
     }
 
     &__text {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin: .5ch;
+        font-size: 1rem;
+        line-height: 1.2;
 
         @include from($desktop) {
+            font-size: 1.1rem;
+        }
+
+        @include from($widescreen) {
             font-size: 1.3rem;
         }
     }
@@ -41,7 +43,7 @@
 
         @include from($desktop) {
             left: 0;
-            transform: translateX(-30%) translateY(-50%);
+            transform: translateX(-35%) translateY(-50%);
         }
     }
 
@@ -50,7 +52,7 @@
 
         @include from($desktop) {
             right: 0;
-            transform: translateX(30%) translateY(-50%);
+            transform: translateX(35%) translateY(-50%);
         }
     }
 }

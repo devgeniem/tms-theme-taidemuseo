@@ -3,4 +3,9 @@
     @include tablet-only {
         min-height: 315px;
     }
+    .layout-badge {
+        @include from($desktop) {
+            top: 50%;
+        }
+    }
 }
