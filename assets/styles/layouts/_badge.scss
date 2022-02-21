@@ -8,9 +8,9 @@
     transform: translateY(-20%);
 
     @include from($desktop) {
-        top: 64px;
+        top: 50%;
         width: 175px;
-        transform: translateY(0);
+        // transform: translateY(0);
     }
 
     &::after {
@@ -37,18 +37,20 @@
     }
 
     &.align-before {
-        left: 0;
+        transform: translateX(0) translateY(-30%);
 
         @include from($desktop) {
-            left: -85px;
+            left: 0;
+            transform: translateX(-30%) translateY(-50%);
         }
     }
 
     &.align-after {
-        right: 0;
+        transform: translateX(0) translateY(-30%);
 
         @include from($desktop) {
-            right: -85px;
+            right: 0;
+            transform: translateX(30%) translateY(-50%);
         }
     }
 }
