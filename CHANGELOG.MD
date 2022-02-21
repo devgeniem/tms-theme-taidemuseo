@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-470: Gravity forms
+### Changed
+
 - TMS-723: Capabilities for Roles
-- TMS-724: Icon links
+- TMS-445: Layout badge
+- TMS-724: Icon links #64
+- TMS-470: Gravity forms #66
+
+[1.0.0] - 2022-02-17
+
+- TMS-723: Capabilities for Roles
 - TMS-472: Notice banner #61
 - TMS-467: Related contents #60
 - TMS-438: Add page contacts styles #59
