@@ -8,8 +8,7 @@
     transform: translateY(-20%);
 
     @include from($desktop) {
-        top: 175px;
-        width: 160px;
+        width: 150px;
     }
 
     &::after {
@@ -30,7 +29,7 @@
         line-height: 1.2;
 
         @include from($desktop) {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
 
         @include from($widescreen) {
@@ -39,20 +38,20 @@
     }
 
     &.align-before {
-        transform: translateX(0) translateY(-30%);
-
+        left: 0;
+        transform: translateX(-10%) translateY(-35%);
         @include from($desktop) {
-            left: 0;
-            transform: translateX(-35%) translateY(-50%);
+            
+            transform: translateX(-30%) translateY(100%);
         }
     }
 
     &.align-after {
-        transform: translateX(0) translateY(-30%);
+        right: 0;
+        transform: translateX(10%) translateY(-35%);
 
         @include from($desktop) {
-            right: 0;
-            transform: translateX(35%) translateY(-50%);
+            transform: translateX(30%) translateY(100%);
         }
     }
 }
