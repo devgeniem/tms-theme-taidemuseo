@@ -159,7 +159,8 @@ class LayoutInfoBadge {
                 ->set_wrapper_width( 20 )
                 ->set_instructions( $strings['background_color']['instructions'] );
 
-            $group->add_fields( [ $align_field, $bg_color_field_field, $text_field ] );
+                $group->add_fields( [ $align_field, $bg_color_field_field, $text_field ] );
+
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -176,7 +177,13 @@ class LayoutInfoBadge {
      */
     public function alter_fields( array $fields, string $key ) : array {
         try {
-            $fields[] = $this->get_fields( $key );
+            if ( str_ends_with( $key, 'call_to_action' ) ) {
+                $fields_to_add = $this->get_fields( $key );
+                $fields['rows']->add_field( $fields_to_add );
+            }
+            else {
+                $fields[] = $this->get_fields( $key );
+            }
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -193,25 +200,55 @@ class LayoutInfoBadge {
      * @return array
      */
     public function alter_format( array $layout ) : array {
-        if ( ! isset( $layout['layout_badge'] ) || empty( $layout['layout_badge']['layout_badge_text'] ) ) {
-            return $layout;
+
+        if ( ( ! empty( $layout['acf_fc_layout'] ) && $layout['acf_fc_layout'] === 'call_to_action' ) && ! empty( $layout['rows'] ) ) {
+
+            foreach ( $layout['rows'] as $key => $row ) {
+
+                if ( ! isset( $row['layout_badge'] ) || empty( $row['layout_badge']['layout_badge_text'] ) ) {
+                    continue;
+                }
+
+                $align    = $row['layout_badge']['layout_badge_align'] ?? 'before';
+                $bg_color = $row['layout_badge']['layout_badge_background_color'] ?? 'white';
+                $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
+                $badge_html = dustpress()->render( [
+                    'partial' => 'layout-badge',
+                    'type'    => 'html',
+                    'echo'    => false,
+                    'data'    => [
+                        'align'  => "align-$align",
+                        'color_classes' => $color_classes,
+                        'text'   => $layout['rows'][ $key ]['layout_badge']['layout_badge_text'],
+                    ],
+                ] );
+
+                $layout['rows'][ $key ][ "${align}_main_content" ] = $badge_html;
+            }
         }
+        else {
 
-        $align    = $layout['layout_badge']['layout_badge_align'] ?? 'before';
-        $bg_color = $layout['layout_badge']['layout_badge_background_color'] ?? 'white';
-        $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
-        $badge_html = dustpress()->render( [
-            'partial' => 'layout-badge',
-            'type'    => 'html',
-            'echo'    => false,
-            'data'    => [
-                'align'  => "align-$align",
-                'color_classes' => $color_classes,
-                'text'   => $layout['layout_badge']['layout_badge_text'],
-            ],
-        ] );
+            if ( ! isset( $layout['layout_badge'] ) || empty( $layout['layout_badge']['layout_badge_text'] ) ) {
+                return $layout;
+            }
 
-        $layout[ "${align}_main_content" ] = $badge_html;
+            $align    = $layout['layout_badge']['layout_badge_align'] ?? 'before';
+            $bg_color = $layout['layout_badge']['layout_badge_background_color'] ?? 'white';
+            $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
+            $badge_html = dustpress()->render( [
+                'partial' => 'layout-badge',
+                'type'    => 'html',
+                'echo'    => false,
+                'data'    => [
+                    'align'  => "align-$align",
+                    'color_classes' => $color_classes,
+                    'text'   => $layout['layout_badge']['layout_badge_text'],
+                ],
+            ] );
+
+            $layout[ "${align}_main_content" ] = $badge_html;
+
+        }
 
         return $layout;
     }

@@ -39,7 +39,7 @@
 
     &.align-before {
         left: 0;
-        transform: translateX(-10%) translateY(-35%);
+        transform: translateX(-10%) translateY(-20%);
         @include from($desktop) {
             
             transform: translateX(-30%) translateY(100%);
@@ -48,7 +48,7 @@
 
     &.align-after {
         right: 0;
-        transform: translateX(10%) translateY(-35%);
+        transform: translateX(10%) translateY(-20%);
 
         @include from($desktop) {
             transform: translateX(30%) translateY(100%);
