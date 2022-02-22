@@ -99,19 +99,18 @@ class AlterCallToActionLayout {
                 $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-4by3';
                 $layout['rows'][ $key ]['img_column_class'] = 'is-6-desktop';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-6-desktop';
+                continue;
             }
-            else {
-                if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
-                    $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop';
-                    $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
-                }
-                else {
-                    $layout['rows'][ $key ]['img_column_class'] = 'is-4-desktop';
-                    $layout['rows'][ $key ]['text_column_class'] = 'is-8-desktop';
-                }
+           
+            if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
+                $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop';
+                $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
+                continue;
             }
 
-            
+            $layout['rows'][ $key ]['img_column_class'] = 'is-4-desktop';
+            $layout['rows'][ $key ]['text_column_class'] = 'is-8-desktop';
+
         }
         
         return $layout;
