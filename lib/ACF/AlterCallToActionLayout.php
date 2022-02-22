@@ -4,6 +4,7 @@
  */
 
 use Geniem\ACF\Field;
+use Geniem\ACF\ConditionalLogicGroup;
 use TMS\Theme\Base\Logger;
 use TMS\Theme\Muumimuseo\ACF\Field\AccentColorField;
 
@@ -57,6 +58,7 @@ class AlterCallToActionLayout {
                 ->use_ui()
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['round_image']['instructions'] );
+
             
             $aspect_ratio_field = ( new Field\TrueFalse( $strings['wide_img']['label'] ) )
                 ->set_key( "${key}_wide_img" )
@@ -64,6 +66,11 @@ class AlterCallToActionLayout {
                 ->use_ui()
                 ->set_wrapper_width( 33 )
                 ->set_instructions( $strings['wide_img']['instructions'] );
+                
+            
+            $rule_group_automatic = ( new ConditionalLogicGroup() )
+            ->add_rule( $round_image_field, '!=', 1 );
+            $aspect_ratio_field->add_conditional_logic( $rule_group_automatic );
 
             $fields['rows']->add_fields( [ $round_image_field, $aspect_ratio_field ] );
         }
@@ -89,12 +96,22 @@ class AlterCallToActionLayout {
 
         foreach ( $layout['rows'] as $key => $row ) {
             if ( isset( $row['round_image'] ) && true === $row['round_image'] ) {
-                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-5by3';
+                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-4by3';
+                $layout['rows'][ $key ]['img_column_class'] = 'is-6-desktop';
+                $layout['rows'][ $key ]['text_column_class'] = 'is-6-desktop';
+            }
+            else {
+                if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
+                    $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop';
+                    $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
+                }
+                else {
+                    $layout['rows'][ $key ]['img_column_class'] = 'is-4-desktop';
+                    $layout['rows'][ $key ]['text_column_class'] = 'is-8-desktop';
+                }
             }
 
-            if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
-                $layout['rows'][ $key ]['container_class'] = 'is-8-desktop is-8-tablet';
-            }
+            
         }
         
         return $layout;
