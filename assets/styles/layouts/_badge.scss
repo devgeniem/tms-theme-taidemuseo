@@ -3,14 +3,12 @@
     top: 0;
     z-index: 1;
     overflow: hidden;
-    width: 150px;
+    width: 120px;
     border-radius: 50%;
     transform: translateY(-20%);
 
     @include from($desktop) {
-        top: 64px;
-        width: 175px;
-        transform: translateY(0);
+        width: 150px;
     }
 
     &::after {
@@ -27,28 +25,33 @@
     }
 
     &__text {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin: .5ch;
+        font-size: 1rem;
+        line-height: 1.2;
 
         @include from($desktop) {
+            font-size: 1.3rem;
+        }
+
+        @include from($widescreen) {
             font-size: 1.3rem;
         }
     }
 
     &.align-before {
         left: 0;
-
+        transform: translateX(-10%) translateY(-20%);
         @include from($desktop) {
-            left: -85px;
+            
+            transform: translateX(-30%) translateY(100%);
         }
     }
 
     &.align-after {
         right: 0;
+        transform: translateX(10%) translateY(-20%);
 
         @include from($desktop) {
-            right: -85px;
+            transform: translateX(30%) translateY(100%);
         }
     }
 }

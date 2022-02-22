@@ -1,0 +1,37 @@
+.call-to-action {
+
+    &__item {
+
+        .layout-badge {
+        
+            @include from($desktop) {
+                top: 50%;
+                width: 130px;
+
+            }
+
+            &__text {
+                font-size: 1rem;
+        
+                @include from($widescreen) {
+                    font-size: 1.1rem;
+                }
+            }
+            
+            
+            &.align-before {    
+                @include from($desktop) {
+                    left: 0;
+                    transform: translateX(-20%) translateY(-50%);
+                }
+            }
+        
+            &.align-after {
+                @include from($desktop) {
+                    right: 0;
+                    transform: translateX(20%) translateY(-50%);
+                }
+            }
+        }
+    }
+}
