@@ -44,6 +44,10 @@ class AlterCallToActionLayout {
                 'label'        => 'Pyöreä kuva',
                 'instructions' => '',
             ],
+            'wide_img'   => [
+                'label'        => 'Leveä kuva',
+                'instructions' => 'Kuva täyttää 2/3 elementin leveydestä.',
+            ],
         ];
 
         try {
@@ -53,8 +57,15 @@ class AlterCallToActionLayout {
                 ->use_ui()
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['round_image']['instructions'] );
+            
+            $aspect_ratio_field = ( new Field\TrueFalse( $strings['wide_img']['label'] ) )
+                ->set_key( "${key}_wide_img" )
+                ->set_name( 'wide_img' )
+                ->use_ui()
+                ->set_wrapper_width( 33 )
+                ->set_instructions( $strings['wide_img']['instructions'] );
 
-            $fields['rows']->add_field( $round_image_field );
+            $fields['rows']->add_fields( [ $round_image_field, $aspect_ratio_field ] );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -78,7 +89,11 @@ class AlterCallToActionLayout {
 
         foreach ( $layout['rows'] as $key => $row ) {
             if ( isset( $row['round_image'] ) && true === $row['round_image'] ) {
-                $layout['rows'][ $key ]['image_class'] = 'has-round-mask';
+                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-5by3';
+            }
+
+            if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
+                $layout['rows'][ $key ]['container_class'] = 'is-8-desktop is-8-tablet';
             }
         }
         
