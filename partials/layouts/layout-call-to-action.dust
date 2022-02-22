@@ -6,7 +6,7 @@
             <div class="call-to-action__item mt-6 mb-6 columns is-variable is-6 is-vcentered {container_class|s}">
                 {?image}
                     <div class="column is-6-desktop ">
-                        <div class="image is-5by3 {image_class|s} is-relative">
+                        <div class="image is-5by3 is-relative {image_class|s}">
                         {>"shared/layout-after-main-content" /}
                             {@image id=image.id size="large" class="objectfit-image" /}
                          {>"shared/layout-before-main-content" /}    
