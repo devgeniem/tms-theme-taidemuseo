@@ -3,10 +3,6 @@
     &__item {
 
         .layout-badge {
-
-            @include from($tablet) {
-               
-            }
         
             @include from($desktop) {
                 top: 50%;
@@ -16,11 +12,6 @@
 
             &__text {
                 font-size: 1rem;
-                // line-height: 1.2;
-
-                // @include from($tablet) {
-                //     font-size: 1.1rem;
-                // }
         
                 @include from($widescreen) {
                     font-size: 1.1rem;
