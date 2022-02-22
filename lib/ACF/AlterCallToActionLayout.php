@@ -59,15 +59,13 @@ class AlterCallToActionLayout {
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['round_image']['instructions'] );
 
-            
             $aspect_ratio_field = ( new Field\TrueFalse( $strings['wide_img']['label'] ) )
                 ->set_key( "${key}_wide_img" )
                 ->set_name( 'wide_img' )
                 ->use_ui()
                 ->set_wrapper_width( 33 )
                 ->set_instructions( $strings['wide_img']['instructions'] );
-                
-            
+
             $rule_group_automatic = ( new ConditionalLogicGroup() )
             ->add_rule( $round_image_field, '!=', 1 );
             $aspect_ratio_field->add_conditional_logic( $rule_group_automatic );
@@ -90,7 +88,7 @@ class AlterCallToActionLayout {
      */
     public function alter_format( array $layout ) : array {
 
-        if ( empty( $layout['rows'] ) ) {          
+        if ( empty( $layout['rows'] ) ) {
             return $layout;
         }
 
@@ -101,7 +99,7 @@ class AlterCallToActionLayout {
                 $layout['rows'][ $key ]['text_column_class'] = 'is-6-desktop';
                 continue;
             }
-           
+
             if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
                 $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
@@ -112,7 +110,7 @@ class AlterCallToActionLayout {
             $layout['rows'][ $key ]['text_column_class'] = 'is-8-desktop';
 
         }
-        
+
         return $layout;
     }
 }
