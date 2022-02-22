@@ -240,9 +240,9 @@ class LayoutInfoBadge {
                 'type'    => 'html',
                 'echo'    => false,
                 'data'    => [
-                    'align'  => "align-$align",
+                    'align'         => "align-$align",
                     'color_classes' => $color_classes,
-                    'text'   => $layout['layout_badge']['layout_badge_text'],
+                    'text'          => $layout['layout_badge']['layout_badge_text'],
                 ],
             ] );
 
