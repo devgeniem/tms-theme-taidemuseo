@@ -3,10 +3,6 @@
     &__item {
 
         .layout-badge {
-
-            @include from($tablet) {
-                width: 110px;
-            }
         
             @include from($desktop) {
                 top: 50%;
@@ -15,8 +11,8 @@
 
             &__text {
                 font-size: 1rem;
-        
-                @include from($widescreen) {
+
+                @include from($desktop) {
                     font-size: 1rem;
                 }
             }
@@ -37,6 +33,28 @@
                     transform: translateX(10%) translateY(-50%);
                 }
             }
+        }
+
+        .image-is-round,
+        .image-is-wide {
+            .layout-badge {
+            
+                @include from($desktop) {
+                    top: 35%;
+                    width: 150px;
+                }
+
+                &__text {
+                    font-size: 1rem;
+                    
+                    @include from($desktop) {
+                        font-size: 1.3rem;
+                    }
+
+                }
+               
+            }
+            
         }
     }
 }

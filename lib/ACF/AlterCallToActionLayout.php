@@ -94,14 +94,14 @@ class AlterCallToActionLayout {
 
         foreach ( $layout['rows'] as $key => $row ) {
             if ( isset( $row['round_image'] ) && true === $row['round_image'] ) {
-                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-4by3';
-                $layout['rows'][ $key ]['img_column_class'] = 'is-6-desktop';
+                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-square';
+                $layout['rows'][ $key ]['img_column_class'] = 'is-6-desktop image-is-round';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-6-desktop';
                 continue;
             }
 
             if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
-                $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop';
+                $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop image-is-wide';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
                 continue;
             }
