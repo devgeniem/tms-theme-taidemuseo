@@ -38,7 +38,7 @@
                                     </label>
 
                                     <select name="artist-sort" id="artist-sort"
-                                            class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small">
+                                            class="js-trigger-form-submit has-width-100 has-height-100 has-text-small">
                                         {#sort_options}
                                             <option value="{value}" {is_selected|s}>
                                                 {label|s}
