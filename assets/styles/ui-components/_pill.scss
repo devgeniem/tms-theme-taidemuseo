@@ -14,23 +14,19 @@
     }
 
     &:not(span) {
-        &:hover {
+        &:hover,
+        &:focus {
             color: $primary !important;
             background-color: $primary-invert !important;
-        }
-
-        &:focus {
-            outline: .125rem dotted $black !important;
+            border-color: $primary !important;
         }
     }
 
     &.is-active {
         &:not(span) {
+           
+            &:hover,
             &:focus {
-                color: $white !important;
-            }
-
-            &:hover {
                 background-color: $primary-invert !important;
                 color: $primary !important;
             }

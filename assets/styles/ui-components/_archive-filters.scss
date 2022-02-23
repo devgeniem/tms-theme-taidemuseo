@@ -19,6 +19,15 @@
                 }
             }
         }
+        &--search-container {
+            @include from($tablet) {
+                height: 100%;
+            }
+
+            @include from($desktop) {
+                max-height: 3rem;
+            }
+        }
     }
 
     .filters-wrapper {
@@ -34,6 +43,10 @@
         select,
         input[type="text"] {
             max-height: 2.375rem;
+
+            @include from($tablet) {
+                height: 100%;
+            }
 
             @include from($desktop) {
                 max-height: 3rem;
