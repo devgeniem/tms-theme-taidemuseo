@@ -27,7 +27,7 @@
         input[type="text"] {
            height: 2.375rem;
 
-            @include from($desktop) {
+            @include from($tablet) {
                 height: 3rem;
             }
         }
