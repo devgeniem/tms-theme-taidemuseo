@@ -71,6 +71,9 @@ class AlterCallToActionLayout {
             $aspect_ratio_field->add_conditional_logic( $rule_group_automatic );
 
             $fields['rows']->add_fields( [ $round_image_field, $aspect_ratio_field ] );
+
+            // unset( $fields['rows']->sub_fields['display_artist'] );
+
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
