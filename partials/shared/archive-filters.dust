@@ -32,7 +32,7 @@
                           role="search">
                         <div class="filters-wrapper">
                             {?sort_options}
-                                <div class="filters--sort-by-container">
+                                <div class="filters--sort-by-container mb-2">
                                     <label for="artist-sort" class="is-block h6 mb-3">
                                         {strings.sort|s}
                                     </label>
@@ -48,9 +48,9 @@
                                 </div>
                             {/sort_options}
 
-                            <div class="filters--text">
+                            <div class="filters--text mb-2">
                                 <label for="filters-search" class="h6 is-block mb-3">
-                                    {strings.search.label|s}
+                                    {strings.search.label|s} XX
                                 </label>
 
                                 <div class="filters--search-container">
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
 
-                            <div class="filters--submit">
+                            <div class="filters--submit mb-2">
                                 <button class="button is-primary button--icon {class|s}"
                                         type="submit">
                                     {strings.search.submit_value|s}
