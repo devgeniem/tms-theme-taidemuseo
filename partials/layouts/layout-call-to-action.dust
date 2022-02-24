@@ -12,7 +12,7 @@
                         </div>
                         {?display_artist}
                             {?image_title_and_artist}
-                                <small>{image_title_and_artist|s}</small>
+                               <span class="is-block pt-2 pb-2 mb-0">{image_title_and_artist|s}</span>
                             {/image_title_and_artist}
                         {/display_artist}
                         {>"shared/layout-before-main-content" /}
