@@ -37,6 +37,19 @@ class ColorOptions {
             10
         );
 
+        add_filter(
+            'tms/acf/layout/_textblock/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
+
+        add_filter(
+            'tms/acf/layout/textblock/data',
+            [ $this, 'alter_format' ],
+            10
+        );
+
     }
 
     /**
@@ -66,7 +79,7 @@ class ColorOptions {
                 ->set_key( "${key}_color_options" )
                 ->set_name( 'color_options' );
 
-                $bg_color_field = ( new Field\Color( $strings['background_color']['label'] ) )
+            $bg_color_field = ( new Field\Color( $strings['background_color']['label'] ) )
                 ->set_key( "${key}_color_options_bg_color" )
                 ->set_name( 'bg_color' )
                 ->set_wrapper_width( 60 )
@@ -103,6 +116,9 @@ class ColorOptions {
         try {
            
             $fields[] = $this->get_fields( $key );
+        
+            // remove other background-color selections
+            unset( $fields['background_color']);
          
         }
         catch ( Exception $e ) {
