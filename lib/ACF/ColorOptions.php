@@ -50,6 +50,32 @@ class ColorOptions {
             10
         );
 
+        add_filter(
+            'tms/acf/layout/_image_carousel/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
+
+        add_filter(
+            'tms/acf/layout/image_carousel/data',
+            [ $this, 'alter_format' ],
+            10
+        );
+
+        // add_filter(
+        //     'tms/block/image_carousel/fields',
+        //     [ $this, 'alter_fields' ],
+        //     10,
+        //     2
+        // );
+
+        // add_filter(
+        //     'tms/acf/block/image_carousel/data',
+        //     [ $this, 'alter_format' ],
+        //     10
+        // );
+
     }
 
     /**
@@ -118,8 +144,10 @@ class ColorOptions {
             $fields[] = $this->get_fields( $key );
         
             // remove other background-color selections
-            unset( $fields['background_color']);
-         
+            if ( isset( $fields['background_color'] ) ) {
+                unset( $fields['background_color'] );
+            }
+
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -136,7 +164,7 @@ class ColorOptions {
      * @return array
      */
     public function alter_format( array $layout ) : array {
-
+    
         try {
            if ( ! empty( $layout['color_options']['bg_color'] )) {
             $bg_color = $layout['color_options']['bg_color'];
