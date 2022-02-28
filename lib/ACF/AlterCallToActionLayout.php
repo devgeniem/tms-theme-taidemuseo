@@ -44,7 +44,7 @@ class AlterCallToActionLayout {
                 'label'        => 'Pyöreä kuva',
                 'instructions' => '',
             ],
-            'wide_img'   => [
+            'wide_img' => [
                 'label'        => 'Leveä kuva',
                 'instructions' => 'Kuva täyttää 2/3 elementin leveydestä.',
             ],
@@ -70,6 +70,7 @@ class AlterCallToActionLayout {
             $aspect_ratio_field->add_conditional_logic( $rule_group_automatic );
 
             $fields['rows']->add_fields( [ $round_image_field, $aspect_ratio_field ] );
+
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -93,19 +94,19 @@ class AlterCallToActionLayout {
 
         foreach ( $layout['rows'] as $key => $row ) {
             if ( isset( $row['round_image'] ) && true === $row['round_image'] ) {
-                $layout['rows'][ $key ]['image_class'] = 'has-round-mask is-square';
-                $layout['rows'][ $key ]['img_column_class'] = 'is-6-desktop image-is-round';
+                $layout['rows'][ $key ]['image_class']       = 'has-round-mask is-square';
+                $layout['rows'][ $key ]['img_column_class']  = 'is-6-desktop image-is-round';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-6-desktop';
                 continue;
             }
 
             if ( isset( $row['wide_img'] ) && true === $row['wide_img'] ) {
-                $layout['rows'][ $key ]['img_column_class'] = 'is-8-desktop image-is-wide';
+                $layout['rows'][ $key ]['img_column_class']  = 'is-8-desktop image-is-wide';
                 $layout['rows'][ $key ]['text_column_class'] = 'is-4-desktop';
                 continue;
             }
 
-            $layout['rows'][ $key ]['img_column_class'] = 'is-4-desktop';
+            $layout['rows'][ $key ]['img_column_class']  = 'is-4-desktop';
             $layout['rows'][ $key ]['text_column_class'] = 'is-8-desktop';
 
         }

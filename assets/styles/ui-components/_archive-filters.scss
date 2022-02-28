@@ -11,14 +11,6 @@
                 margin-top: auto;
             }
         }
-
-        &--sort-by-container {
-            select {
-                @include from($tablet) {
-                    height: 100%;
-                }
-            }
-        }
     }
 
     .filters-wrapper {
@@ -33,10 +25,10 @@
 
         select,
         input[type="text"] {
-            max-height: 2.375rem;
+           height: 2.375rem;
 
-            @include from($desktop) {
-                max-height: 3rem;
+            @include from($tablet) {
+                height: 3rem;
             }
         }
 

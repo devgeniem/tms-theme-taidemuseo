@@ -236,7 +236,7 @@ class PageArtist extends BaseModel {
                 'value' => '',
             ],
             [
-                'label' => __( 'Name, ascending', 'tms-theme-taidemuseo' ),
+                'label' => __( 'Name, descending', 'tms-theme-taidemuseo' ),
                 'value' => 'desc',
             ],
             [
