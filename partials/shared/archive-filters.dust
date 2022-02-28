@@ -3,26 +3,28 @@
         <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
             <div class="columns is-desktop filters">
                 {?filters}
-                    <div class="column {filters_container_classes|s}">
-                        <div class="mb-4">
-                            <h2 class="is-block h6 mb-3">
-                                {strings.filter|s}
-                            </h2>
+                    {@gt key=filters.length value=2}
+                        <div class="column {filters_container_classes|s}">
+                            <div class="mb-4">
+                                <h2 class="is-block h6 mb-3">
+                                    {strings.filter|s}
+                                </h2>
 
-                            <div class="filters__list">
-                                {#filters}
-                                    <a href="{url}"
-                                       class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
-                                        {?is_active}
-                                            {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
-                                        {/is_active}
+                                <div class="filters__list">
+                                    {#filters}
+                                        <a href="{url}"
+                                        class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
+                                            {?is_active}
+                                                {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                                            {/is_active}
 
-                                        {name|s}
-                                    </a>
-                                {/filters}
+                                            {name|s}
+                                        </a>
+                                    {/filters}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {/gt}
                 {/filters}
 
                 <div class="column">
@@ -30,13 +32,13 @@
                           role="search">
                         <div class="filters-wrapper">
                             {?sort_options}
-                                <div class="filters--sort-by-container">
+                                <div class="filters--sort-by-container mb-2">
                                     <label for="artist-sort" class="is-block h6 mb-3">
                                         {strings.sort|s}
                                     </label>
 
                                     <select name="artist-sort" id="artist-sort"
-                                            class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small">
+                                            class="js-trigger-form-submit has-width-100 has-text-small">
                                         {#sort_options}
                                             <option value="{value}" {is_selected|s}>
                                                 {label|s}
@@ -46,9 +48,9 @@
                                 </div>
                             {/sort_options}
 
-                            <div class="filters--text">
+                            <div class="filters--text mb-2">
                                 <label for="filters-search" class="h6 is-block mb-3">
-                                    {strings.search.label|s}
+                                    {strings.search.label|s} XX
                                 </label>
 
                                 <div class="filters--search-container">
@@ -60,7 +62,7 @@
                                 </div>
                             </div>
 
-                            <div class="filters--submit">
+                            <div class="filters--submit mb-2">
                                 <button class="button is-primary button--icon {class|s}"
                                         type="submit">
                                     {strings.search.submit_value|s}
