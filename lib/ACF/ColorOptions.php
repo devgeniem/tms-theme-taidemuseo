@@ -90,7 +90,7 @@ class ColorOptions {
                 'label'        => 'Värivalinnat',
                 'instructions' => '',
             ],
-            'text_color'  => [
+            'text_color' => [
                 'label'        => 'Tekstin väri',
                 'instructions' => 'Valitse tekstin väri',
             ],
@@ -140,22 +140,20 @@ class ColorOptions {
      */
     public function alter_fields( array $fields, string $key ) : array {
         try {
-           
+
             if ( str_ends_with( $key, 'call_to_action' ) ) {
                 $fields_to_add = $this->get_fields( $key );
                 $fields['rows']->add_field( $fields_to_add );
             }
             else {
                 $fields[] = $this->get_fields( $key );
-           
 
                 $fields[] = $this->get_fields( $key );
-            
+
                 // remove other background-color selections
                 if ( isset( $fields['background_color'] ) ) {
                     unset( $fields['background_color'] );
                 }
-
             }
         }
         catch ( Exception $e ) {
@@ -174,56 +172,45 @@ class ColorOptions {
      * @return array
      */
     public function alter_format( array $layout ) : array {
-    
+
         try {
 
             if ( ( ! empty( $layout['acf_fc_layout'] ) && $layout['acf_fc_layout'] === 'call_to_action' ) && ! empty( $layout['rows'] ) ) { // phpcs:ignore
                 foreach ( $layout['rows'] as $key => $row ) {
 
-                   
-                    if ( ! empty( $row['color_options']['bg_color'] )) {
-                        $bg_color = $row['color_options']['bg_color'];
-                        $layout['rows'][ $key ]['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
+                    if ( ! empty( $row['color_options']['bg_color'] ) ) {
+                        $bg_color                           = $row['color_options']['bg_color'];
+                        $layout['rows'][ $key ]['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
                     }
-                    
-                    if ( ! empty( $row['color_options']['text_color'] )) {
-                        $txt_color = $row['color_options']['text_color'];
+
+                    if ( ! empty( $row['color_options']['text_color'] ) ) {
+                        $txt_color                                 = $row['color_options']['text_color'];
                         $layout['rows'][ $key ]['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
                     }
                     else {
                         $layout['rows'][ $key ]['txt_color_class'] = 'has-text-black';
                     }
-    
-                   
-                    // $layout['rows'][ $key ][ "${align}_main_content" ] = $badge_html;
                 }
             }
             else {
 
-                if ( ! empty( $layout['color_options']['bg_color'] )) {
-                    $bg_color = $layout['color_options']['bg_color'];
-                    $layout['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
-                   }
-                   
-                   if ( ! empty( $layout['color_options']['text_color'] )) {
-                    $txt_color = $layout['color_options']['text_color'];
+                if ( ! empty( $layout['color_options']['bg_color'] ) ) {
+                    $bg_color           = $layout['color_options']['bg_color'];
+                    $layout['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
+                }
+
+                if ( ! empty( $layout['color_options']['text_color'] ) ) {
+                    $txt_color                 = $layout['color_options']['text_color'];
                     $layout['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
-                   }
-                   else {
+                }
+                else {
                     $layout['txt_color_class'] = 'has-text-black';
-                   }
+                }
             }
-
-           
-
-           
-
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
         }
-
-       
 
         return $layout;
     }
