@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-451: Article highlights
 - TMS-445: Layout badge
 - TMS-724: Icon links #64
 - TMS-470: Gravity forms #66
