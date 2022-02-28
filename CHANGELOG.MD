@@ -7,14 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
-
-- TMS-446: Call to action rounded image and aspect ratio selections
-
 ### Changed
 
 - TMS-451: Article highlights
-- TMS-432: Artwork archive page template
+- TMS-447: Background-color selection for layouts
+  - Call to actions
+  - Article highlights
+  - Textblock
+  - Image carousel
+- TMS-446: Call to action rounded image and aspect ratio selections
+  
+[1.1.0] - 2022-02-24
+
+### Changed
+
 - TMS-445: Layout badge
 - TMS-724: Icon links #64
 - TMS-470: Gravity forms #66

@@ -1,9 +1,9 @@
-<div {?anchor}id="{anchor|s}"{/anchor} class="section call-to-action {accent_color|s}">
-    <div class="container keep-vertical-spacing">
+<div {?anchor}id="{anchor|s}"{/anchor} class="call-to-action {accent_color|s}">
+    <div class="keep-vertical-spacing">
       
-
         {#rows}
-            <div class="call-to-action__item mt-6 mb-6 columns is-variable is-6 is-vcentered {container_class|s}">
+            <div class="call-to-action__item section is-flex is-justify-content-center pt-6 pb-6"{bg_style|s}>
+             <div class="container columns is-variable is-6 is-vcentered {container_class|s}">
                 {?image}
                     <div class="column is-relative {img_column_class}">
                         {>"shared/layout-after-main-content" /}
@@ -12,7 +12,7 @@
                         </div>
                         {?display_artist}
                             {?image_title_and_artist}
-                               <span class="is-block pt-2 pb-2 mb-0">{image_title_and_artist|s}</span>
+                               <span class="is-block pt-2 pb-2 mb-0 {txt_color_class|s}">{image_title_and_artist|s}</span>
                             {/image_title_and_artist}
                         {/display_artist}
                         {>"shared/layout-before-main-content" /}
@@ -21,13 +21,13 @@
 
                 <div class="column {text_column_class|s}">
                     {?title}
-                        <h2 class="call-to-action__title h4 mt-0">
+                        <h2 class="call-to-action__title h4 mt-0 {txt_color_class|s}">
                             {title|s}
                         </h2>
                     {/title}
 
                     {?description}
-                        <div class="call-to-action__description mt-6 mb-6">
+                        <div class="call-to-action__description mt-6 mb-6 {txt_color_class|s}">
                             {description|s}
                         </div>
                     {/description}
@@ -35,6 +35,7 @@
                     {>"ui/button-link" classes="is-primary" icon="chevron-right" icon_classes="icon--medium"  /}
                 </div>
             </div>
+        </div>
         {/rows}
 
         
