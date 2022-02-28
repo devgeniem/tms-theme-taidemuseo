@@ -146,6 +146,10 @@ class ColorOptions {
                 $fields['rows']->add_field( $fields_to_add );
             }
             else {
+                // remove other background-color selections
+                if ( isset( $fields['background_color'] ) ) {
+                    unset( $fields['background_color'] );
+                }
                 $fields[] = $this->get_fields( $key );
             }
         }
@@ -199,6 +203,9 @@ class ColorOptions {
                 else {
                     $layout['txt_color_class'] = 'has-text-black';
                 }
+
+                // prevent error in theme base formatter by setting empty value
+                $layout['background_color'] = '';
             }
         }
         catch ( Exception $e ) {
