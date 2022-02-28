@@ -6,32 +6,55 @@
         
             @include from($desktop) {
                 top: 50%;
-                width: 130px;
-
+                width: 120px;
             }
 
             &__text {
                 font-size: 1rem;
-        
-                @include from($widescreen) {
-                    font-size: 1.1rem;
+
+                @include from($desktop) {
+                    font-size: 1rem;
                 }
             }
             
             
             &.align-before {    
+                transform: translateX(5%) translateY(-20%);
                 @include from($desktop) {
                     left: 0;
-                    transform: translateX(-20%) translateY(-50%);
+                    transform: translateX(-10%) translateY(-50%);
                 }
             }
         
             &.align-after {
+                transform: translateX(-5%) translateY(-20%);
                 @include from($desktop) {
                     right: 0;
-                    transform: translateX(20%) translateY(-50%);
+                    transform: translateX(10%) translateY(-50%);
                 }
             }
+        }
+
+        .image-is-round,
+        .image-is-wide {
+            .layout-badge {
+            
+                @include from($desktop) {
+                    top: 35%;
+                    width: 150px;
+                }
+
+                &__text {
+                    font-size: 1rem;
+                    
+                    @include from($desktop) {
+                        font-size: 1.3rem;
+                    }
+
+                }
+               
+            }
+            
         }
     }
 }

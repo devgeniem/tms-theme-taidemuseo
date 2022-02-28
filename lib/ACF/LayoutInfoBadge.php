@@ -113,7 +113,7 @@ class LayoutInfoBadge {
                 'label'        => 'Asemointi',
                 'instructions' => '',
             ],
-            'text'  => [
+            'text' => [
                 'label'        => 'Teksti',
                 'instructions' => '',
             ],
@@ -234,7 +234,7 @@ class LayoutInfoBadge {
 
             $align         = $layout['layout_badge']['layout_badge_align'] ?? 'before';
             $bg_color      = $layout['layout_badge']['layout_badge_background_color'] ?? 'white';
-            $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black';
+            $color_classes = $bg_color === 'white' ? 'has-text-black has-background-white' : 'has-text-white has-background-black'; // phpcs:ignore
             $badge_html    = dustpress()->render( [
                 'partial' => 'layout-badge',
                 'type'    => 'html',

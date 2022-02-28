@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-451: Article highlights #68
+
+### Added
+
+- TMS-446: Call to action rounded image and aspect ratio selections #69
+
 [1.1.0] - 2022-02-24
 
 ### Changed
 
-- TMS-451: Article highlights
 - TMS-445: Layout badge
 - TMS-724: Icon links #64
 - TMS-470: Gravity forms #66
