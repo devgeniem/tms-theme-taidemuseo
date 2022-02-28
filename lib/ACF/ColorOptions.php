@@ -31,6 +31,12 @@ class ColorOptions {
             10
         );
 
+        add_filter(
+            'tms/acf/layout/blog_articles/data',
+            [ $this, 'alter_format' ],
+            10
+        );
+
     }
 
     /**
@@ -118,11 +124,17 @@ class ColorOptions {
         try {
            if ( ! empty( $layout['color_options']['bg_color'] )) {
             $bg_color = $layout['color_options']['bg_color'];
-            error_log( print_r( $bg_color, true ) );
             $layout['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
-           
            }
-         
+           
+           if ( ! empty( $layout['color_options']['text_color'] )) {
+            $txt_color = $layout['color_options']['text_color'];
+            $layout['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
+           }
+           else {
+            $layout['txt_color_class'] = 'has-text-black';
+           }
+
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
