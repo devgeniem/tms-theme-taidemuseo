@@ -5,18 +5,17 @@
         {#rows}
             <div class="call-to-action__item mt-6 mb-6 columns is-variable is-6 is-vcentered {container_class|s}">
                 {?image}
-                    <div class="column is-6-desktop ">
-                        <div class="image is-5by3 {image_class|s} is-relative">
+                    <div class="column is-relative {img_column_class}">
                         {>"shared/layout-after-main-content" /}
+                        <div class="image {image_class|s}">
                             {@image id=image.id size="large" class="objectfit-image" /}
-                         {>"shared/layout-before-main-content" /}    
                         </div>
                         {?display_artist}
-                            {?image_author_and_artist}
-                                <small>{image_author_and_artist|s}</small>
-                            {/image_author_and_artist}
+                            {?image_title_and_artist}
+                               <span class="is-block pt-2 pb-2 mb-0">{image_title_and_artist|s}</span>
+                            {/image_title_and_artist}
                         {/display_artist}
-                       
+                        {>"shared/layout-before-main-content" /}
                     </div>
                 {/image}
 
