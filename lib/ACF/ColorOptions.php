@@ -63,18 +63,18 @@ class ColorOptions {
             10
         );
 
-        // add_filter(
-        //     'tms/block/image_carousel/fields',
-        //     [ $this, 'alter_fields' ],
-        //     10,
-        //     2
-        // );
+        add_filter(
+            'tms/acf/layout/_call_to_action/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
 
-        // add_filter(
-        //     'tms/acf/block/image_carousel/data',
-        //     [ $this, 'alter_format' ],
-        //     10
-        // );
+        add_filter(
+            'tms/acf/layout/call_to_action/data',
+            [ $this, 'alter_format' ],
+            10
+        );
 
     }
 
@@ -141,13 +141,22 @@ class ColorOptions {
     public function alter_fields( array $fields, string $key ) : array {
         try {
            
-            $fields[] = $this->get_fields( $key );
-        
-            // remove other background-color selections
-            if ( isset( $fields['background_color'] ) ) {
-                unset( $fields['background_color'] );
+            if ( str_ends_with( $key, 'call_to_action' ) ) {
+                $fields_to_add = $this->get_fields( $key );
+                $fields['rows']->add_field( $fields_to_add );
             }
+            else {
+                $fields[] = $this->get_fields( $key );
+           
 
+                $fields[] = $this->get_fields( $key );
+            
+                // remove other background-color selections
+                if ( isset( $fields['background_color'] ) ) {
+                    unset( $fields['background_color'] );
+                }
+
+            }
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
@@ -155,6 +164,7 @@ class ColorOptions {
 
         return $fields;
     }
+
 
     /**
      * Format layout data
@@ -166,18 +176,47 @@ class ColorOptions {
     public function alter_format( array $layout ) : array {
     
         try {
-           if ( ! empty( $layout['color_options']['bg_color'] )) {
-            $bg_color = $layout['color_options']['bg_color'];
-            $layout['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
-           }
+
+            if ( ( ! empty( $layout['acf_fc_layout'] ) && $layout['acf_fc_layout'] === 'call_to_action' ) && ! empty( $layout['rows'] ) ) { // phpcs:ignore
+                foreach ( $layout['rows'] as $key => $row ) {
+
+                   
+                    if ( ! empty( $row['color_options']['bg_color'] )) {
+                        $bg_color = $row['color_options']['bg_color'];
+                        $layout['rows'][ $key ]['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
+                    }
+                    
+                    if ( ! empty( $row['color_options']['text_color'] )) {
+                        $txt_color = $row['color_options']['text_color'];
+                        $layout['rows'][ $key ]['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
+                    }
+                    else {
+                        $layout['rows'][ $key ]['txt_color_class'] = 'has-text-black';
+                    }
+    
+                   
+                    // $layout['rows'][ $key ][ "${align}_main_content" ] = $badge_html;
+                }
+            }
+            else {
+
+                if ( ! empty( $layout['color_options']['bg_color'] )) {
+                    $bg_color = $layout['color_options']['bg_color'];
+                    $layout['bg_style'] =  sprintf( 'style="background-color:%s;"', $bg_color );
+                   }
+                   
+                   if ( ! empty( $layout['color_options']['text_color'] )) {
+                    $txt_color = $layout['color_options']['text_color'];
+                    $layout['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
+                   }
+                   else {
+                    $layout['txt_color_class'] = 'has-text-black';
+                   }
+            }
+
            
-           if ( ! empty( $layout['color_options']['text_color'] )) {
-            $txt_color = $layout['color_options']['text_color'];
-            $layout['txt_color_class'] = sprintf( 'has-text-%s', $txt_color );
-           }
-           else {
-            $layout['txt_color_class'] = 'has-text-black';
-           }
+
+           
 
         }
         catch ( Exception $e ) {
