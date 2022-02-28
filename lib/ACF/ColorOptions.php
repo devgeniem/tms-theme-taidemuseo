@@ -147,13 +147,6 @@ class ColorOptions {
             }
             else {
                 $fields[] = $this->get_fields( $key );
-
-                $fields[] = $this->get_fields( $key );
-
-                // remove other background-color selections
-                if ( isset( $fields['background_color'] ) ) {
-                    unset( $fields['background_color'] );
-                }
             }
         }
         catch ( Exception $e ) {
