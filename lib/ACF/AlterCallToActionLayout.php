@@ -6,7 +6,6 @@
 use Geniem\ACF\Field;
 use Geniem\ACF\ConditionalLogicGroup;
 use TMS\Theme\Base\Logger;
-use TMS\Theme\Muumimuseo\ACF\Field\AccentColorField;
 
 /**
  * Alter Call to Action Layout
