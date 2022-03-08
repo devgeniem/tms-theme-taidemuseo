@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-475: Bug fix for blog article grid item
+
 - TMS-447: Background-color selection for layouts
   - Call to actions
   - Article highlights
