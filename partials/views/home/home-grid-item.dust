@@ -22,7 +22,7 @@
         {@ne key=post_type value="post"}
             {?category}
                 <a href="{category.permalink|s}" class="pill {category_link_classes}">
-                    {highlight.category.name|s}
+                    {category.name|s}
                 </a>
             {/category}
         {/ne}
