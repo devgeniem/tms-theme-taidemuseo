@@ -50,7 +50,7 @@
 
                             <div class="filters--text mb-2">
                                 <label for="filters-search" class="h6 is-block mb-3">
-                                    {strings.search.label|s} XX
+                                    {strings.search.label|s}
                                 </label>
 
                                 <div class="filters--search-container">
