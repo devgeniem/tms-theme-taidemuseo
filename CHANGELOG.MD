@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-728: Fix media gallery texts of featured image in artwork.
+
 ### Changed
 
 - TMS-475: Bug fix for blog article grid item
