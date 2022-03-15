@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-10-15
+
 ### Fixed
 
 - TMS-728: Fix media gallery texts of featured image in artwork.
@@ -27,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-446: Call to action rounded image and aspect ratio selections #69
 
-[1.1.0] - 2022-02-24
+## [1.1.0] - 2022-02-24
 
 ### Changed
 
@@ -35,7 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-724: Icon links #64
 - TMS-470: Gravity forms #66
 
-[1.0.0] - 2022-02-17
+## [1.0.0] - 2022-02-17
 
 - TMS-723: Capabilities for Roles
 - TMS-472: Notice banner #61
