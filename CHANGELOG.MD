@@ -10,6 +10,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-447-2: Fallack fix for text color in home-grid-item and home-highlight
+- TMS-788: Change header logo alignment
+
+## [1.2.0] - 2022-03-15
+
+### Fixed
+
+- TMS-728: Fix media gallery texts of featured image in artwork.
+
+### Changed
+
 - TMS-754: Share links bigger
 - TMS-475: Bug fix for blog article grid item
 - TMS-447: Background-color selection for layouts
@@ -24,7 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-446: Call to action rounded image and aspect ratio selections #69
 
-[1.1.0] - 2022-02-24
+## [1.1.0] - 2022-02-24
 
 ### Changed
 
@@ -32,7 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-724: Icon links #64
 - TMS-470: Gravity forms #66
 
-[1.0.0] - 2022-02-17
+## [1.0.0] - 2022-02-17
 
 - TMS-723: Capabilities for Roles
 - TMS-472: Notice banner #61
