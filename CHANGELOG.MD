@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-447-2: Fallack fix for text color in home-grid-item and home-highlight
 - TMS-788: Change header logo alignment
+- TMS-758:
+  - Primary nav arrow icons
+  - Language nav dropdown styles
 
 ## [1.2.0] - 2022-03-15
 
