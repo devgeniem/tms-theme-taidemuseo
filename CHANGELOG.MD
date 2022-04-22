@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-758:
+    - Primary nav arrow icons
+
 ## [1.2.0] - 2022-03-15
 
 ### Fixed
