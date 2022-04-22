@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-758:
     - Primary nav arrow icons
+    - Language nav dropdown styles
 
 ## [1.2.0] - 2022-03-15
 
