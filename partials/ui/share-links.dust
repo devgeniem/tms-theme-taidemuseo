@@ -6,7 +6,7 @@
                    class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle {share_link_classes.link|s} {#extra_classes}{.} {/extra_classes}"
                    data-callback-text="{callback_text|s}">
                     <span class="is-sr-only">{sr_text|s}</span>
-                    {>"ui/icon" class="icon--large icon--xlarge-tablet-only is-primary-invert {share_link_classes.icon|s}" /}
+                    {>"ui/icon" class="icon--xlarge is-primary-invert {share_link_classes.icon|s}" /}
 
 
                     {?callback_text}
