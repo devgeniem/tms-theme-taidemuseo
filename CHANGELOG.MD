@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Primary nav arrow icons
   - Language nav dropdown styles
 
+### Added
+
+- TMS-224: Add api image to single article template.
+
+## [1.3.0] - 2022-04-26
+
+### Fixed
+
+- TMS-800: Image Gallery is_clickable selection added back #92
+- TMS-805: Do not display "No results found" when Home view has a featured post. #91
+
 ## [1.2.0] - 2022-03-15
 
 ### Fixed
