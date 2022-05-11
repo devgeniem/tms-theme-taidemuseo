@@ -3,7 +3,8 @@
  */
 
 .site-header__wrapper {
-    max-width: $container-max-width - $container-offset;
+    width: auto;
+    max-width: 1480px !important;
 }
 
 .site-header {
@@ -19,6 +20,7 @@
 
         @include from($desktop) {
             max-width: 17.2rem;
+            margin-left: calc(2 * 1.1764rem);
         }
 
         > a {

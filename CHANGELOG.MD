@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-788: Align header logo with main navigation
+
 ## [1.4.0] - 2022-06-05
 
 ### Changed
