@@ -36,10 +36,6 @@
         padding-left: 0;
     }
 
-    .dropdown-toggler {
-        display: none;
-    }
-
     .navbar-dropdown {
         border-top: none !important;
         background-color: $color-taide-dark !important;
@@ -67,7 +63,7 @@
     }
 
     .icon {
-        fill: $color-taide-tiili !important;
+        fill: currentColor !important;
     }
 
     .navbar-dropdown-items {
