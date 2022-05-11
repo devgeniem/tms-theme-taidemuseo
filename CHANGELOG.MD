@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-796: Full image meta data for images inside accordion
 - TMS-224: Add api image to single article template.
 
 ## [1.4.0] - 2022-06-05
