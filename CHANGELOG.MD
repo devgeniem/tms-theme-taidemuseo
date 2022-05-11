@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-788: Align header logo with main navigation #98
 - TMS-447-2: Fallack fix for text color in home-grid-item and home-highlight
 - TMS-788: Change header logo alignment
 - TMS-758:
@@ -18,6 +19,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-224: Add api image to single article template.
+
+## [1.4.0] - 2022-06-05
+
+### Changed
+
+- TMS-816: Display image meta on artwork view #95
+
+### Fixed
+
+- TMS-813: Translate CPT name #97
 
 ## [1.3.0] - 2022-04-26
 

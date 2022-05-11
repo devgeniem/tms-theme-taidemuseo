@@ -95,7 +95,7 @@ class Artist implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Taiteilijat',
+            'name'                  => _x( 'Artists', 'theme CPT', 'tms-theme-taidemuseo' ),
             'singular_name'         => 'Taiteilija',
             'menu_name'             => 'Taiteilijat',
             'name_admin_bar'        => 'Taiteilijat',

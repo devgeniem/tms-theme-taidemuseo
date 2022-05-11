@@ -2,6 +2,11 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
+.site-header__wrapper {
+    width: auto;
+    max-width: 1480px !important;
+}
+
 .site-header {
     background-color: $primary;
     color: $primary-invert;
@@ -19,6 +24,7 @@
 
         @include from($desktop) {
             max-width: 17.2rem;
+            margin-left: calc(2 * 1.1764rem);
         }
 
         > a {
