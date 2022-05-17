@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-791: Remove key figures block description capitalize #89
+
 ## [1.4.0] - 2022-06-05
 
 ### Changed
@@ -32,7 +36,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-791: Remove key figures block description capitalize
 - TMS-754: Share links bigger
 - TMS-475: Bug fix for blog article grid item
 - TMS-447: Background-color selection for layouts
