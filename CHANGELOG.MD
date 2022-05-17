@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- TMS-794: Share links bigger #90
+
 ## [1.4.0] - 2022-06-05
 
 ### Changed
@@ -31,7 +34,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-728: Fix media gallery texts of featured image in artwork.
 
 ### Changed
-- TMS-794: Share links bigger
 - TMS-754: Share links bigger
 - TMS-475: Bug fix for blog article grid item
 - TMS-447: Background-color selection for layouts
