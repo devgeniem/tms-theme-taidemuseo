@@ -13,6 +13,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Primary nav arrow icons
     - Language nav dropdown styles
 
+## [1.4.0] - 2022-06-05
+
+### Changed
+
+- TMS-816: Display image meta on artwork view #95
+
+### Fixed
+
+- TMS-813: Translate CPT name #97
+
+## [1.3.0] - 2022-04-26
+
+### Fixed
+
+- TMS-800: Image Gallery is_clickable selection added back #92
+- TMS-805: Do not display "No results found" when Home view has a featured post. #91
+
 ## [1.2.0] - 2022-03-15
 
 ### Fixed
