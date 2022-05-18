@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-788: Align header logo with main navigation #98
 - TMS-758:
     - Primary nav arrow icons
     - Language nav dropdown styles

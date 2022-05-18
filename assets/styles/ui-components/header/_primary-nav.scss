@@ -32,6 +32,10 @@
         }
     }
 
+    > .has-dropdown > div > .navbar-link {
+        padding-left: 0;
+    }
+
     .navbar-dropdown {
         border-top: none !important;
         background-color: $color-taide-dark !important;
