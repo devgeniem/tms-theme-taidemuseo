@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-796: Full image meta data for images inside accordion #99
+
 ### Changed
 
 - TMS-794: Share links bigger #90
