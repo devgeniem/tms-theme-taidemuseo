@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-794: Share links bigger #90
 - TMS-791: Remove key figures block description capitalize #89
 - TMS-788: Align header logo with main navigation #98
 - TMS-758:
@@ -39,7 +40,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-728: Fix media gallery texts of featured image in artwork.
 
 ### Changed
-
 - TMS-754: Share links bigger
 - TMS-475: Bug fix for blog article grid item
 - TMS-447: Background-color selection for layouts
