@@ -32,8 +32,8 @@
         }
     }
 
-    .dropdown-toggler {
-        display: none;
+    > .has-dropdown > div > .navbar-link {
+        padding-left: 0;
     }
 
     .navbar-dropdown {
@@ -63,7 +63,7 @@
     }
 
     .icon {
-        fill: $color-taide-tiili !important;
+        fill: currentColor !important;
     }
 
     .navbar-dropdown-items {

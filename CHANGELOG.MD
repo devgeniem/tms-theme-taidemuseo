@@ -9,7 +9,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-224: Add api image to single article template.
+- TMS-224: Add api image to single article template. #94
+- TMS-796: Full image meta data for images inside accordion #99
+
+### Changed
+
+- TMS-794: Share links bigger #90
+- TMS-791: Remove key figures block description capitalize #89
+- TMS-788: Align header logo with main navigation #98
+- TMS-758:
+    - Primary nav arrow icons
+    - Language nav dropdown styles
+
+## [1.4.0] - 2022-06-05
+
+### Changed
+
+- TMS-816: Display image meta on artwork view #95
+
+### Fixed
+
+- TMS-813: Translate CPT name #97
 
 ## [1.3.0] - 2022-04-26
 
@@ -25,7 +45,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-728: Fix media gallery texts of featured image in artwork.
 
 ### Changed
-
 - TMS-754: Share links bigger
 - TMS-475: Bug fix for blog article grid item
 - TMS-447: Background-color selection for layouts
