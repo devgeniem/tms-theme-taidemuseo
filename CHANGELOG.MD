@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.5.0] - 2022-05-23
+
 ### Added
 
 - TMS-224: Add api image to single article template. #94
