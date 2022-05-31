@@ -59,6 +59,10 @@
 
 .modal--slider {
 
+    .modal-close-button {
+        top: $theme-spacing-twoandhalf !important;
+    }
+
     .modal-content {
 
         p a {
