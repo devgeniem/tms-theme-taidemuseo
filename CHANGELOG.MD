@@ -7,19 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Changed
+### Fixed
 
-- TMS-788: Align header logo with main navigation #98
-- TMS-447-2: Fallack fix for text color in home-grid-item and home-highlight
-- TMS-788: Change header logo alignment
-- TMS-758:
-  - Primary nav arrow icons
-  - Language nav dropdown styles
+- TMS-829: Fix width's of elements in header #105
+
+## [1.5.0] - 2022-05-23
 
 ### Added
 
-- TMS-796: Full image meta data for images inside accordion
-- TMS-224: Add api image to single article template.
+- TMS-224: Add api image to single article template. #94
+- TMS-796: Full image meta data for images inside accordion #99
+
+### Changed
+
+- TMS-794: Share links bigger #90
+- TMS-791: Remove key figures block description capitalize #89
+- TMS-788: Align header logo with main navigation #98
+- TMS-758:
+    - Primary nav arrow icons
+    - Language nav dropdown styles
 
 ## [1.4.0] - 2022-06-05
 
