@@ -24,7 +24,7 @@
                             {/SingleArtist.additional_information}
                         </div>
 
-                        <div class="column is-5-desktop is-offset-1-desktop">
+                        <div class="column is-4-desktop is-offset-2-desktop single-artist__image-wrapper">
                             {?content.image}
                                 <div class="entry__figure image">
                                     {@image id=content.image.id size="large" class="objectfit-image" /}
