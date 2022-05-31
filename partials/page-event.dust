@@ -13,17 +13,18 @@
                                 </h1>
 
                                 {?hero_image}
-                                    <div class="has-text-centered">
-                                        <img class="entry__hero-image mt-6 mr-auto ml-auto" src="{hero_image}" alt=""
-                                             aria-hidden="true"
-                                             tabindex="-1">
-                                    </div>
-
-                                    {?hero_image_credits}
-                                        <div class="has-text-right is-size-7">
-                                            {hero_image_credits|s}
+                                    <div class="is-flex is-flex-direction-column is-align-items-center">
+                                        <div>
+                                            <img class="entry__hero-image mt-6" src="{hero_image}" alt=""
+                                                aria-hidden="true"
+                                                tabindex="-1" />
+                                            {?hero_image_credits}
+                                                <div class="has-text-right is-size-7">
+                                                    {hero_image_credits|s}
+                                                </div>
+                                            {/hero_image_credits}
                                         </div>
-                                    {/hero_image_credits}
+                                    </div>
                                 {/hero_image}
 
                                 <div class="entry__hero-info section pt-6 pb-6 {template_classes.hero_info|s}">
