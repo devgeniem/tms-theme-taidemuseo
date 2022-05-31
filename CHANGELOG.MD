@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-829: Fix width's of elements in header
+- TMS-829: Fix width's of elements in header #105
 
 ## [1.5.0] - 2022-05-23
 
