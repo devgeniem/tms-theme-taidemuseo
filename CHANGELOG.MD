@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-848: Resize single artist image and adjust position
+- TMS-848: Resize single artist image and adjust position #107
 
 ## [1.5.0] - 2022-05-23
 
