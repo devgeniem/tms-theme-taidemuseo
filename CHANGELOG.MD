@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-793: Fix modal button position
+- TMS-793: Fix modal button position #106
 
 ## [1.5.0] - 2022-05-23
 
