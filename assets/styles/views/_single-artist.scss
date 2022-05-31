@@ -11,6 +11,12 @@
                 left: 0;
             }
         }
+
+        .entry__content--description {
+            @include from($desktop) {
+                min-height: 550px;
+            }
+        }
     }
 
     &__image-wrapper {
