@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
 ### Changed
 
 - TMS-795: Change event image credit position #108
@@ -16,6 +17,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-793: Fix modal button position, fix modal image size #106
 - TMS-829: Fix width's of elements in header #105
+
+### Added
+
+- TMS-849: Change terms
 
 ## [1.5.0] - 2022-05-23
 
