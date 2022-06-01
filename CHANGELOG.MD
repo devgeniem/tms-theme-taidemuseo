@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-849: Change terms
+- TMS-849: Change terms #109
 
 ## [1.5.0] - 2022-05-23
 
