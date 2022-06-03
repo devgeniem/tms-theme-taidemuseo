@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-795: Change event image credit position #108
+- TMS-848: Resize single artist image and adjust position #107
+
+### Fixed
+
+- TMS-793: Fix modal button position, fix modal image size #106
 
 ## [1.5.0] - 2022-05-23
 
