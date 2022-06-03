@@ -98,6 +98,10 @@ class ArtistGroup {
                 'title'        => 'Kuolinvuosi',
                 'instructions' => '',
             ],
+            'selection_year'             => [
+                'title'        => 'Valintavuosi',
+                'instructions' => '',
+            ],
             'short_description'      => [
                 'title'        => 'Lyhyt kuvaus',
                 'instructions' => '',
@@ -153,6 +157,13 @@ class ArtistGroup {
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['death_year']['instructions'] );
+
+        $selection_year_field = ( new Field\Number( $strings['selection_year']['title'] ) )
+            ->set_key( "${key}_selection_year" )
+            ->set_name( 'selection_year' )
+            ->redipress_include_search()
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['selection_year']['instructions'] );
 
         $short_description_field = ( new Field\Textarea( $strings['short_description']['title'] ) )
             ->set_key( "${key}_short_description" )

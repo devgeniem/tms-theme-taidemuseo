@@ -240,12 +240,12 @@ class PageArtist extends BaseModel {
                 'value' => 'desc',
             ],
             [
-                'label' => __( 'Oldest first', 'tms-theme-taidemuseo' ),
-                'value' => 'birth_date_asc',
+                'label' => __( 'Young artist of the year ascending', 'tms-theme-taidemuseo' ),
+                'value' => 'selection_year_asc',
             ],
             [
-                'label' => __( 'Youngest first', 'tms-theme-taidemuseo' ),
-                'value' => 'birth_date_desc',
+                'label' => __( 'Young artist of the year descending', 'tms-theme-taidemuseo' ),
+                'value' => 'selection_year_desc',
             ],
         ];
 
@@ -331,11 +331,8 @@ class PageArtist extends BaseModel {
             $item->permalink   = get_the_permalink( $item->ID );
             $additional_fields = get_fields( $item->ID );
 
-            if ( ! empty( $additional_fields['birth_year'] ) && ! empty( $additional_fields['death_year'] ) ) {
-                $item->years = $additional_fields['birth_year'] . ' - ' . $additional_fields['death_year'];
-            }
-            elseif ( ! empty( $additional_fields['birth_year'] ) ) {
-                $item->years = $additional_fields['birth_year'];
+            if ( ! empty( $additional_fields['selection_year'] ) ) {
+                $item->years = $additional_fields['selection_year'];
             }
 
             $item->fields = $additional_fields;

@@ -1,4 +1,4 @@
-{>"shared/base" /}
+>"shared/base" /}
 
 {<content}
     <main class="main-content" id="main-content">
@@ -9,6 +9,12 @@
                         <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
                             {@title /}
                         </h1>
+
+                        {?selection_year}
+                            <p>
+                                {selection_year|html}
+                            </p>
+                        {/selection_year}
                     </header>
 
                     <article class="entry columns is-desktop is-flex-wrap-wrap">
