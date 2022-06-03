@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Taidemuseo\n"
-"POT-Creation-Date: 2022-02-23 15:48+0200\n"
-"PO-Revision-Date: 2022-02-23 15:48+0200\n"
+"POT-Creation-Date: 2022-06-01 11:06+0300\n"
+"PO-Revision-Date: 2022-06-01 11:06+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -23,12 +23,12 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4821
+#: assets/dist/vendor.js:4630
 msgctxt "text direction"
 msgid "ltr"
 msgstr ""
 
-#: lib/PostType/Artist.php:56
+#: lib/PostType/Artist.php:56 lib/PostType/Artist.php:98
 msgctxt "theme CPT"
 msgid "Artists"
 msgstr "Taiteilijat"
@@ -38,7 +38,7 @@ msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr "Etusivu"
 
-#: lib/PostType/Artwork.php:56
+#: lib/PostType/Artwork.php:56 lib/PostType/Artwork.php:115
 msgctxt "theme CPT"
 msgid "Artwork"
 msgstr "Teokset"
@@ -99,7 +99,7 @@ msgstr "Vanhin ensin"
 msgid "Youngest first"
 msgstr "Nuorin ensin"
 
-#: models/page-artist.php:345 models/single-artwork.php:235
+#: models/page-artist.php:345 models/single-artwork.php:245
 msgid "View artist"
 msgstr "Näytä taiteilija"
 
@@ -125,71 +125,34 @@ msgstr "Hae teosta"
 
 #: models/single-artist.php:42
 msgid "Death year"
-msgstr "Kuolinvuosi"
+msgstr "Kuollut"
 
 #: models/single-artist.php:51
 msgid "Birth year"
-msgstr "Syntymävuosi"
+msgstr "Syntynyt"
 
-#: models/single-artwork.php:98
+#: models/single-artist.php:120
+msgid "Related art"
+msgstr "Taiteilijan teokset kokoelmissa"
+
+#: models/single-artwork.php:102
 msgctxt "theme-frontend"
 msgid "Location"
 msgstr "Sijainti"
 
-#: models/single-artwork.php:130
+#: models/single-artwork.php:134
 msgctxt "theme-frontend"
 msgid "Artists"
 msgstr "Taiteilijat"
 
-#: models/single-artwork.php:131
+#: models/single-artwork.php:135
 msgctxt "theme-frontend"
 msgid "Artist"
 msgstr "Taiteilija"
 
-#: models/single-artwork.php:149
+#: models/single-artwork.php:153
 msgid "Year of manufacture"
 msgstr "Valmistumisvuosi"
-
-#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
-#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
-msgid "Add Row"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
-msgid "Multisite Post Object"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
-msgid "Multisite Relationship"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
-msgid "Multisite taxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
-msgid "Multitaxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
-#, php-format
-msgctxt "No terms"
-msgid "No %s"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
-msgid "PHP"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
-msgid "Instructions"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
-msgid ""
-"This field can only be used with ACF Codifier. Doesn't do anything if "
-"defined in the admin side."
-msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "TMS Theme Taidemuseo"
