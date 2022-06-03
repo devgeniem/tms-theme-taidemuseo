@@ -23,6 +23,14 @@
         }
     }
 
+    &--slider {
+        .modal-close-button {
+            @include from($tablet) {
+                top: $theme-spacing-two;
+            }
+        }
+    }
+
     .slick-arrow {
         .icon {
             fill: $white !important; // sass-lint:disable-line no-important
