@@ -128,4 +128,11 @@ class SingleArtist extends BaseModel {
             ? wp_trim_words( $item_excerpt, $excerpt_length, '...' )
             : $item_excerpt;
     }
+
+    /**
+     * Get related art title
+     */
+    public function related_art() : string {
+        return __( 'Related art', 'tms-theme-taidemuseo' );
+    }
 }
