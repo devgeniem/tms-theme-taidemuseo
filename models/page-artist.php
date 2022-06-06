@@ -42,6 +42,30 @@ class PageArtist extends BaseModel {
     protected object $pagination;
 
     /**
+     * Hooks
+     *
+     * @return void
+     */
+    public static function hooks() {
+        add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
+    }
+
+    /**
+     * Add custom query vars to the list of ignored query vars list for RediPress.
+     *
+     * @param array $vars Ignored query vars.
+     *
+     * @return array
+     */
+    public static function set_ignored_query_vars(
+        array $vars
+    ) : array {
+        $vars[] = 'selection_year';
+
+        return $vars;
+    }
+
+    /**
      * Get search query var value
      *
      * @return mixed
