@@ -37,6 +37,7 @@ class SingleArtist extends BaseModel {
 
         return ! empty( $selection_year )
             ? sprintf(
+                /* translators: Year number */
                 __( 'The Young Artist of the Year %s', 'tms-theme-taidemuseo' ),
                 $selection_year
             )

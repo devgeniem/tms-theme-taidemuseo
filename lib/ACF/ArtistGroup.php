@@ -98,7 +98,7 @@ class ArtistGroup {
                 'title'        => 'Kuolinvuosi',
                 'instructions' => '',
             ],
-            'selection_year'             => [
+            'selection_year'         => [
                 'title'        => 'Valintavuosi',
                 'instructions' => '',
             ],
@@ -198,6 +198,7 @@ class ArtistGroup {
             $last_name_field,
             $birth_year_field,
             $death_year_field,
+            $selection_year_field,
             $short_description_field,
             $additional_info_repeater,
         ] );
