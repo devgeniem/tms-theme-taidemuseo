@@ -25,7 +25,7 @@
 
         <div class="mt-6 mt-8-desktop has-text-right">
             <a class="exhibition-item__arrow-link" href="{exhibition.permalink}" aria-hidden="true" tabindex="-1">
-                {>"ui/icon" icon="arrow-right" class="icon--large" /}
+                {>"ui/icon" icon="arrow-right" class="icon--large is-accent" /}
             </a>
         </div>
     </div>
