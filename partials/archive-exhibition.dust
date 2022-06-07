@@ -15,7 +15,7 @@
 
                 <div class="mt-5 mt-8-desktop">
                     {?results.summary}
-                        <p role="status">{results.summary|s}</p>
+                        <p role="status">{results.summary|html}</p>
                     {/results.summary}
 
                     <div

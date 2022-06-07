@@ -27,6 +27,10 @@ class SingleExhibition extends BaseModel {
         $single = Query::get_acf_post( get_queried_object_id() );
         $date   = self::get_date( $single->ID );
 
+        if ( $this->is_past( $single ) ) {
+            $single->image = null;
+        }
+
         if ( ! empty( $date ) ) {
             $single->date = $date;
         }
@@ -70,5 +74,21 @@ class SingleExhibition extends BaseModel {
         $datetime = DateTime::createFromFormat( 'Y-m-d', $string );
 
         return $datetime->format( 'j.n.Y' );
+    }
+
+    /**
+     * Is the items' end_date in the past?
+     *
+     * @param WP_Post $item Item object.
+     *
+     * @return bool
+     */
+    protected function is_past( $item ) {
+        $format = 'Ymd';
+        $today  = new DateTime( 'now' );
+
+        $end_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+
+        return $today > $end_date;
     }
 }

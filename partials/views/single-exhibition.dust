@@ -29,13 +29,13 @@
                                     <div class="column is-6 is-offset-3 has-text-centered keep-vertical-spacing">
                                         {?SingleExhibition.content.fields.title}
                                             <h2 class="h1 entry__title">
-                                                {SingleExhibition.content.fields.title|s}
+                                                {SingleExhibition.content.fields.title|html}
                                             </h2>
                                         {/SingleExhibition.content.fields.title}
 
                                         {?SingleExhibition.content.post_excerpt}
                                             <p class="has-text-lead">
-                                                {SingleExhibition.content.post_excerpt|s}
+                                                {SingleExhibition.content.post_excerpt|html}
                                             </p>
                                         {/SingleExhibition.content.post_excerpt}
                                     </div>
@@ -49,7 +49,7 @@
                                                 {>"ui/icon" icon="date" class="icon--xlarge" /}
 
                                                 <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-medium has-text-primary">
-                                                    {SingleExhibition.content.date|s}
+                                                    {SingleExhibition.content.date|html}
                                                 </p>
                                             </div>
                                         {/SingleExhibition.content.date}
@@ -59,7 +59,7 @@
                                                 {>"ui/icon" icon="location" class="icon--xlarge" /}
 
                                                 <p class="entry__meta-text mb-0 ml-3 ml-4-desktop ml-5-fullhd has-text-weight-medium has-text-primary is-uppercase">
-                                                    {SingleExhibition.content.fields.location|s}
+                                                    {SingleExhibition.content.fields.location|html}
                                                 </p>
                                             </div>
                                         {/SingleExhibition.content.fields.location}
