@@ -2,8 +2,8 @@
 
 namespace TMS\Theme\Taidemuseo;
 
+use ArchiveExhibition;
 use TMS\Theme\Base\Interfaces;
-use TMS\Theme\Taidemuseo\ThemeCustomizationController;
 
 /**
  * ThemeController
@@ -32,6 +32,10 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
             }
+        } );
+
+        add_action( 'init', function () {
+            ArchiveExhibition::hooks();
         } );
     }
 }

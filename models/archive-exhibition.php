@@ -264,8 +264,8 @@ class ArchiveExhibition extends BaseModel {
         $current_exhibitions  = array_filter( $this->results->all, [ $this, 'is_current' ] );
         $upcoming_exhibitions = $this->results->upcoming;
 
-        $past_exhibitions            = array_filter( $this->results->all, [ $this, 'is_past' ] );
-        $this->results->past         = $past_exhibitions;
+        $past_exhibitions    = array_filter( $this->results->all, [ $this, 'is_past' ] );
+        $this->results->past = $past_exhibitions;
 
         $results = $is_past_archive ? $past_exhibitions : $upcoming_exhibitions;
         $this->set_pagination_data( count( $results ), $per_page );
