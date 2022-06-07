@@ -83,24 +83,24 @@ class ExhibitionGroup {
      */
     protected function get_details_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab'           => 'Lisätiedot',
-            'start_date'    => [
+            'tab'         => 'Lisätiedot',
+            'start_date'  => [
                 'title'        => 'Alkupvm',
                 'instructions' => '',
             ],
-            'end_date'      => [
+            'end_date'    => [
                 'title'        => 'Loppupvm',
                 'instructions' => '',
             ],
-            'title'         => [
+            'title'       => [
                 'title'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'location'      => [
+            'location'    => [
                 'title'        => 'Sijainti',
                 'instructions' => '',
             ],
-            'is_upcoming'   => [
+            'is_upcoming' => [
                 'title'        => 'Tulossa',
                 'instructions' => '',
             ],
