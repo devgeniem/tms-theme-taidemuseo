@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [1.6.0] - 2022-06-03
-
 ### Added
+
+- TMS-860: Exhibition CPT & views
+
+## [1.6.0] - 2022-06-03
 
 - TMS-849: Change terms #109
 

@@ -1,0 +1,25 @@
+{?tabs}
+    <div class="columns pt-6 pb-6">
+        <div
+            class="post-type-archive-exhibition__tab column is-6 has-text-weight-semibold {?tabs.upcoming.is_active}is-active{/tabs.upcoming.is_active}">
+            <a class="post-type-archive-exhibition__tab-link"
+               href="{tabs.upcoming.link|s}">{tabs.upcoming.text|s}
+                <div class="post-type-archive-exhibition__item-count-container">
+                    <p
+                        class="post-type-archive-exhibition__item-count">{results.result_count|s}</p>
+                </div>
+            </a>
+        </div>
+
+        <div
+            class="post-type-archive-exhibition__tab column is-6 has-text-weight-semibold {?tabs.past.is_active}is-active{/tabs.past.is_active}">
+            <a class="post-type-archive-exhibition__tab-link" href="{tabs.past.link|s}">
+                {tabs.past.text|s}
+                <div class="post-type-archive-exhibition__item-count-container">
+                    <p
+                        class="post-type-archive-exhibition__item-count">{results.past_results_count|s}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+{/tabs}

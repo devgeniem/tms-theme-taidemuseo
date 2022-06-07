@@ -1,0 +1,43 @@
+{>"shared/base" /}
+
+{<content}
+    {#ArchiveExhibition}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                {>"shared/archive-view-title" /}
+
+                {>"shared/exhibition-archive-tabs"  /}
+
+                {?results.show_past}
+                    {>"shared/archive-exhibition-filters"  /}
+                {/results.show_past}
+
+
+                <div class="mt-5 mt-8-desktop">
+                    {?results.summary}
+                        <p role="status">{results.summary|s}</p>
+                    {/results.summary}
+
+                    <div
+                        class="archive-exhibition__results columns">
+                        <div class="column {^results.show_past}is-10-desktop is-offset-1-desktop{/results.show_past}">
+                            <div class="columns is-multiline is-variable is-tablet keep-vertical-spacing">
+                                {^results.show_past}
+                                    {#results.current_exhibitions}
+                                        {>"{results.partial}" exhibition=. /}
+                                    {/results.current_exhibitions}
+                                {/results.show_past}
+
+                                {#results.posts}
+                                    {>"{results.partial}" exhibition=. /}
+                                {/results.posts}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {>"shared/archive-pagination" /}
+            </div>
+        </main>
+    {/ArchiveExhibition}
+{/content}
