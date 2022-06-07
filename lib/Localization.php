@@ -2,6 +2,7 @@
 
 namespace TMS\Theme\Taidemuseo;
 
+use TMS\Theme\Taidemuseo\PostType\Exhibition;
 use TMS\Theme\Taidemuseo\Taxonomy\ArtistCategory;
 use TMS\Theme\Taidemuseo\Taxonomy\ArtworkLocation;
 use TMS\Theme\Taidemuseo\Taxonomy\ArtworkType;
@@ -62,6 +63,7 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
         $tax_types[ ArtistCategory::SLUG ]  = ArtistCategory::SLUG;
         $tax_types[ ArtworkLocation::SLUG ] = ArtworkLocation::SLUG;
         $tax_types[ ArtworkType::SLUG ]     = ArtworkType::SLUG;
+        $tax_types[ Exhibition::SLUG ]      = Exhibition::SLUG;
 
         return $tax_types;
     }
