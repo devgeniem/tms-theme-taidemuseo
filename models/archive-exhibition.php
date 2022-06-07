@@ -295,29 +295,31 @@ class ArchiveExhibition extends BaseModel {
         $choices = [];
         $items   = $this->results->past;
 
-        if ( ! empty( $items ) ) {
-            $selected_year = self::get_year_query_var();
+        if ( empty( $items ) ) {
+            return $choices;
+        }
 
-            $choices[] = [
-                'value'       => '',
-                'is_selected' => empty( $selected_year ) ? 'selected' : '',
-                'label'       => __( 'Filter by year', 'tms-theme-taidemuseo' ),
-            ];
+        $selected_year = self::get_year_query_var();
 
-            foreach ( $items as $exhibition ) {
-                $year = get_post_meta( $exhibition->ID, 'exhibition_year', true );
+        $choices[] = [
+            'value'       => '',
+            'is_selected' => empty( $selected_year ) ? 'selected' : '',
+            'label'       => __( 'Filter by year', 'tms-theme-taidemuseo' ),
+        ];
 
-                if ( in_array( $year, array_column( $choices, 'value' ), true ) ) {
-                    continue;
-                }
+        foreach ( $items as $exhibition ) {
+            $year = get_post_meta( $exhibition->ID, 'exhibition_year', true );
 
-                if ( ! empty( $year ) ) {
-                    $choices[] = [
-                        'value'       => $year,
-                        'label'       => $year,
-                        'is_selected' => $year === $selected_year ? 'selected' : '',
-                    ];
-                }
+            if ( in_array( $year, array_column( $choices, 'value' ), true ) ) {
+                continue;
+            }
+
+            if ( ! empty( $year ) ) {
+                $choices[] = [
+                    'value'       => $year,
+                    'label'       => $year,
+                    'is_selected' => $year === $selected_year ? 'selected' : '',
+                ];
             }
         }
 
