@@ -1,4 +1,4 @@
-<form action="{search.action|s}" method="get" role="search">
+<form action="{search.action|url}" method="get" role="search">
     <input id="archive" type="hidden" name="archive" value="">
 
     <div class="columns is-multiline">
@@ -9,14 +9,14 @@
                         <div class="column is-6-tablet is-flex">
                             <div class="filters--sort-by-container">
                                 <label for="exhibition-year" class="is-block h6 mb-1">
-                                    {strings.year_label|s}
+                                    {strings.year_label|html}
                                 </label>
 
                                 <select name="exhibition-year" id="exhibition-year"
                                         class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small has-border-1">
                                     {#years}
-                                        <option value="{value}" {is_selected|s}>
-                                            {label|s}
+                                        <option value="{value}" {is_selected|attr}>
+                                            {label|html}
                                         </option>
                                     {/years}
                                 </select>
@@ -28,19 +28,19 @@
                         <div class="is-flex-tablet is-justify-content-flex-end">
                             <div>
                                 <label for="filters-search" class="h6 is-block mb-1">
-                                    {strings.search.label|s}
+                                    {strings.search.label|html}
                                 </label>
 
                                 <div class="filters--search-container">
                                     <input id="filters-search"
                                            class="p-2 pt-3-desktop pb-3-desktop has-text-small has-border-1"
-                                           type="text" name="{search.input_search_name|s}"
-                                           value="{search.current_search|s}"
-                                           placeholder="{strings.search.input_placeholder|s}">
+                                           type="text" name="{search.input_search_name|html}"
+                                           value="{search.current_search|html}"
+                                           placeholder="{strings.search.input_placeholder|html}">
 
-                                    <button class="button is-secondary button--icon {class|s}"
+                                    <button class="button is-secondary button--icon {class|attr}"
                                             type="submit">
-                                        {strings.search.submit_value|s}
+                                        {strings.search.submit_value|html}
 
                                         {>"ui/icon" icon="search" class="icon--medium" /}
                                     </button>
