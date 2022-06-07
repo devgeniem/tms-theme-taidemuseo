@@ -1,0 +1,55 @@
+<form action="{search.action|url}" method="get" role="search">
+    <input id="archive" type="hidden" name="archive" value="">
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <div class="pb-4">
+                <div class="columns filters">
+                    {?years}
+                        <div class="column is-6-tablet is-flex">
+                            <div class="filters--sort-by-container">
+                                <label for="exhibition-year" class="is-block h6 mb-1">
+                                    {strings.year_label|html}
+                                </label>
+
+                                <select name="exhibition-year" id="exhibition-year"
+                                        class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-text-small has-border-1">
+                                    {#years}
+                                        <option value="{value}" {is_selected|attr}>
+                                            {label|html}
+                                        </option>
+                                    {/years}
+                                </select>
+                            </div>
+                        </div>
+                    {/years}
+
+                    <div class="column {?filters}is-6-tablet is-offset-2-fullhd is-4-fullhd{/filters}">
+                        <div class="is-flex-tablet is-justify-content-flex-end">
+                            <div>
+                                <label for="filters-search" class="h6 is-block mb-1">
+                                    {strings.search.label|html}
+                                </label>
+
+                                <div class="filters--search-container">
+                                    <input id="filters-search"
+                                           class="p-2 pt-3-desktop pb-3-desktop has-text-small has-border-1"
+                                           type="text" name="{search.input_search_name|html}"
+                                           value="{search.current_search|html}"
+                                           placeholder="{strings.search.input_placeholder|html}">
+
+                                    <button class="button is-secondary button--icon {class|attr}"
+                                            type="submit">
+                                        {strings.search.submit_value|html}
+
+                                        {>"ui/icon" icon="search" class="icon--medium" /}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+<div class="exhibition-item exhibition-item--simple column is-6 is-4-fullhd">
+    <div
+        class="inner pt-6 pr-4 pb-4 pl-4 pt-6-tablet pr-5-tablet pl-5-tablet p-7-fullhd keep-vertical-spacing has-border-1">
+        <h2 class="mt-4 mb-3 has-line-height-tight">
+            <a href="{exhibition.permalink}" class="has-text-primary">
+                {exhibition.post_title|html}
+            </a>
+        </h2>
+
+        {?exhibition.date}
+            <div class="is-flex is-align-items-center">
+                {>"ui/icon" icon="date" class="icon--large entry__meta-icon" /}
+
+                <p class="entry__meta-text has-text-primary has-text-small">
+                    {exhibition.date|html}
+                </p>
+            </div>
+        {/exhibition.date}
+
+        {?exhibition.post_excerpt}
+            <p class="entry__summary mb-0 has-text-primary has-text-small">
+                {exhibition.post_excerpt|html}
+            </p>
+        {/exhibition.post_excerpt}
+
+        <div class="mt-6 mt-8-desktop has-text-right">
+            <a class="exhibition-item__arrow-link" href="{exhibition.permalink}" aria-hidden="true" tabindex="-1">
+                {>"ui/icon" icon="arrow-right" class="icon--large is-accent" /}
+            </a>
+        </div>
+    </div>
+</div>

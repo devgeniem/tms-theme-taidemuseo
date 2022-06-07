@@ -1,0 +1,42 @@
+.exhibition-item {
+    &__arrow-link {
+        color: $color-ui-border-light;
+    }
+
+    &__image {
+        position: relative;
+        padding-top: 68%;
+
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__image-badge {
+        display: flex;
+        position: absolute;
+        top: $theme-spacing-three-quarters;
+        left: $theme-spacing-three-quarters;
+        align-items: center;
+        justify-content: center;
+        min-width: 6rem;
+        min-height: 6rem;
+        border-radius: 50%;
+        background-color: $color-taide-harmaa;
+
+        @include from($desktop) {
+            top: $theme-spacing;
+            left: $theme-spacing;
+        }
+    }
+
+    &__badge-text {
+        display: inline-block;
+        padding: $theme-spacing-half;
+        font-weight: $weight-bold;
+    }
+}

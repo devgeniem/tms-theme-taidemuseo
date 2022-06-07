@@ -1,0 +1,18 @@
+.single-exhibition {
+    .page__hero {
+        @media (min-width: $fullhd) and (max-width: 2200px) {
+            height: unset;
+            min-height: 41.666vw;
+        }
+    }
+
+    .entry {
+        &__details {
+            gap: $theme-spacing-oneandhalf;
+        }
+
+        &__meta-text {
+            margin-top: .15rem !important;
+        }
+    }
+}
