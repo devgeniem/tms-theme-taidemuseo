@@ -37,7 +37,7 @@ class SingleArtist extends BaseModel {
 
         return ! empty( $selection_year )
             ? sprintf(
-                /* translators: Year number */
+            /* translators: Year number */
                 __( 'The Young Artist of the Year %s', 'tms-theme-taidemuseo' ),
                 $selection_year
             )
@@ -51,6 +51,10 @@ class SingleArtist extends BaseModel {
      */
     public function additional_information() {
         $additional_information = get_field( 'additional_information' );
+
+        if ( empty( $additional_information ) ) {
+            $additional_information = [];
+        }
 
         $death_year = get_field( 'death_year' );
 
