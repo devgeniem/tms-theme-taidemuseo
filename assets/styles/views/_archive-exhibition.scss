@@ -1,0 +1,88 @@
+.post-type-archive-exhibition {
+    &__tab-link {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: $theme-spacing-three-quarters;
+        margin-bottom: $theme-spacing-three-quarters;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+
+        @include from($desktop) {
+            display: inline-block;
+            text-align: center;
+        }
+    }
+
+    &__tab {
+        border-bottom: .0625rem solid $color-ui-border-light;
+
+        @include from($desktop) {
+            text-align: center;
+        }
+
+        &.is-active {
+            border-bottom: .25rem solid $primary;
+
+            .post-type-archive-exhibition__item-count-container {
+                background-color: $primary;
+                color: $primary-invert;
+            }
+        }
+
+        &-link {
+            color: $primary;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__results {
+        &--past {
+            @include from($desktop) {
+                max-width: 66.6rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__item-count-container {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-left: $theme-spacing;
+        padding: $theme-spacing-half;
+        border: 1px solid $color-ui-border-light;
+        border-radius: 50%;
+        font-weight: $weight-normal !important;
+        text-align: center;
+        text-decoration: none !important;
+
+        @include from($desktop) {
+            position: absolute;
+            top: -.5rem;
+            right: -4.5rem;
+        }
+    }
+
+    &__item-count {
+        margin-top: -.4rem;
+
+        @include from($desktop) {
+            margin-top: -.5rem;
+        }
+    }
+
+    .entry {
+        &__meta-text {
+            margin: .0875rem 0 0 $theme-spacing-three-quarters;
+        }
+
+        &__meta-icon {
+            fill: #78726D !important;
+        }
+    }
+}

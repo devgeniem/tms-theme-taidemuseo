@@ -1,0 +1,54 @@
+<div class="exhibition-item column is-12 mb-4 mb-7-desktop">
+    <div class="columns is-tablet is-variable is-4-desktop">
+        <div class="column is-6">
+            {?exhibition.image}
+                <div class="exhibition-item__image image">
+                    {@image id=exhibition.image size="large" class="objectfit-image" /}
+
+                    {?exhibition.fields.is_upcoming}
+                        <div class="exhibition-item__image-badge" aria-hidden="true">
+                            <span class="exhibition-item__badge-text has-text-small">
+                                {strings.upcoming_badge|html}
+                            </span>
+                        </div>
+                    {/exhibition.fields.is_upcoming}
+                </div>
+            {/exhibition.image}
+        </div>
+
+        <div class="column is-6">
+            <div class="inner is-flex is-align-items-center has-height-100">
+                <div
+                    class="inner keep-vertical-spacing">
+                    <h2 class="h3 mt-4 mb-3 has-line-height-tight">
+                        <a href="{exhibition.permalink|url}" class="has-text-primary">
+                            {exhibition.post_title|html}
+                        </a>
+
+                        {?exhibition.fields.is_upcoming}
+                            <span class="is-sr-only">
+                                {strings.upcoming_badge|html}
+                            </span>
+                        {/exhibition.fields.is_upcoming}
+                    </h2>
+
+                    {?exhibition.date}
+                        <div class="is-flex is-align-items-center mt-3 mb-3">
+                            {>"ui/icon" icon="date" class="icon--large entry__meta-icon" /}
+
+                            <p class="entry__meta-text has-text-primary has-text-small">
+                                {exhibition.date|html}
+                            </p>
+                        </div>
+                    {/exhibition.date}
+
+                    {?exhibition.post_excerpt}
+                        <p class="entry__summary mt-3 mb-0 has-text-primary has-text-small">
+                            {exhibition.post_excerpt|kses}
+                        </p>
+                    {/exhibition.post_excerpt}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
