@@ -264,15 +264,16 @@ class ArchiveExhibition extends BaseModel {
         $current_exhibitions  = array_filter( $this->results->all, [ $this, 'is_current' ] );
         $upcoming_exhibitions = $this->results->upcoming;
 
-        $past_exhibitions    = array_filter( $this->results->all, [ $this, 'is_past' ] );
-        $this->results->past = $past_exhibitions;
+        $unfiltered_past_exhibitions = array_filter( $this->results->all, [ $this, 'is_past' ] );
+        $past_exhibitions            = $wp_query->posts;
+        $this->results->past         = $past_exhibitions;
 
         $results = $is_past_archive ? $past_exhibitions : $upcoming_exhibitions;
         $this->set_pagination_data( count( $results ), $per_page );
 
         return [
             'result_count'        => count( $upcoming_exhibitions ) + count( $current_exhibitions ),
-            'past_results_count'  => count( $past_exhibitions ),
+            'past_results_count'  => count( $unfiltered_past_exhibitions ),
             'show_past'           => $is_past_archive,
             'current_exhibitions' => $this->format_posts( $current_exhibitions ),
             'posts'               => $this->format_posts( $results ),
@@ -336,8 +337,10 @@ class ArchiveExhibition extends BaseModel {
     protected function is_past( $item ) {
         $format = 'Ymd';
         $today  = new DateTime( 'now' );
+        $today->setTime( '0', '0' );
 
         $end_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+        $end_date->setTime( '23', '59' );
 
         return $today > $end_date;
     }
@@ -352,9 +355,13 @@ class ArchiveExhibition extends BaseModel {
     protected function is_current( $item ) {
         $format = 'Ymd';
         $today  = new DateTime( 'now' );
+        $today->setTime( '0', '0' );
 
         $start_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'start_date', true ) );
-        $end_date   = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+        $start_date->setTime( '0', '0' );
+
+        $end_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+        $end_date->setTime( '23', '59' );
 
         return $today >= $start_date && $today <= $end_date;
     }
