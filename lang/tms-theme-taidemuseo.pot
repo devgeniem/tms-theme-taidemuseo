@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Taidemuseo\n"
-"POT-Creation-Date: 2022-06-07 11:54+0300\n"
+"POT-Creation-Date: 2022-06-14 11:56+0300\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -62,12 +62,12 @@ msgstr ""
 msgid "Search from archive"
 msgstr ""
 
-#: models/archive-exhibition.php:143 models/page-artist.php:143
+#: models/archive-exhibition.php:143 models/page-artist.php:167
 #: models/page-artwork.php:65
 msgid "Search"
 msgstr ""
 
-#: models/archive-exhibition.php:146 models/page-artist.php:149
+#: models/archive-exhibition.php:146 models/page-artist.php:173
 #: models/page-artwork.php:71
 msgid "No results"
 msgstr ""
@@ -88,11 +88,11 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: models/archive-exhibition.php:304
+#: models/archive-exhibition.php:307
 msgid "Filter by year"
 msgstr ""
 
-#: models/archive-exhibition.php:443 models/page-artist.php:385
+#: models/archive-exhibition.php:445 models/page-artist.php:406
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -100,7 +100,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/archive-exhibition.php:457 models/page-artist.php:399
+#: models/archive-exhibition.php:459 models/page-artist.php:420
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"
@@ -108,51 +108,51 @@ msgid_plural "%1$1s results found"
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-artist.php:142
+#: models/page-artist.php:166
 msgid "Search for artist"
 msgstr ""
 
-#: models/page-artist.php:144 models/page-artwork.php:66
+#: models/page-artist.php:168 models/page-artwork.php:66
 msgid "Search query"
 msgstr ""
 
-#: models/page-artist.php:147 models/page-artwork.php:69
+#: models/page-artist.php:171 models/page-artwork.php:69
 msgid "Show All"
 msgstr ""
 
-#: models/page-artist.php:150 models/page-artwork.php:72
+#: models/page-artist.php:174 models/page-artwork.php:72
 msgid "Filter"
 msgstr ""
 
-#: models/page-artist.php:151 models/page-artwork.php:73
+#: models/page-artist.php:175 models/page-artwork.php:73
 msgid "Sort"
 msgstr ""
 
-#: models/page-artist.php:152 models/page-artwork.php:74
+#: models/page-artist.php:176 models/page-artwork.php:74
 msgid "Categories"
 msgstr ""
 
-#: models/page-artist.php:216 models/page-artwork.php:141
+#: models/page-artist.php:240 models/page-artwork.php:141
 msgid "All"
 msgstr ""
 
-#: models/page-artist.php:235
+#: models/page-artist.php:259
 msgid "Name"
 msgstr ""
 
-#: models/page-artist.php:239
+#: models/page-artist.php:263
 msgid "Name, descending"
 msgstr ""
 
-#: models/page-artist.php:243
-msgid "Oldest first"
+#: models/page-artist.php:267
+msgid "Young artist of the year ascending"
 msgstr ""
 
-#: models/page-artist.php:247
-msgid "Youngest first"
+#: models/page-artist.php:271
+msgid "Young artist of the year descending"
 msgstr ""
 
-#: models/page-artist.php:345 models/single-artwork.php:245
+#: models/page-artist.php:366 models/single-artwork.php:245
 msgid "View artist"
 msgstr ""
 
@@ -160,15 +160,21 @@ msgstr ""
 msgid "Search for artwork"
 msgstr ""
 
-#: models/single-artist.php:42
+#. translators: Year number
+#: models/single-artist.php:41
+#, php-format
+msgid "The Young Artist of the Year %s"
+msgstr ""
+
+#: models/single-artist.php:63
 msgid "Death year"
 msgstr ""
 
-#: models/single-artist.php:51
+#: models/single-artist.php:72
 msgid "Birth year"
 msgstr ""
 
-#: models/single-artist.php:120
+#: models/single-artist.php:141
 msgid "Related art"
 msgstr ""
 
