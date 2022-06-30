@@ -294,7 +294,7 @@ class ArchiveExhibition extends BaseModel {
         }
 
         $choices = [];
-        $items   = $this->results->past;
+        $items   = $this->results->all;
 
         if ( empty( $items ) ) {
             return $choices;
