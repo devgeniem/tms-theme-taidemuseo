@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - TMS-869: Fix issue with date filters when end_date is today #119
+- TMS-853: Fix artist table alignment #124
 
 ## [1.8.0] - 2022-06-21
 
