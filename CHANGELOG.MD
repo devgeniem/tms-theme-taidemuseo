@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- TMS-890: Add exhibition caps
 - TMS-869: Fix issue with date filters when end_date is today #119
 
 ## [1.8.0] - 2022-06-21
