@@ -104,3 +104,8 @@ $duet-color-border: $color-vaalean-harmaa;
 
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";
+
+.objecfit-image {
+    object-fit: contain;
+    height: auto !important;
+}
