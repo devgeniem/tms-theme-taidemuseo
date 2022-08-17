@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS_871: Prevent vertical images from cropping #126
 - TMS-869: Fix issue with date filters when end_date is today #119
+- TMS-853: Fix artist table alignment #124
 
 ## [1.8.0] - 2022-06-21
 

@@ -1,12 +1,12 @@
 .info-row {
     &--title {
         color: $black;
-        font-size: 1.1em;
         letter-spacing: .06rem;
+        line-height: 1.75;
     }
 
     &--text {
         color: $black;
-        line-height: 175%;
+        line-height: 1.75;
     }
 }
