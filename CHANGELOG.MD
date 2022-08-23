@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.1] - 2022-08-23
+
 ### Fixed
 
+- TMS-894: Fix composer
 - TMS-890: Add exhibition caps #127
 - TMS-871: Prevent vertical images from cropping #126
 - TMS-869: Fix issue with date filters when end_date is today #119
