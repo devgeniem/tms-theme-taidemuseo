@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Changed
-- TMS-899: change artist translation.
+
+- TMS-899: change artist translation. #130
 
 ## [1.8.1] - 2022-08-23
 
