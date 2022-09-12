@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-897: Add support for video width option.
+
 ## [1.8.2] - 2022-09-07
 
 ### Changed
