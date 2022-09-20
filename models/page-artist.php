@@ -126,11 +126,11 @@ class PageArtist extends BaseModel {
         $order = $orderby_query_var === 'selection_year_asc' ? 'ASC' : 'DESC';
 
         $args['meta_query'] = [
-            'relation'          => 'AND',
+            'relation'              => 'AND',
             'selection_year_clause' => [
                 'key' => 'selection_year',
             ],
-            'last_name_clause'  => [
+            'last_name_clause'      => [
                 'key' => 'last_name',
             ],
         ];

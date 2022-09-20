@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Taidemuseo\n"
 "POT-Creation-Date: 2022-06-14 11:56+0300\n"
-"PO-Revision-Date: 2022-06-14 12:14+0300\n"
+"PO-Revision-Date: 2022-09-02 10:05+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -164,7 +164,7 @@ msgstr "Hae teosta"
 #: models/single-artist.php:41
 #, php-format
 msgid "The Young Artist of the Year %s"
-msgstr "Vuoden nuori artisti %s"
+msgstr "Vuoden nuori taiteilija %s"
 
 #: models/single-artist.php:63
 msgid "Death year"
