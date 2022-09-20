@@ -1,14 +1,27 @@
 {?highlight}
     <div class="highlight-article columns is-desktop is-gapless">
-        <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">          
-            <div class="highlight-article__image is-absolute-desktop has-top-0-desktop has-right-0-desktop has-bottom-0-desktop has-left-0-desktop has-background-cover" {@inlinebg id=highlight.featured_image size="large" /}>
-                    <a href="{highlight.permalink}" aria-hidden="true" tabindex="-1" class="is-block has-height-100 has-width-100">
-                    <div class="image is-16by9 is-hidden-desktop">
-                        {@image id=highlight.featured_image size="fullhd" class="objecfit-image" /}
-                    </div>
-                </a>
+        {?featured_image}
+            <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">          
+                <div class="highlight-article__image is-absolute-desktop has-top-0-desktop has-right-0-desktop has-bottom-0-desktop has-left-0-desktop has-background-cover" {@inlinebg id=highlight.featured_image size="large" /}>
+                        <a href="{highlight.permalink}" aria-hidden="true" tabindex="-1" class="is-block has-height-100 has-width-100">
+                        <div class="image is-16by9 is-hidden-desktop">
+                            {@image id=highlight.featured_image size="fullhd" class="objecfit-image" /}
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
+        {/featured_image}
+        {?api_image_url}
+            <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">          
+                <div class="highlight-article__image is-absolute-desktop has-top-0-desktop has-right-0-desktop has-bottom-0-desktop has-left-0-desktop">
+                        <a href="{highlight.permalink}" aria-hidden="true" tabindex="-1" class="is-block has-height-100 has-width-100">
+                        <div class="image is-16by9">
+                            <img class="objectfit-image is-block" src="{api_image_url|url}" loading="lazy"/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {/api_image_url}
 
         <div class="column is-6-desktop is-5-widescreen">
             <div
