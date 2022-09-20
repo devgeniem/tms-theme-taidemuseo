@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
+### Changed
+
+- TMS-897: Add support for video width option.
+
+## [1.8.2] - 2022-09-07
+
+### Changed
+
+- TMS-899: change artist translation. #130
+
 ## [1.8.1] - 2022-08-23
 
 ### Fixed
