@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+## [1.8.1] - 2022-08-23
+
+### Fixed
+
+- TMS-894: Fix composer
 - TMS-890: Add exhibition caps #127
 - TMS-871: Prevent vertical images from cropping #126
 
