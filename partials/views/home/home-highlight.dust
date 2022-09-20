@@ -15,7 +15,7 @@
             <div class="highlight-article__image-container column is-6-desktop is-7-widescreen is-relative">          
                 <div class="highlight-article__image is-absolute-desktop has-top-0-desktop has-right-0-desktop has-bottom-0-desktop has-left-0-desktop">
                         <a href="{highlight.permalink}" aria-hidden="true" tabindex="-1" class="is-block has-height-100 has-width-100">
-                        <div class="image is-16by9 is-hidden-desktop">
+                        <div class="image is-16by9">
                             <img class="objectfit-image is-block" src="{api_image_url|url}" loading="lazy"/>
                         </div>
                     </a>
