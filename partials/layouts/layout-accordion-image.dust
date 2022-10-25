@@ -1,7 +1,11 @@
 {?image}
     <div class="image mt-4 mt-8-tablet {^caption}mb-4 mb-8-tablet{/caption}">
-        {@image id=image size="large" class="objectfit-image" /}
+        {@image id=image size="large" /}
     </div>
 
-    {>"ui/image/image-block__meta" /}
+    {?caption}
+        <div class="image-caption mb-4 mb-8-tablet">
+            {caption|s}
+        </div>
+    {/caption}
 {/image}

@@ -33,7 +33,7 @@
                         <div class="column is-4-desktop is-offset-2-desktop single-artist__image-wrapper">
                             {?content.image}
                                 <div class="entry__figure image">
-                                    {@image id=content.image.id size="large" class="objectfit-image" /}
+                                    {@image id=content.image.id size="large" /}
                                 </div>
                             {/content.image}
 

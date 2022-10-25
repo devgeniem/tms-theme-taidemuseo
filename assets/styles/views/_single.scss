@@ -9,6 +9,13 @@
                 justify-content: flex-start !important;
             }
         }
+
+        &__figure {
+            img {
+                width: auto;
+                max-height: $image-max-height;
+            }
+        }
     }
 
     .related-posts {
