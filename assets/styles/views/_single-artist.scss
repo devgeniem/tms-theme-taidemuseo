@@ -1,17 +1,5 @@
 .single-artist {
     article {
-        .entry__figure {
-            padding-top: 105% !important;
-
-            img {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-            }
-        }
-
         .entry__content--description {
             @include from($desktop) {
                 min-height: 550px;

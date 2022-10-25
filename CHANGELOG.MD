@@ -9,11 +9,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- TMS-818: Fix images.
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
 ### Changed
 
 - TMS-897: Add support for video width option.
+
+## [1.8.2] - 2022-09-07
+
+
+## [1.8.5] - 2022-10-17
+
+### Fixed
+
+- PIEN-7726: Fix showing images in home page highlight.
+
+## [1.8.4] - 2022-09-28
+
+### Deleted
+
+- PIEN-7660: Image ratio in accordion block.
+
+## [1.8.3] - 2022-09-20
+
+### Fixed
+
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
 ## [1.8.2] - 2022-09-07
 
