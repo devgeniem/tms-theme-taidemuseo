@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.6] - 2022-02-11
+
 ### Changed
 
-- TMS-818: Fix images.
+- TMS-818: Fix images. #137
 
 ## [1.8.5] - 2022-10-17
 
