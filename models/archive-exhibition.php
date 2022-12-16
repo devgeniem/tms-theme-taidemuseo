@@ -79,14 +79,15 @@ class ArchiveExhibition extends BaseModel {
                 'posts_per_page' => self::ONGOING_ITEMS_PER_PAGE,
                 'post_status'    => 'publish',
                 'meta_query'     => [
-                    'relation'   => 'AND', [
-                        'start_date'  => [
-                            'key'     => 'start_date',
+                    'relation' => 'AND',
+                    [
+                        'start_date' => [
+                            'key' => 'start_date',
                         ],
-                        'is_main'     => [
-                            'key'     => 'main_exhibition',
-                        ]
-                    ]
+                        'is_main' => [
+                            'key' => 'main_exhibition',
+                        ],
+                    ],
                 ],
                 'orderby'        => [ 'start_date' => 'ASC', 'is_main' => 'DESC', 'title' => 'ASC' ],
             ];
@@ -298,8 +299,8 @@ class ArchiveExhibition extends BaseModel {
 
         $is_past_archive     = $this->is_past_archive();
         $is_upcoming_archive = $this->is_upcoming_archive();
-        $is_ongoing_archive  = (! $is_past_archive && ! $is_upcoming_archive);
-        $per_page            = ($is_past_archive) ? self::PAST_ITEMS_PER_PAGE : (($is_upcoming_archive)  ? self::UPCOMING_ITEMS_PER_PAGE : self::ONGOING_ITEMS_PER_PAGE);
+        $is_ongoing_archive  = ! $is_past_archive && ! $is_upcoming_archive;
+        $per_page            = ( $is_past_archive ) ? self::PAST_ITEMS_PER_PAGE : ( ( $is_upcoming_archive ) ? self::UPCOMING_ITEMS_PER_PAGE : self::ONGOING_ITEMS_PER_PAGE );
 
         $current_exhibitions  = array_filter( $this->results->all, [ $this, 'is_current' ] );
         $upcoming_exhibitions = $this->results->upcoming;

@@ -183,7 +183,7 @@ class ExhibitionGroup {
             ->set_key( "${key}_location" )
             ->set_name( 'location' )
             ->set_instructions( $strings['location']['instructions'] );
-        
+
         $logo_wall_header = ( new Field\Text( $strings['logo_wall_header']['title'] ) )
             ->set_key( "${key}_logo_wall_header" )
             ->set_name( 'logo_wall_header' )
