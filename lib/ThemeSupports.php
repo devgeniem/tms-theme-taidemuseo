@@ -39,6 +39,7 @@ class ThemeSupports implements Controller {
         $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
         $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
         $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
+        $vars[] = ArchiveExhibition::UPCOMING_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
         $vars[] = PageArtist::FILTER_QUERY_VAR;
