@@ -29,9 +29,19 @@ class ArchiveExhibition extends BaseModel {
     const PAST_QUERY_VAR = 'archive';
 
     /**
+     * Artist category filter name.
+     */
+    const UPCOMING_QUERY_VAR = 'upcoming';
+
+    /**
      * Number of past items to show per page.
      */
     const PAST_ITEMS_PER_PAGE = '9';
+
+    /**
+     * Number of ongoing items to show per page.
+     */
+    const ONGOING_ITEMS_PER_PAGE = '100';
 
     /**
      * Number of upcoming items to show per page.
@@ -66,10 +76,19 @@ class ArchiveExhibition extends BaseModel {
 
             $args = [
                 'post_type'      => Exhibition::SLUG,
-                'posts_per_page' => self::UPCOMING_ITEMS_PER_PAGE,
+                'posts_per_page' => self::ONGOING_ITEMS_PER_PAGE,
                 'post_status'    => 'publish',
-                'orderby'        => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
-                'meta_key'       => 'start_date',
+                'meta_query'     => [
+                    'relation'   => 'AND', [
+                        'start_date'  => [
+                            'key'     => 'start_date',
+                        ],
+                        'is_main'     => [
+                            'key'     => 'main_exhibition',
+                        ]
+                    ]
+                ],
+                'orderby'        => [ 'start_date' => 'ASC', 'is_main' => 'DESC', 'title' => 'ASC' ],
             ];
 
             $query = new WP_Query( $args );
@@ -120,6 +139,15 @@ class ArchiveExhibition extends BaseModel {
      */
     public function is_past_archive() : bool {
         return ! is_null( get_query_var( self::PAST_QUERY_VAR, null ) );
+    }
+
+    /**
+     * Get current tab query var value
+     *
+     * @return bool
+     */
+    public function is_upcoming_archive() : bool {
+        return ! is_null( get_query_var( self::UPCOMING_QUERY_VAR, null ) );
     }
 
     /**
@@ -198,7 +226,7 @@ class ArchiveExhibition extends BaseModel {
             }
         }
 
-        $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'title' => 'ASC' ] );
+        $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'main_exhibition', 'title' => 'ASC' ] );
         $wp_query->set( 'meta_key', 'start_date' );
         $wp_query->set( 'posts_per_page', $posts_per_page );
     }
@@ -229,14 +257,24 @@ class ArchiveExhibition extends BaseModel {
      * @return string[]
      */
     public function tabs() : array {
-        $base_url        = get_post_type_archive_link( Exhibition::SLUG );
-        $past_tab_active = self::is_past_archive();
+        $base_url            = get_post_type_archive_link( Exhibition::SLUG );
+        $past_tab_active     = self::is_past_archive();
+        $upcoming_tab_active = self::is_upcoming_archive();
 
         return [
             'upcoming' => [
+                'text'      => __( 'Upcoming exhibitions', 'tms-theme-taidemuseo' ),
+                'link'      => add_query_arg(
+                    self::UPCOMING_QUERY_VAR,
+                    '',
+                    $base_url
+                ),
+                'is_active' => $upcoming_tab_active,
+            ],
+            'ongoing' => [
                 'text'      => __( 'Current exhibitions', 'tms-theme-taidemuseo' ),
                 'link'      => $base_url,
-                'is_active' => ! $past_tab_active,
+                'is_active' => ! $past_tab_active && ! $upcoming_tab_active,
             ],
             'past'     => [
                 'text'      => __( 'Archives', 'tms-theme-taidemuseo' ),
@@ -258,8 +296,10 @@ class ArchiveExhibition extends BaseModel {
     public function results() {
         global $wp_query;
 
-        $is_past_archive = $this->is_past_archive();
-        $per_page        = $is_past_archive ? self::PAST_ITEMS_PER_PAGE : self::UPCOMING_ITEMS_PER_PAGE;
+        $is_past_archive     = $this->is_past_archive();
+        $is_upcoming_archive = $this->is_upcoming_archive();
+        $is_ongoing_archive  = (! $is_past_archive && ! $is_upcoming_archive);
+        $per_page            = ($is_past_archive) ? self::PAST_ITEMS_PER_PAGE : (($is_upcoming_archive)  ? self::UPCOMING_ITEMS_PER_PAGE : self::ONGOING_ITEMS_PER_PAGE);
 
         $current_exhibitions  = array_filter( $this->results->all, [ $this, 'is_current' ] );
         $upcoming_exhibitions = $this->results->upcoming;
@@ -272,14 +312,18 @@ class ArchiveExhibition extends BaseModel {
         $this->set_pagination_data( count( $results ), $per_page );
 
         return [
-            'result_count'        => count( $upcoming_exhibitions ) + count( $current_exhibitions ),
-            'past_results_count'  => count( $unfiltered_past_exhibitions ),
-            'show_past'           => $is_past_archive,
-            'current_exhibitions' => $this->format_posts( $current_exhibitions ),
-            'posts'               => $this->format_posts( $results ),
-            'summary'             => $this->results_summary( count( $results ) ),
-            'have_posts'          => ! empty( $results ) || ! empty( $current_exhibitions ),
-            'partial'             => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
+            'result_count'           => count( $current_exhibitions ),
+            'past_results_count'     => count( $unfiltered_past_exhibitions ),
+            'upcoming_results_count' => count( $upcoming_exhibitions ),
+            'show_past'              => $is_past_archive,
+            'show_ongoing'           => $is_ongoing_archive,
+            'show_upcoming'          => $is_upcoming_archive,
+            'current_exhibitions'    => $this->format_posts( $current_exhibitions ),
+            'upcoming_exhibitions'   => $this->format_posts( $upcoming_exhibitions ),
+            'posts'                  => $this->format_posts( $results ),
+            'summary'                => $this->results_summary( count( $results ) ),
+            'have_posts'             => ! empty( $results ) || ! empty( $current_exhibitions ),
+            'partial'                => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
         ];
     }
 
