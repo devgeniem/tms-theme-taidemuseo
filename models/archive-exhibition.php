@@ -383,8 +383,12 @@ class ArchiveExhibition extends BaseModel {
         for ( $i = 0; $i < $length; $i++ ) {
             // Check if the main exhibition true/false field is checked & the meta-value exists
             if ( ! empty( $items[ $i ]->main_exhibition ) && $items[ $i ]->main_exhibition === '1' ) {
+                // Get main exhibitions original position for buggy situations
+                $items[ $i ]->original_position = $i;
+
                 // Make an array for the main exhibitions
                 $main_exhibitions[] = $items[ $i ];
+
                 // Remove the main exhibition from the original $items array
                 unset( $items[ $i ] );
             }
@@ -404,6 +408,10 @@ class ArchiveExhibition extends BaseModel {
                     $main->position = $i;
                     // Break the loop when a match is found
                     break;
+                }
+                else {
+                    // Set original position for the main exhibition if there are no matches
+                    $main->position = $main->original_position;
                 }
             }
         }
