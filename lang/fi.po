@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Taidemuseo\n"
-"POT-Creation-Date: 2022-12-14 15:31+0200\n"
-"PO-Revision-Date: 2022-12-14 15:31+0200\n"
+"POT-Creation-Date: 2022-12-22 14:34+0200\n"
+"PO-Revision-Date: 2022-12-22 14:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -53,45 +53,45 @@ msgstr "Näyttelyt"
 msgid "Send Comment"
 msgstr ""
 
-#: models/archive-exhibition.php:164 models/archive-exhibition.php:166
+#: models/archive-exhibition.php:161 models/archive-exhibition.php:163
 msgid "Search from archive"
 msgstr "Hae arkistosta"
 
-#: models/archive-exhibition.php:165 models/page-artist.php:167
+#: models/archive-exhibition.php:162 models/page-artist.php:167
 #: models/page-artwork.php:65
 msgid "Search"
 msgstr "Hae"
 
-#: models/archive-exhibition.php:168 models/page-artist.php:173
+#: models/archive-exhibition.php:165 models/page-artist.php:173
 #: models/page-artwork.php:71
 msgid "No results"
 msgstr "Ei hakutuloksia"
 
-#: models/archive-exhibition.php:169
+#: models/archive-exhibition.php:166
 msgid "Year"
 msgstr "Vuosi"
 
-#: models/archive-exhibition.php:170
+#: models/archive-exhibition.php:167
 msgid "Upcoming"
 msgstr "Tulossa"
 
-#: models/archive-exhibition.php:260
+#: models/archive-exhibition.php:257
 msgid "Upcoming exhibitions"
 msgstr "Tulevat näyttelyt"
 
-#: models/archive-exhibition.php:269
+#: models/archive-exhibition.php:266
 msgid "Current exhibitions"
 msgstr "Näyttelyt nyt"
 
-#: models/archive-exhibition.php:274
-msgid "Archives"
-msgstr "Arkisto"
+#: models/archive-exhibition.php:271
+msgid "Past exhibitions"
+msgstr "Menneet näyttelyt"
 
-#: models/archive-exhibition.php:350
+#: models/archive-exhibition.php:343
 msgid "Filter by year"
 msgstr "Rajaa"
 
-#: models/archive-exhibition.php:507 models/page-artist.php:406
+#: models/archive-exhibition.php:562 models/page-artist.php:406
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -99,7 +99,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
-#: models/archive-exhibition.php:521 models/page-artist.php:420
+#: models/archive-exhibition.php:576 models/page-artist.php:420
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"
@@ -151,7 +151,7 @@ msgstr "Valintavuoden mukaan"
 msgid "Young artist of the year descending"
 msgstr "Valintavuoden mukaan, laskeva"
 
-#: models/page-artist.php:366 models/single-artwork.php:245
+#: models/page-artist.php:366 models/single-artwork.php:246
 msgid "View artist"
 msgstr "Näytä taiteilija"
 
@@ -177,22 +177,22 @@ msgstr "Syntynyt"
 msgid "Related art"
 msgstr "Taiteilijan teokset kokoelmissa"
 
-#: models/single-artwork.php:102
+#: models/single-artwork.php:103
 msgctxt "theme-frontend"
 msgid "Location"
 msgstr "Sijainti"
 
-#: models/single-artwork.php:134
+#: models/single-artwork.php:135
 msgctxt "theme-frontend"
 msgid "Artists"
 msgstr "Taiteilijat"
 
-#: models/single-artwork.php:135
+#: models/single-artwork.php:136
 msgctxt "theme-frontend"
 msgid "Artist"
 msgstr "Taiteilija"
 
-#: models/single-artwork.php:153
+#: models/single-artwork.php:154
 msgid "Year of manufacture"
 msgstr "Valmistumisvuosi"
 
@@ -211,6 +211,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://geniem.fi"
 msgstr ""
+
+#~ msgid "Archives"
+#~ msgstr "Arkisto"
 
 #~ msgid "Oldest first"
 #~ msgstr "Vanhin ensin"

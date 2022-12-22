@@ -268,7 +268,7 @@ class ArchiveExhibition extends BaseModel {
                 'is_active' => ! $past_tab_active && ! $upcoming_tab_active,
             ],
             'past'     => [
-                'text'      => __( 'Archives', 'tms-theme-taidemuseo' ),
+                'text'      => __( 'Past exhibitions', 'tms-theme-taidemuseo' ),
                 'link'      => add_query_arg(
                     self::PAST_QUERY_VAR,
                     '',
