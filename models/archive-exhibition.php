@@ -78,18 +78,8 @@ class ArchiveExhibition extends BaseModel {
                 'post_type'      => Exhibition::SLUG,
                 'posts_per_page' => self::ONGOING_ITEMS_PER_PAGE,
                 'post_status'    => 'publish',
-                'meta_query'     => [
-                    'relation' => 'AND',
-                    [
-                        'start_date' => [
-                            'key' => 'start_date',
-                        ],
-                        'is_main' => [
-                            'key' => 'main_exhibition',
-                        ],
-                    ],
-                ],
-                'orderby'        => [ 'start_date' => 'ASC', 'is_main' => 'DESC', 'title' => 'ASC' ],
+                'orderby'        => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
+                'meta_key'       => 'start_date',
             ];
 
             $query = new WP_Query( $args );
@@ -227,7 +217,7 @@ class ArchiveExhibition extends BaseModel {
             }
         }
 
-        $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'main_exhibition', 'title' => 'ASC' ] );
+        $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'title' => 'ASC' ] );
         $wp_query->set( 'meta_key', 'start_date' );
         $wp_query->set( 'posts_per_page', $posts_per_page );
     }
@@ -319,9 +309,9 @@ class ArchiveExhibition extends BaseModel {
             'show_past'              => $is_past_archive,
             'show_ongoing'           => $is_ongoing_archive,
             'show_upcoming'          => $is_upcoming_archive,
-            'current_exhibitions'    => $this->format_posts( $current_exhibitions ),
-            'upcoming_exhibitions'   => $this->format_posts( $upcoming_exhibitions ),
-            'posts'                  => $this->format_posts( $results ),
+            'current_exhibitions'    => $this->reorder_main_exhibitions( $this->format_posts( $current_exhibitions ) ),
+            'upcoming_exhibitions'   => $this->reorder_main_exhibitions( $this->format_posts( $upcoming_exhibitions ) ),
+            'posts'                  => $this->reorder_main_exhibitions( $this->format_posts( $results ) ),
             'summary'                => $this->results_summary( count( $results ) ),
             'have_posts'             => ! empty( $results ) || ! empty( $current_exhibitions ),
             'partial'                => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
@@ -370,6 +360,60 @@ class ArchiveExhibition extends BaseModel {
         }
 
         return $choices;
+    }
+
+    /**
+     * Reorder main exhibitions to top of other exhibitions with the same dates
+     *
+     * @param array $items Array of WP_Post instances.
+     *
+     * @return array
+     */
+    protected function reorder_main_exhibitions( $items ) {
+
+        // Return original $items array if search or year filter is used
+        if ( self::get_search_query_var() || self::get_year_query_var() ) {
+            return $items;
+        }
+
+        $items  = array_values( $items ); // reset array keys to start from 0
+        $length = count( $items );
+
+        // Loop through exhibitions and get main exhibitions to an array
+        for ( $i = 0; $i < $length; $i++ ) {
+            // Check if the main exhibition true/false field is checked & the meta-value exists
+            if ( ! empty( $items[ $i ]->main_exhibition ) && $items[ $i ]->main_exhibition === '1' ) {
+                // Make an array for the main exhibitions
+                $main_exhibitions[] = $items[ $i ];
+                // Remove the main exhibition from the original $items array
+                unset( $items[ $i ] );
+            }
+        }
+
+        $items  = array_values( $items ); // reset array keys to start from 0 again
+        $length = count( $items );
+
+        // Loop through exhibitions and compare main exhibition dates with other exhibitions
+        foreach ( $main_exhibitions as $main ) { // Loop main exhibitions
+            for ( $i = 0; $i <= $length; $i++ ) { // Loop normal exhibitions
+
+                // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
+                if ( array_intersect( $items[ $i ]->dates, $main->dates ) && $items[ $i ]->ID !== $main->ID
+                && ( empty( $items[ $i ]->main_exhibition ) || $items[ $i ]->main_exhibition === '0' ) ) {
+                    // Set the position as a variable for the main exhibition and break the loop
+                    $main->position = $i;
+                    // Break the loop when a match is found
+                    break;
+                }
+            }
+        }
+
+        // Set each main exhibition back to the $items array to their new positions
+        foreach ( $main_exhibitions as $main ) {
+            array_splice( $items, $main->position, 0, [ $main ] );
+        }
+
+        return $items;
     }
 
     /**
@@ -453,6 +497,19 @@ class ArchiveExhibition extends BaseModel {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
             }
+
+            // Get single dates between start_date and end_date for the exhibitions
+            $start = new DateTime( $additional_fields['start_date'] );
+            $end   = clone $start;
+            $end->modify( $additional_fields['end_date'] );
+            $end->setTime( 0, 0, 1 ); // Add time to the end_day so it will be included
+            $interval    = new DateInterval( 'P1D' ); // Interval period 1 day
+            $date_period = new DatePeriod( $start, $interval, $end );
+            foreach ( $date_period as $date ) {
+                $date_array[] = $date->format( 'Y-m-d' );
+            }
+
+            $item->dates = $date_array;
 
             return $item;
         }, $posts );
