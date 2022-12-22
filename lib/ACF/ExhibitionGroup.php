@@ -96,7 +96,7 @@ class ExhibitionGroup {
             'tab'         => 'Lisätiedot',
             'main_exhibition'  => [
                 'title'        => 'Päänäyttely',
-                'instructions' => 'Valittu näyttely näytetään listauksessa saman alkupäivämäärän näyttelyiden kanssa ylimpänä',
+                'instructions' => 'Valittu näyttely näytetään listauksessa samaan aikaan meneillään olevien näyttelyiden kanssa ylimpänä',
             ],
             'start_date'  => [
                 'title'        => 'Alkupvm',
