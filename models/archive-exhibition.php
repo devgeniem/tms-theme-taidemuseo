@@ -157,14 +157,15 @@ class ArchiveExhibition extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'         => [
+            'search'           => [
                 'label'             => __( 'Search from archive', 'tms-theme-taidemuseo' ),
                 'submit_value'      => __( 'Search', 'tms-theme-taidemuseo' ),
                 'input_placeholder' => __( 'Search from archive', 'tms-theme-taidemuseo' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-taidemuseo' ),
-            'year_label'     => __( 'Year', 'tms-theme-taidemuseo' ),
-            'upcoming_badge' => __( 'Upcoming', 'tms-theme-taidemuseo' ),
+            'no_results'       => __( 'No results', 'tms-theme-taidemuseo' ),
+            'year_label'       => __( 'Year', 'tms-theme-taidemuseo' ),
+            'year_filter_info' => __( 'Selecting the year filter limits the exhibition view.', 'tms-theme-taidemuseo' ),
+            'upcoming_badge'   => __( 'Upcoming', 'tms-theme-taidemuseo' ),
         ];
     }
 

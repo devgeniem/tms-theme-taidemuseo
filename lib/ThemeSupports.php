@@ -26,6 +26,11 @@ class ThemeSupports implements Controller {
             'query_vars',
             Closure::fromCallable( [ $this, 'query_vars' ] )
         );
+
+        \add_filter(
+            'tms/theme/remove_custom_links',
+            '__return_false'
+        );
     }
 
     /**
