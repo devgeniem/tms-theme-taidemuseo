@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Taidemuseo\n"
-"POT-Creation-Date: 2022-12-22 14:34+0200\n"
-"PO-Revision-Date: 2022-12-22 14:34+0200\n"
+"POT-Creation-Date: 2023-01-10 09:50+0200\n"
+"PO-Revision-Date: 2023-01-10 09:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -72,26 +72,30 @@ msgid "Year"
 msgstr "Vuosi"
 
 #: models/archive-exhibition.php:167
+msgid "Selecting the year filter limits the exhibition view."
+msgstr "Vuosisuodattimen valinta rajaa näyttelynäkymän."
+
+#: models/archive-exhibition.php:168
 msgid "Upcoming"
 msgstr "Tulossa"
 
-#: models/archive-exhibition.php:257
+#: models/archive-exhibition.php:258
 msgid "Upcoming exhibitions"
 msgstr "Tulevat näyttelyt"
 
-#: models/archive-exhibition.php:266
+#: models/archive-exhibition.php:267
 msgid "Current exhibitions"
 msgstr "Näyttelyt nyt"
 
-#: models/archive-exhibition.php:271
+#: models/archive-exhibition.php:272
 msgid "Past exhibitions"
 msgstr "Menneet näyttelyt"
 
-#: models/archive-exhibition.php:343
+#: models/archive-exhibition.php:344
 msgid "Filter by year"
 msgstr "Rajaa"
 
-#: models/archive-exhibition.php:562 models/page-artist.php:406
+#: models/archive-exhibition.php:563 models/page-artist.php:406
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -99,7 +103,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
-#: models/archive-exhibition.php:576 models/page-artist.php:420
+#: models/archive-exhibition.php:577 models/page-artist.php:420
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"

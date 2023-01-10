@@ -7,7 +7,12 @@
                 <div class="columns filters">
                     {?years}
                         <div class="column is-6-tablet is-flex">
-                            <div class="filters--sort-by-container">
+                            <div class="order-2 is-flex align-items-end">
+                                <span class="is-block h6 mb-1">
+                                    {strings.year_filter_info|html}
+                                </span>
+                            </div>
+                            <div class="filters--sort-by-container mr-3">
                                 <label for="exhibition-year" class="is-block h6 mb-1">
                                     {strings.year_label|html}
                                 </label>
