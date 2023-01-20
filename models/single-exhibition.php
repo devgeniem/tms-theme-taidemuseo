@@ -27,10 +27,6 @@ class SingleExhibition extends BaseModel {
         $single = Query::get_acf_post( get_queried_object_id() );
         $date   = self::get_date( $single->ID );
 
-        if ( $this->is_past( $single ) ) {
-            $single->image = null;
-        }
-
         if ( ! empty( $date ) ) {
             $single->date = $date;
         }
