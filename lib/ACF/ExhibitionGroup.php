@@ -144,6 +144,7 @@ class ExhibitionGroup {
             ->set_key( "${key}_title" )
             ->set_name( 'title' )
             ->set_wrapper_width( 50 )
+            ->set_required()
             ->set_instructions( $strings['title']['instructions'] );
 
         $display_format = 'j.n.Y';

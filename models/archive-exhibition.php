@@ -200,6 +200,7 @@ class ArchiveExhibition extends BaseModel {
             ];
 
             $year = self::get_year_query_var();
+            $s = self::get_search_query_var();
 
             if ( ! empty( $year ) ) {
                 $meta_query[] = [
@@ -209,13 +210,15 @@ class ArchiveExhibition extends BaseModel {
                 ];
             }
 
-            $wp_query->set( 'meta_query', $meta_query );
-
-            $s = self::get_search_query_var();
-
             if ( ! empty( $s ) ) {
-                $wp_query->set( 's', $s );
+                $meta_query[] = [
+                    'key'     => 'title',
+                    'compare' => 'LIKE',
+                    'value'   => $s,
+                ];
             }
+
+            $wp_query->set( 'meta_query', $meta_query );
         }
 
         $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'title' => 'ASC' ] );
@@ -330,7 +333,7 @@ class ArchiveExhibition extends BaseModel {
         }
 
         $choices = [];
-        $items   = $this->results->all;
+        $items   = $this->results->past;
 
         if ( empty( $items ) ) {
             return $choices;
@@ -375,6 +378,11 @@ class ArchiveExhibition extends BaseModel {
         // Return original $items array if search or year filter is used
         if ( self::get_search_query_var() || self::get_year_query_var() ) {
             return $items;
+        }
+
+        // Return null if there are no items in array
+        if ( $items === false ) {
+            return;
         }
 
         $items  = array_values( $items ); // reset array keys to start from 0
