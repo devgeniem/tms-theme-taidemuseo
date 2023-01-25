@@ -93,47 +93,47 @@ class ExhibitionGroup {
         $file_types_list = implode( ', ', $this->allowed_filetypes );
 
         $strings = [
-            'tab'         => 'Lisätiedot',
-            'main_exhibition'  => [
-                'title'        => 'Päänäyttely',
-                'instructions' => 'Valittu näyttely näytetään listauksessa samaan aikaan meneillään olevien näyttelyiden kanssa ylimpänä',
+            'tab'                => 'Lisätiedot',
+            'main_exhibition'    => [
+                'title'          => 'Päänäyttely',
+                'instructions'   => 'Valittu näyttely näytetään listauksessa samaan aikaan meneillään olevien näyttelyiden kanssa ylimpänä',
             ],
-            'start_date'  => [
-                'title'        => 'Alkupvm',
-                'instructions' => '',
+            'start_date'         => [
+                'title'          => 'Alkupvm',
+                'instructions'   => '',
             ],
-            'end_date'    => [
-                'title'        => 'Loppupvm',
-                'instructions' => '',
+            'end_date'           => [
+                'title'          => 'Loppupvm',
+                'instructions'   => '',
             ],
-            'title'       => [
-                'title'        => 'Otsikko',
-                'instructions' => '',
+            'title'              => [
+                'title'          => 'Otsikko',
+                'instructions'   => '',
             ],
-            'location'    => [
-                'title'        => 'Sijainti',
-                'instructions' => '',
+            'location'           => [
+                'title'          => 'Sijainti',
+                'instructions'   => '',
             ],
-            'is_upcoming' => [
-                'title'        => 'Tulossa',
-                'instructions' => '',
+            'is_upcoming'        => [
+                'title'          => 'Tulossa',
+                'instructions'   => '',
             ],
-            'logo_wall_header' => [
-                'title'        => 'Logoseinän otsikko',
-                'instructions' => '',
+            'logo_wall_header'   => [
+                'title'          => 'Logoseinän otsikko',
+                'instructions'   => '',
             ],
             'logo_wall_repeater' => [
-                'title'        => 'Logoseinä',
-                'instructions' => '',
-                'button'       => 'Lisää logo',
+                'title'          => 'Logoseinä',
+                'instructions'   => '',
+                'button'         => 'Lisää logo',
             ],
-            'logo_wall_logo'   => [
-                'title'        => 'Logo',
-                'instructions' => "Sallitut tiedostomuodot: {$file_types_list}.",
+            'logo_wall_logo'     => [
+                'title'          => 'Logo',
+                'instructions'   => "Sallitut tiedostomuodot: {$file_types_list}.",
             ],
-            'logo_wall_link'   => [
-                'title'        => 'Linkki',
-                'instructions' => '',
+            'logo_wall_link'     => [
+                'title'          => 'Linkki',
+                'instructions'   => '',
             ],
         ];
 
