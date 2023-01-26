@@ -425,7 +425,11 @@ class ArchiveExhibition extends BaseModel {
                     }
                 }
             }
+
+            unset( $item );
         }
+
+        unset( $main );
 
         // Set each main exhibition back to the $items array to their new positions
         foreach ( $main_exhibitions as $main ) {
