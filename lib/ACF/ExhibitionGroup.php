@@ -99,45 +99,45 @@ class ExhibitionGroup {
         $strings = [
             'tab'                => 'Lisätiedot',
             'main_exhibition'    => [
-                'title'          => 'Päänäyttely',
-                'instructions'   => 'Valittu näyttely näytetään listauksessa samaan aikaan meneillään olevien näyttelyiden kanssa ylimpänä',
+                'title'        => 'Päänäyttely',
+                'instructions' => 'Valittu näyttely näytetään listauksessa samaan aikaan meneillään olevien näyttelyiden kanssa ylimpänä',
             ],
             'start_date'         => [
-                'title'          => 'Alkupvm',
-                'instructions'   => '',
+                'title'        => 'Alkupvm',
+                'instructions' => '',
             ],
             'end_date'           => [
-                'title'          => 'Loppupvm',
-                'instructions'   => '',
+                'title'        => 'Loppupvm',
+                'instructions' => '',
             ],
             'title'              => [
-                'title'          => 'Otsikko',
-                'instructions'   => '',
+                'title'        => 'Otsikko',
+                'instructions' => '',
             ],
             'location'           => [
-                'title'          => 'Sijainti',
-                'instructions'   => '',
+                'title'        => 'Sijainti',
+                'instructions' => '',
             ],
             'is_upcoming'        => [
-                'title'          => 'Tulossa',
-                'instructions'   => '',
+                'title'        => 'Tulossa',
+                'instructions' => '',
             ],
             'logo_wall_header'   => [
-                'title'          => 'Logoseinän otsikko',
-                'instructions'   => '',
+                'title'        => 'Logoseinän otsikko',
+                'instructions' => '',
             ],
             'logo_wall_repeater' => [
-                'title'          => 'Logoseinä',
-                'instructions'   => '',
-                'button'         => 'Lisää logo',
+                'title'        => 'Logoseinä',
+                'instructions' => '',
+                'button'       => 'Lisää logo',
             ],
             'logo_wall_logo'     => [
-                'title'          => 'Logo',
-                'instructions'   => "Sallitut tiedostomuodot: {$file_types_list}.",
+                'title'        => 'Logo',
+                'instructions' => "Sallitut tiedostomuodot: {$file_types_list}.",
             ],
             'logo_wall_link'     => [
-                'title'          => 'Linkki',
-                'instructions'   => '',
+                'title'        => 'Linkki',
+                'instructions' => '',
             ],
         ];
 

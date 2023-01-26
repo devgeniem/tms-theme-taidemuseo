@@ -200,7 +200,7 @@ class ArchiveExhibition extends BaseModel {
             ];
 
             $year = self::get_year_query_var();
-            $s = self::get_search_query_var();
+            $s    = self::get_search_query_var();
 
             if ( ! empty( $year ) ) {
                 $meta_query[] = [
@@ -412,7 +412,7 @@ class ArchiveExhibition extends BaseModel {
             // Loop normal exhibitions
             for ( $i = 0; $i <= $length; $i++ ) {
                 // Check if item dates exists
-                if( ! empty( $items[ $i ]->dates ) ) {
+                if ( ! empty( $items[ $i ]->dates ) ) {
                     // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
                     if ( array_intersect( $items[ $i ]->dates, $main->dates ) && $items[ $i ]->ID !== $main->ID
                     && ( empty( $items[ $i ]->main_exhibition ) || $items[ $i ]->main_exhibition === '0' ) ) {
