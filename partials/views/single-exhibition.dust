@@ -81,7 +81,7 @@
 
                         {?SingleExhibition.content.fields.logo_wall_header}
                             <h2 class="logo-wall__header is-align-full has-text-centered mt-0 mb-6">
-                                {SingleExhibition.content.fields.logo_wall_header|s}
+                                {SingleExhibition.content.fields.logo_wall_header|html}
                             </h2>
                         {/SingleExhibition.content.fields.logo_wall_header}
 
@@ -90,7 +90,7 @@
 
                                 <div class="logo-wall__item m-3 m-5-tablet m-7-desktop is-inline-flex">
                                     {?logo_wall_link.url}
-                                        <a href="{logo_wall_link.url}" target="{logo_wall_link.target}" class="logo-wall__link is-block">
+                                        <a href="{logo_wall_link.url|url}" target="{logo_wall_link.target|attr}" class="logo-wall__link is-block">
                                             {@image id=logo_wall_logo.id size="medium" class="is-block" /}
                                         </a>
                                     {:else}

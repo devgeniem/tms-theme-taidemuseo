@@ -27,6 +27,7 @@ class ThemeSupports implements Controller {
             Closure::fromCallable( [ $this, 'query_vars' ] )
         );
 
+        // Allow custom url links to be added in menus
         \add_filter(
             'tms/theme/remove_custom_links',
             '__return_false'
