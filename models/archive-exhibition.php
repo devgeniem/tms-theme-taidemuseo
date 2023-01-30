@@ -160,7 +160,7 @@ class ArchiveExhibition extends BaseModel {
             'search'           => [
                 'label'             => __( 'Search from archive', 'tms-theme-taidemuseo' ),
                 'submit_value'      => __( 'Search', 'tms-theme-taidemuseo' ),
-                'input_placeholder' => __( 'Search from archive', 'tms-theme-taidemuseo' ),
+                'input_placeholder' => __( 'Type a search word', 'tms-theme-taidemuseo' ),
             ],
             'no_results'       => __( 'No results', 'tms-theme-taidemuseo' ),
             'year_label'       => __( 'Year', 'tms-theme-taidemuseo' ),
@@ -405,35 +405,37 @@ class ArchiveExhibition extends BaseModel {
         $items  = array_values( $items ); // reset array keys to start from 0 again
 
         // Loop through exhibitions and compare main exhibition dates with other exhibitions
+        if( isset( $main_exhibitions ) ) {
         // Loop main exhibitions
-        foreach ( $main_exhibitions as $main ) {
-            // Loop normal exhibitions
-            foreach ( $items as $i => $item ) {
-                // Check if item dates exists
-                if ( ! empty( $item->dates ) ) {
-                    // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
-                    if ( array_intersect( $item->dates, $main->dates ) && $item->ID !== $main->ID
-                    && ( empty( $item->main_exhibition ) || $item->main_exhibition === '0' ) ) {
-                        // Set the position as a variable for the main exhibition and break the loop
-                        $main->position = $i;
-                        // Break the loop when a match is found
-                        break;
-                    }
-                    else {
-                        // Set original position for the main exhibition if there are no matches
-                        $main->position = $main->original_position;
+            foreach ( $main_exhibitions as $main ) {
+                // Loop normal exhibitions
+                foreach ( $items as $i => $item ) {
+                    // Check if item dates exists
+                    if ( ! empty( $item->dates ) ) {
+                        // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
+                        if ( array_intersect( $item->dates, $main->dates ) && $item->ID !== $main->ID
+                        && ( empty( $item->main_exhibition ) || $item->main_exhibition === '0' ) ) {
+                            // Set the position as a variable for the main exhibition and break the loop
+                            $main->position = $i;
+                            // Break the loop when a match is found
+                            break;
+                        }
+                        else {
+                            // Set original position for the main exhibition if there are no matches
+                            $main->position = $main->original_position;
+                        }
                     }
                 }
+
+                unset( $item );
             }
 
-            unset( $item );
-        }
+            unset( $main );
 
-        unset( $main );
-
-        // Set each main exhibition back to the $items array to their new positions
-        foreach ( $main_exhibitions as $main ) {
-            array_splice( $items, intval( $main->position ), 0, [ $main ] );
+            // Set each main exhibition back to the $items array to their new positions
+            foreach ( $main_exhibitions as $main ) {
+                array_splice( $items, intval( $main->position ), 0, [ $main ] );
+            }
         }
 
         return $items;
