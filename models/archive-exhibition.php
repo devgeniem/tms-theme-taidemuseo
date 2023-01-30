@@ -386,35 +386,37 @@ class ArchiveExhibition extends BaseModel {
         }
 
         $items  = array_values( $items ); // reset array keys to start from 0
+        $length = count( $items );
 
         // Loop through exhibitions and get main exhibitions to an array
-        foreach ( $items as $i => $item ) {
+        for ( $i = 0; $i < $length; $i++ ) {
             // Check if the main exhibition true/false field is checked & the meta-value exists
-            if ( ! empty( $item->main_exhibition ) && $item->main_exhibition === '1' ) {
+            if ( ! empty( $items[ $i ]->main_exhibition ) && $items[ $i ]->main_exhibition === '1' ) {
                 // Get main exhibitions original position for buggy situations
-                $item->original_position = $i;
+                $items[ $i ]->original_position = $i;
 
                 // Make an array for the main exhibitions
-                $main_exhibitions[] = $item;
+                $main_exhibitions[] = $items[ $i ];
 
                 // Remove the main exhibition from the original $items array
-                unset( $item );
+                unset( $items[ $i ] );
             }
         }
 
         $items  = array_values( $items ); // reset array keys to start from 0 again
+        $length = count( $items );
 
         // Loop through exhibitions and compare main exhibition dates with other exhibitions
         if( isset( $main_exhibitions ) ) {
-        // Loop main exhibitions
+            // Loop main exhibitions
             foreach ( $main_exhibitions as $main ) {
                 // Loop normal exhibitions
-                foreach ( $items as $i => $item ) {
+                for ( $i = 0; $i <= $length; $i++ ) {
                     // Check if item dates exists
-                    if ( ! empty( $item->dates ) ) {
+                    if ( ! empty( $items[ $i ]->dates ) ) {
                         // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
-                        if ( array_intersect( $item->dates, $main->dates ) && $item->ID !== $main->ID
-                        && ( empty( $item->main_exhibition ) || $item->main_exhibition === '0' ) ) {
+                        if ( array_intersect( $items[ $i ]->dates, $main->dates ) && $items[ $i ]->ID !== $main->ID
+                        && ( empty( $items[ $i ]->main_exhibition ) || $items[ $i ]->main_exhibition === '0' ) ) {
                             // Set the position as a variable for the main exhibition and break the loop
                             $main->position = $i;
                             // Break the loop when a match is found
@@ -426,8 +428,6 @@ class ArchiveExhibition extends BaseModel {
                         }
                     }
                 }
-
-                unset( $item );
             }
 
             unset( $main );
