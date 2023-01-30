@@ -19,17 +19,17 @@ class ArchiveExhibition extends BaseModel {
     const SEARCH_QUERY_VAR = 'exhibition-search';
 
     /**
-     * Artist category filter name.
+     * Year filter name.
      */
     const YEAR_QUERY_VAR = 'exhibition-year';
 
     /**
-     * Artist category filter name.
+     * Exhibition archive filter name.
      */
     const PAST_QUERY_VAR = 'archive';
 
     /**
-     * Artist category filter name.
+     * Upcoming exhibition filter name.
      */
     const UPCOMING_QUERY_VAR = 'upcoming';
 
@@ -138,7 +138,7 @@ class ArchiveExhibition extends BaseModel {
      * @return bool
      */
     public function is_upcoming_archive() : bool {
-        return ! is_null( get_query_var( self::UPCOMING_QUERY_VAR, null ) );
+        return ! empty( \get_query_var( self::UPCOMING_QUERY_VAR, null ) );
     }
 
     /**
@@ -160,7 +160,7 @@ class ArchiveExhibition extends BaseModel {
             'search'           => [
                 'label'             => __( 'Search from archive', 'tms-theme-taidemuseo' ),
                 'submit_value'      => __( 'Search', 'tms-theme-taidemuseo' ),
-                'input_placeholder' => __( 'Search from archive', 'tms-theme-taidemuseo' ),
+                'input_placeholder' => __( 'Type a search word', 'tms-theme-taidemuseo' ),
             ],
             'no_results'       => __( 'No results', 'tms-theme-taidemuseo' ),
             'year_label'       => __( 'Year', 'tms-theme-taidemuseo' ),
@@ -200,7 +200,7 @@ class ArchiveExhibition extends BaseModel {
             ];
 
             $year = self::get_year_query_var();
-            $s = self::get_search_query_var();
+            $s    = self::get_search_query_var();
 
             if ( ! empty( $year ) ) {
                 $meta_query[] = [
@@ -241,7 +241,7 @@ class ArchiveExhibition extends BaseModel {
             'action'            => add_query_arg(
                 self::PAST_QUERY_VAR,
                 '',
-                get_post_type_archive_link( Exhibition::SLUG )
+                \get_post_type_archive_link( Exhibition::SLUG )
             ),
         ];
     }
@@ -386,48 +386,56 @@ class ArchiveExhibition extends BaseModel {
         }
 
         $items  = array_values( $items ); // reset array keys to start from 0
-        $length = count( $items );
 
         // Loop through exhibitions and get main exhibitions to an array
-        for ( $i = 0; $i < $length; $i++ ) {
+        foreach ( $items as $i => $item ) {
             // Check if the main exhibition true/false field is checked & the meta-value exists
-            if ( ! empty( $items[ $i ]->main_exhibition ) && $items[ $i ]->main_exhibition === '1' ) {
+            if ( ! empty( $item->main_exhibition ) && $item->main_exhibition === '1' ) {
                 // Get main exhibitions original position for buggy situations
-                $items[ $i ]->original_position = $i;
+                $item->original_position = $i;
 
                 // Make an array for the main exhibitions
-                $main_exhibitions[] = $items[ $i ];
+                $main_exhibitions[] = $item;
 
                 // Remove the main exhibition from the original $items array
-                unset( $items[ $i ] );
+                unset( $item );
             }
         }
 
         $items  = array_values( $items ); // reset array keys to start from 0 again
-        $length = count( $items );
 
         // Loop through exhibitions and compare main exhibition dates with other exhibitions
-        foreach ( $main_exhibitions as $main ) { // Loop main exhibitions
-            for ( $i = 0; $i <= $length; $i++ ) { // Loop normal exhibitions
+        if( isset( $main_exhibitions ) ) {
+        // Loop main exhibitions
+            foreach ( $main_exhibitions as $main ) {
+                // Loop normal exhibitions
+                foreach ( $items as $i => $item ) {
+                    // Check if item dates exists
+                    if ( ! empty( $item->dates ) ) {
+                        // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
+                        if ( array_intersect( $item->dates, $main->dates ) && $item->ID !== $main->ID
+                        && ( empty( $item->main_exhibition ) || $item->main_exhibition === '0' ) ) {
+                            // Set the position as a variable for the main exhibition and break the loop
+                            $main->position = $i;
+                            // Break the loop when a match is found
+                            break;
+                        }
+                        else {
+                            // Set original position for the main exhibition if there are no matches
+                            $main->position = $main->original_position;
+                        }
+                    }
+                }
 
-                // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
-                if ( array_intersect( $items[ $i ]->dates, $main->dates ) && $items[ $i ]->ID !== $main->ID
-                && ( empty( $items[ $i ]->main_exhibition ) || $items[ $i ]->main_exhibition === '0' ) ) {
-                    // Set the position as a variable for the main exhibition and break the loop
-                    $main->position = $i;
-                    // Break the loop when a match is found
-                    break;
-                }
-                else {
-                    // Set original position for the main exhibition if there are no matches
-                    $main->position = $main->original_position;
-                }
+                unset( $item );
             }
-        }
 
-        // Set each main exhibition back to the $items array to their new positions
-        foreach ( $main_exhibitions as $main ) {
-            array_splice( $items, $main->position, 0, [ $main ] );
+            unset( $main );
+
+            // Set each main exhibition back to the $items array to their new positions
+            foreach ( $main_exhibitions as $main ) {
+                array_splice( $items, intval( $main->position ), 0, [ $main ] );
+            }
         }
 
         return $items;
