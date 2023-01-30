@@ -17,6 +17,16 @@
             </div>
         {/exhibition.date}
 
+        {?exhibition.fields.location}
+            <div class="is-flex is-align-items-center">
+                {>"ui/icon" icon="location" class="icon--large entry__meta-icon" /}
+
+                <p class="entry__meta-text has-text-primary has-text-small">
+                    {exhibition.fields.location|html}
+                </p>
+            </div>
+        {/exhibition.fields.location}
+
         {?exhibition.post_excerpt}
             <p class="entry__summary mb-0 has-text-primary has-text-small">
                 {exhibition.post_excerpt|html}

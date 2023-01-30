@@ -19,19 +19,29 @@ class ArchiveExhibition extends BaseModel {
     const SEARCH_QUERY_VAR = 'exhibition-search';
 
     /**
-     * Artist category filter name.
+     * Year filter name.
      */
     const YEAR_QUERY_VAR = 'exhibition-year';
 
     /**
-     * Artist category filter name.
+     * Exhibition archive filter name.
      */
     const PAST_QUERY_VAR = 'archive';
+
+    /**
+     * Upcoming exhibition filter name.
+     */
+    const UPCOMING_QUERY_VAR = 'upcoming';
 
     /**
      * Number of past items to show per page.
      */
     const PAST_ITEMS_PER_PAGE = '9';
+
+    /**
+     * Number of ongoing items to show per page.
+     */
+    const ONGOING_ITEMS_PER_PAGE = '100';
 
     /**
      * Number of upcoming items to show per page.
@@ -66,7 +76,7 @@ class ArchiveExhibition extends BaseModel {
 
             $args = [
                 'post_type'      => Exhibition::SLUG,
-                'posts_per_page' => self::UPCOMING_ITEMS_PER_PAGE,
+                'posts_per_page' => self::ONGOING_ITEMS_PER_PAGE,
                 'post_status'    => 'publish',
                 'orderby'        => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
                 'meta_key'       => 'start_date',
@@ -123,6 +133,15 @@ class ArchiveExhibition extends BaseModel {
     }
 
     /**
+     * Get current tab query var value
+     *
+     * @return bool
+     */
+    public function is_upcoming_archive() : bool {
+        return ! empty( \get_query_var( self::UPCOMING_QUERY_VAR, null ) );
+    }
+
+    /**
      * Page title
      *
      * @return string
@@ -138,14 +157,15 @@ class ArchiveExhibition extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'         => [
+            'search'           => [
                 'label'             => __( 'Search from archive', 'tms-theme-taidemuseo' ),
                 'submit_value'      => __( 'Search', 'tms-theme-taidemuseo' ),
-                'input_placeholder' => __( 'Search from archive', 'tms-theme-taidemuseo' ),
+                'input_placeholder' => __( 'Type a search word', 'tms-theme-taidemuseo' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-taidemuseo' ),
-            'year_label'     => __( 'Year', 'tms-theme-taidemuseo' ),
-            'upcoming_badge' => __( 'Upcoming', 'tms-theme-taidemuseo' ),
+            'no_results'       => __( 'No results', 'tms-theme-taidemuseo' ),
+            'year_label'       => __( 'Year', 'tms-theme-taidemuseo' ),
+            'year_filter_info' => __( 'Selecting the year filter limits the exhibition view.', 'tms-theme-taidemuseo' ),
+            'upcoming_badge'   => __( 'Upcoming', 'tms-theme-taidemuseo' ),
         ];
     }
 
@@ -180,6 +200,7 @@ class ArchiveExhibition extends BaseModel {
             ];
 
             $year = self::get_year_query_var();
+            $s    = self::get_search_query_var();
 
             if ( ! empty( $year ) ) {
                 $meta_query[] = [
@@ -189,13 +210,15 @@ class ArchiveExhibition extends BaseModel {
                 ];
             }
 
-            $wp_query->set( 'meta_query', $meta_query );
-
-            $s = self::get_search_query_var();
-
             if ( ! empty( $s ) ) {
-                $wp_query->set( 's', $s );
+                $meta_query[] = [
+                    'key'     => 'title',
+                    'compare' => 'LIKE',
+                    'value'   => $s,
+                ];
             }
+
+            $wp_query->set( 'meta_query', $meta_query );
         }
 
         $wp_query->set( 'orderby', [ 'start_date' => $start_date_order, 'title' => 'ASC' ] );
@@ -218,7 +241,7 @@ class ArchiveExhibition extends BaseModel {
             'action'            => add_query_arg(
                 self::PAST_QUERY_VAR,
                 '',
-                get_post_type_archive_link( Exhibition::SLUG )
+                \get_post_type_archive_link( Exhibition::SLUG )
             ),
         ];
     }
@@ -229,17 +252,27 @@ class ArchiveExhibition extends BaseModel {
      * @return string[]
      */
     public function tabs() : array {
-        $base_url        = get_post_type_archive_link( Exhibition::SLUG );
-        $past_tab_active = self::is_past_archive();
+        $base_url            = get_post_type_archive_link( Exhibition::SLUG );
+        $past_tab_active     = self::is_past_archive();
+        $upcoming_tab_active = self::is_upcoming_archive();
 
         return [
             'upcoming' => [
+                'text'      => __( 'Upcoming exhibitions', 'tms-theme-taidemuseo' ),
+                'link'      => add_query_arg(
+                    self::UPCOMING_QUERY_VAR,
+                    '',
+                    $base_url
+                ),
+                'is_active' => $upcoming_tab_active,
+            ],
+            'ongoing' => [
                 'text'      => __( 'Current exhibitions', 'tms-theme-taidemuseo' ),
                 'link'      => $base_url,
-                'is_active' => ! $past_tab_active,
+                'is_active' => ! $past_tab_active && ! $upcoming_tab_active,
             ],
             'past'     => [
-                'text'      => __( 'Archives', 'tms-theme-taidemuseo' ),
+                'text'      => __( 'Past exhibitions', 'tms-theme-taidemuseo' ),
                 'link'      => add_query_arg(
                     self::PAST_QUERY_VAR,
                     '',
@@ -258,8 +291,10 @@ class ArchiveExhibition extends BaseModel {
     public function results() {
         global $wp_query;
 
-        $is_past_archive = $this->is_past_archive();
-        $per_page        = $is_past_archive ? self::PAST_ITEMS_PER_PAGE : self::UPCOMING_ITEMS_PER_PAGE;
+        $is_past_archive     = $this->is_past_archive();
+        $is_upcoming_archive = $this->is_upcoming_archive();
+        $is_ongoing_archive  = ! $is_past_archive && ! $is_upcoming_archive;
+        $per_page            = ( $is_past_archive ) ? self::PAST_ITEMS_PER_PAGE : ( ( $is_upcoming_archive ) ? self::UPCOMING_ITEMS_PER_PAGE : self::ONGOING_ITEMS_PER_PAGE );
 
         $current_exhibitions  = array_filter( $this->results->all, [ $this, 'is_current' ] );
         $upcoming_exhibitions = $this->results->upcoming;
@@ -272,14 +307,18 @@ class ArchiveExhibition extends BaseModel {
         $this->set_pagination_data( count( $results ), $per_page );
 
         return [
-            'result_count'        => count( $upcoming_exhibitions ) + count( $current_exhibitions ),
-            'past_results_count'  => count( $unfiltered_past_exhibitions ),
-            'show_past'           => $is_past_archive,
-            'current_exhibitions' => $this->format_posts( $current_exhibitions ),
-            'posts'               => $this->format_posts( $results ),
-            'summary'             => $this->results_summary( count( $results ) ),
-            'have_posts'          => ! empty( $results ) || ! empty( $current_exhibitions ),
-            'partial'             => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
+            'result_count'           => count( $current_exhibitions ),
+            'past_results_count'     => count( $unfiltered_past_exhibitions ),
+            'upcoming_results_count' => count( $upcoming_exhibitions ),
+            'show_past'              => $is_past_archive,
+            'show_ongoing'           => $is_ongoing_archive,
+            'show_upcoming'          => $is_upcoming_archive,
+            'current_exhibitions'    => $this->reorder_main_exhibitions( $this->format_posts( $current_exhibitions ) ),
+            'upcoming_exhibitions'   => $this->reorder_main_exhibitions( $this->format_posts( $upcoming_exhibitions ) ),
+            'posts'                  => $this->reorder_main_exhibitions( $this->format_posts( $results ) ),
+            'summary'                => $this->results_summary( count( $results ) ),
+            'have_posts'             => ! empty( $results ) || ! empty( $current_exhibitions ),
+            'partial'                => $is_past_archive ? 'shared/exhibition-item-simple' : 'shared/exhibition-item',
         ];
     }
 
@@ -294,7 +333,7 @@ class ArchiveExhibition extends BaseModel {
         }
 
         $choices = [];
-        $items   = $this->results->all;
+        $items   = $this->results->past;
 
         if ( empty( $items ) ) {
             return $choices;
@@ -325,6 +364,81 @@ class ArchiveExhibition extends BaseModel {
         }
 
         return $choices;
+    }
+
+    /**
+     * Reorder main exhibitions to top of other exhibitions with the same dates
+     *
+     * @param array $items Array of WP_Post instances.
+     *
+     * @return array
+     */
+    protected function reorder_main_exhibitions( $items ) {
+
+        // Return original $items array if search or year filter is used
+        if ( self::get_search_query_var() || self::get_year_query_var() ) {
+            return $items;
+        }
+
+        // Return null if there are no items in array
+        if ( $items === false ) {
+            return;
+        }
+
+        $items  = array_values( $items ); // reset array keys to start from 0
+        $length = count( $items );
+
+        // Loop through exhibitions and get main exhibitions to an array
+        for ( $i = 0; $i < $length; $i++ ) {
+            // Check if the main exhibition true/false field is checked & the meta-value exists
+            if ( ! empty( $items[ $i ]->main_exhibition ) && $items[ $i ]->main_exhibition === '1' ) {
+                // Get main exhibitions original position for buggy situations
+                $items[ $i ]->original_position = $i;
+
+                // Make an array for the main exhibitions
+                $main_exhibitions[] = $items[ $i ];
+
+                // Remove the main exhibition from the original $items array
+                unset( $items[ $i ] );
+            }
+        }
+
+        $items  = array_values( $items ); // reset array keys to start from 0 again
+        $length = count( $items );
+
+        // Loop through exhibitions and compare main exhibition dates with other exhibitions
+        if( isset( $main_exhibitions ) ) {
+            // Loop main exhibitions
+            foreach ( $main_exhibitions as $main ) {
+                // Loop normal exhibitions
+                for ( $i = 0; $i <= $length; $i++ ) {
+                    // Check if item dates exists
+                    if ( ! empty( $items[ $i ]->dates ) ) {
+                        // Compare main exhibitions dates with each normal exhibitions dates and get the first matches position
+                        if ( array_intersect( $items[ $i ]->dates, $main->dates ) && $items[ $i ]->ID !== $main->ID
+                        && ( empty( $items[ $i ]->main_exhibition ) || $items[ $i ]->main_exhibition === '0' ) ) {
+                            // Set the position as a variable for the main exhibition and break the loop
+                            $main->position = $i;
+                            // Break the loop when a match is found
+                            break;
+                        }
+                        else {
+                            // Set original position for the main exhibition if there are no matches
+                            $main->position = $main->original_position;
+                        }
+                    }
+                }
+            }
+
+            unset( $main );
+
+            // Set each main exhibition back to the $items array to their new positions
+            foreach ( $main_exhibitions as $main ) {
+                array_splice( $items, intval( $main->position ), 0, [ $main ] );
+            }
+        }
+
+        return $items;
     }
 
     /**
@@ -408,6 +522,19 @@ class ArchiveExhibition extends BaseModel {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
             }
+
+            // Get single dates between start_date and end_date for the exhibitions
+            $start = new DateTime( $additional_fields['start_date'] );
+            $end   = clone $start;
+            $end->modify( $additional_fields['end_date'] );
+            $end->setTime( 0, 0, 1 ); // Add time to the end_day so it will be included
+            $interval    = new DateInterval( 'P1D' ); // Interval period 1 day
+            $date_period = new DatePeriod( $start, $interval, $end );
+            foreach ( $date_period as $date ) {
+                $date_array[] = $date->format( 'Y-m-d' );
+            }
+
+            $item->dates = $date_array;
 
             return $item;
         }, $posts );

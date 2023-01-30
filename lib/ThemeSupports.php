@@ -26,6 +26,12 @@ class ThemeSupports implements Controller {
             'query_vars',
             Closure::fromCallable( [ $this, 'query_vars' ] )
         );
+
+        // Allow custom url links to be added in menus
+        \add_filter(
+            'tms/theme/remove_custom_links',
+            '__return_false'
+        );
     }
 
     /**
@@ -39,6 +45,7 @@ class ThemeSupports implements Controller {
         $vars[] = ArchiveExhibition::SEARCH_QUERY_VAR;
         $vars[] = ArchiveExhibition::YEAR_QUERY_VAR;
         $vars[] = ArchiveExhibition::PAST_QUERY_VAR;
+        $vars[] = ArchiveExhibition::UPCOMING_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
         $vars[] = PageArtist::FILTER_QUERY_VAR;

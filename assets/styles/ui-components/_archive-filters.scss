@@ -11,6 +11,20 @@
                 margin-top: auto;
             }
         }
+
+        .order-2 {
+            order: 2;
+        }
+
+        .align-items-end {
+            align-items: flex-end;
+        }
+
+        @include until($tablet) {
+            .column {
+                flex-wrap: wrap;
+            }
+        }
     }
 
     .filters-wrapper {

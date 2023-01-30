@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.7] - 2023-01-27
+
+- TMS-913: Added logo-wall fields for Exhibition CPT single page
+- TMS-913: Added new "Upcoming exhibitions" page for exhibition archive
+- TMS-913: Added "Main exhibition" true/false ACF-field for single exhibition that orders it first if other exhibitions have the same starting date
+- TMS-913: Added info text next to exhibition archive search input
+
 ## [1.8.6] - 2022-02-11
 
 ### Changed
