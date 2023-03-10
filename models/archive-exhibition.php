@@ -138,7 +138,7 @@ class ArchiveExhibition extends BaseModel {
      * @return bool
      */
     public function is_upcoming_archive() : bool {
-        return ! empty( \get_query_var( self::UPCOMING_QUERY_VAR, null ) );
+        return ! is_null( \get_query_var( self::UPCOMING_QUERY_VAR, null ) );
     }
 
     /**
@@ -407,7 +407,7 @@ class ArchiveExhibition extends BaseModel {
         $length = count( $items );
 
         // Loop through exhibitions and compare main exhibition dates with other exhibitions
-        if( isset( $main_exhibitions ) ) {
+        if ( isset( $main_exhibitions ) ) {
             // Loop main exhibitions
             foreach ( $main_exhibitions as $main ) {
                 // Loop normal exhibitions
