@@ -303,7 +303,7 @@ class ArchiveExhibition extends BaseModel {
         $past_exhibitions            = $wp_query->posts;
         $this->results->past         = $past_exhibitions;
 
-        $results = $is_past_archive ? $past_exhibitions : $upcoming_exhibitions;
+        $results = $is_past_archive ? $unfiltered_past_exhibitions : $upcoming_exhibitions;
         $this->set_pagination_data( count( $results ), $per_page );
 
         return [
