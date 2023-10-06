@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-936: Image carousel accessibility fixes
+
 ## [1.9.2] - 2023-09-04
 
 ### Fixed
