@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-982: Fix exhibition-archive year-filters & search
+
+## [1.9.2] - 2023-09-04
+
+### Fixed
+
+- TMS-972: Pagination fix for past exhibitions in exhibition-archive
+
+## [1.9.1] - 2023-04-27
+
+### Fixed
+
+- PIEN-8524: Display API images #162
+
 ## [1.9.0] - 2023-04-11
 
 - PIEN-8157: PHP 8.1
