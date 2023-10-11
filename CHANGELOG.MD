@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.3] - 2023-10-12
+
 ### Fixed
 
 - TMS-982: Fix exhibition-archive year-filters & search
