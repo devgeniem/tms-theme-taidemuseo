@@ -300,11 +300,18 @@ class ArchiveExhibition extends BaseModel {
         $upcoming_exhibitions = $this->results->upcoming;
 
         $unfiltered_past_exhibitions = array_filter( $this->results->all, [ $this, 'is_past' ] );
-        $past_exhibitions            = $wp_query->posts;
-        $this->results->past         = $past_exhibitions;
+        $past_exhibitions            = array_filter( $wp_query->posts, [ $this, 'is_past' ] );
+        $this->results->past         = $unfiltered_past_exhibitions;
 
-        $results = $is_past_archive ? $unfiltered_past_exhibitions : $upcoming_exhibitions;
+        $results = $is_past_archive ? $past_exhibitions : $upcoming_exhibitions;
         $this->set_pagination_data( count( $results ), $per_page );
+
+        // Use past exhibitions pagination data when archive search is used
+        $found_posts = $wp_query->found_posts;
+        if ( ( self::get_search_query_var() || self::get_year_query_var() ) && $is_past_archive ) {
+            $this->set_pagination_data( $found_posts, $per_page );
+            $results = $past_exhibitions;
+        }
 
         return [
             'result_count'           => count( $current_exhibitions ),
@@ -375,8 +382,8 @@ class ArchiveExhibition extends BaseModel {
      */
     protected function reorder_main_exhibitions( $items ) {
 
-        // Return original $items array if search or year filter is used
-        if ( self::get_search_query_var() || self::get_year_query_var() ) {
+        // Return original $items array if search or year filter is used, or if page is past archive
+        if ( self::get_search_query_var() || self::get_year_query_var() || self::is_past_archive() ) {
             return $items;
         }
 
