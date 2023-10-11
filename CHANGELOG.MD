@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - TMS-982: Fix exhibition-archive year-filters & search
+- TMS-936: Image carousel accessibility fixes
 
 ## [1.9.2] - 2023-09-04
 
