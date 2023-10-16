@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-970: Add image meta to call-to-action and content-columns components
+
 ## [1.9.3] - 2023-10-12
 
 ### Fixed
