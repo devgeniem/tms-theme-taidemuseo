@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-935: Archive filter accessibility fixes
+
 ## [1.9.4] - 2023-10-23
 
 - TMS-970: Add image meta to call-to-action and content-columns components
