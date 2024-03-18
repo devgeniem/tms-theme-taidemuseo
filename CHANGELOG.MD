@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.6] - 2024-03-18
+
 - TMS-1017: Add image alt-text to imported news single-article
 
 ## [1.9.5] - 2023-11-21
