@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1029: Change contacts-blocks width
+
 ## [1.9.7] - 2024-03-26
 
 - TMS-1021: Remove image carousel modal max-height
