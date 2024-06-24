@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1054: Remove hero overlay-toggle from single page editor
+
 ## [1.9.8] - 2024-05-14
 
 - TMS-1029: Change contacts-blocks width
