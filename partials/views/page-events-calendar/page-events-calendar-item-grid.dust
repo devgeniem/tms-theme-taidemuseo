@@ -53,7 +53,7 @@
 
         {#price}
             {?is_free}
-                <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                <div class="events__meta is-flex is-family-secondary is-align-items-center">
                     <span class="is-flex" aria-label="{Strings.s.event.price|attr}">
                         {>"ui/icon" icon="euro" class="icon--large is-primary mr-2 {item_classes.grid.icon|attr}" /}
                     </span>
