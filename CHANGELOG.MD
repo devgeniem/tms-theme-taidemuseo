@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.10.3] - 2024-09-25
+
 - TMS-1071: Fix events price element class
 
 ## [1.10.2] - 2024-09-25
