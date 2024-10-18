@@ -2,7 +2,7 @@
 
 namespace TMS\Theme\Taidemuseo;
 
-use \TMS\Theme\Base;
+use TMS\Theme\Base;
 /**
  * Class ACFController
  *
@@ -15,8 +15,7 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
      *
      * @return string
      */
-    protected function get_base_dir() : string {
+    protected function get_base_dir(): string {
         return __DIR__ . '/ACF';
     }
-
 }

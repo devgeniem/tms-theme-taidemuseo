@@ -13,7 +13,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
     /**
      * Init classes
      */
-    protected function init_classes() : void {
+    protected function init_classes(): void {
         $classes = [
             Assets::class,
             ACFController::class,
@@ -34,7 +34,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             }
         } );
 
-        add_action( 'init', function () {
+        \add_action( 'init', function () {
             ArchiveExhibition::hooks();
         } );
     }

@@ -37,4 +37,3 @@ function theme_library_loader( $class = '' ) {
 
 // Register the theme autoloader.
 spl_autoload_register( __NAMESPACE__ . '\\theme_library_loader' );
-

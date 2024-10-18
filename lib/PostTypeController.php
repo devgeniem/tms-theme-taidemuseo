@@ -16,7 +16,7 @@ class PostTypeController extends \TMS\Theme\Base\PostTypeController implements P
      *
      * @return string
      */
-    protected function get_namespace() : string {
+    protected function get_namespace(): string {
         return __NAMESPACE__;
     }
 
@@ -25,7 +25,7 @@ class PostTypeController extends \TMS\Theme\Base\PostTypeController implements P
      *
      * @return array
      */
-    protected function get_post_type_files() : array {
+    protected function get_post_type_files(): array {
         return array_diff( scandir( __DIR__ . '/PostType' ), [ '.', '..' ] );
     }
 }
