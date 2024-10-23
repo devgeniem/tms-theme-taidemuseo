@@ -16,13 +16,13 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      *
      * @return void
      */
-    public function hooks() : void {
-        add_action(
+    public function hooks(): void {
+        \add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_formatters' ] )
         );
 
-        add_filter( 'tms/theme/base/formatters', [ $this, 'remove_formatters' ] );
+        \add_filter( 'tms/theme/base/formatters', [ $this, 'remove_formatters' ] );
     }
 
     /**
@@ -30,7 +30,7 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      *
      * @return string
      */
-    protected function get_namespace() : string {
+    protected function get_namespace(): string {
         return __NAMESPACE__;
     }
 
@@ -39,7 +39,7 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      *
      * @return array
      */
-    protected function get_formatter_files() : array {
+    protected function get_formatter_files(): array {
         return array_diff( scandir( __DIR__ . '/Formatters' ), [ '.', '..' ] );
     }
 
@@ -50,7 +50,7 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      *
      * @return array
      */
-    public function remove_formatters( array $classes ) : array {
+    public function remove_formatters( array $classes ): array {
         $formatters_to_remove = [
             HeroFormatter::class,
         ];
