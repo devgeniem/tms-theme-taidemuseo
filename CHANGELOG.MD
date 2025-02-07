@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1062: Increase menu-dropdown button size
+- TMS-1100: Show multiple locations for events if available
+
+## [1.11.1] - 2024-11-25
+
 - TMS-1059: Add Sign up-section to event partial
 
 ## [1.11.0] - 2024-10-24
