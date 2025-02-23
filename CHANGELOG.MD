@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.11.2] - 2025-02-24
+
 - TMS-1100: Show multiple locations for events if available
 
 ## [1.11.1] - 2024-11-25
