@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1139: Add another link-button to CTA-component
+
 ## [1.11.3] - 2025-04-09
 
 - TMS-1114: Change image-meta on cta- & content-columns components
