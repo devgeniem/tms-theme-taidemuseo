@@ -247,21 +247,21 @@ class HeroLayout extends Layout {
      */
     public function get_hero_group_fields( string $key, string $group, array $strings ) : array {
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
-            ->set_key( "{$key}_${group}_title" )
-            ->set_name( "${group}_title" )
+            ->set_key( "{$key}_{$group}_title" )
+            ->set_name( "{$group}_title" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['title']['instructions'] );
 
         $text_field = ( new Field\Textarea( $strings['text']['label'] ) )
-            ->set_key( "{$key}_${group}_text" )
-            ->set_name( "${group}_text" )
+            ->set_key( "{$key}_{$group}_text" )
+            ->set_name( "{$group}_text" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['text']['instructions'] )
             ->set_new_lines( 'br' );
 
         $button_field = ( new Field\Link( $strings['button']['label'] ) )
-            ->set_key( "{$key}_${group}_button" )
-            ->set_name( "${group}_button" )
+            ->set_key( "{$key}_{$group}_button" )
+            ->set_name( "{$group}_button" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['button']['instructions'] );
 
