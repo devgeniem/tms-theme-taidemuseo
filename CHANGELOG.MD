@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1172: Add video-fields and functionality to hero-component
+
 ## [1.11.4] - 2025-04-30
 
 - TMS-1139: Add another link-button to CTA-component
