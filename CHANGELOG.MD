@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1062: Increase menu-dropdown button size
 - TMS-1163: Search results breadcrumbs accessibility fixes
+- TMS-1160: Fix elements focus outline thickness
 
 ## [1.12.0] - 2025-06-23
 
