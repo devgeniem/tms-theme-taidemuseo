@@ -4,6 +4,10 @@
             height: unset;
             min-height: 41.666vw;
         }
+
+        @media (min-width: 2200px) {
+            min-height: 38vw;
+        }
     }
 
     .entry {
