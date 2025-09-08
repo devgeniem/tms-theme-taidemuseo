@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.2] - 2025-09-08
+
 - TMS-1190: Add height to single exhibition hero on large monitors
 - TMS-1163: Search results breadcrumbs accessibility fixes
 
