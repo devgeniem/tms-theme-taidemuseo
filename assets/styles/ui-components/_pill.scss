@@ -17,19 +17,13 @@
         &:hover,
         &:focus {
             color: $primary !important;
-            background-color: $primary-invert !important;
-            border-color: $primary !important;
+            text-decoration: underline !important;
         }
     }
 
     &.is-active {
         &:not(span) {
-           
-            &:hover,
-            &:focus {
-                background-color: $primary-invert !important;
-                color: $primary !important;
-            }
+            text-decoration: underline !important;
         }
     }
 }

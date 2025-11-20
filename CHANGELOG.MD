@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1062: Increase menu-dropdown button size
 - TMS-1201: Add iframe-field for video fields
+- TMS-1164: Remove color changing for button hover-styles
 
 ## [1.12.2] - 2025-09-08
 

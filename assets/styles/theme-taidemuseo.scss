@@ -56,9 +56,12 @@ $button-colors: (
 $color-background-primary-light--opaque-light: $secondary;
 $button-font-weight: $weight-semibold;
 $button-border-radius: 2rem;
-$button-text-invert: $color-white;
+$button-text-invert: $color-black;
 $button-border-invert: $button-text-invert;
-$button-background-invert: $button-text-invert;
+$button-background-invert: $color-white;
+$button-text-primary: $color-white;
+$button-background-primary: $color-black;
+$button-border-primary: $color-black;
 
 $pill-color: $primary-invert;
 $pill-color-active: $primary-invert;
