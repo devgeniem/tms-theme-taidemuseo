@@ -7,4 +7,10 @@
             gap: $theme-spacing-oneandhalf;
         }
     }
+
+    &__item {
+        &:not(.is-current):hover {
+            color: $primary-invert;
+        }
+    }
 }
