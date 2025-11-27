@@ -44,13 +44,6 @@ select {
             background-color: white;
         }
 
-        &:hover,
-        &:focus {
-            &:after {
-                background-color: black;
-            }
-        }
-
         &:active {
             &:after {
                 background-color: white;

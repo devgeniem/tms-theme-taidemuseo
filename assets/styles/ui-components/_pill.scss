@@ -16,7 +16,6 @@
     &:not(span) {
         &:hover,
         &:focus {
-            color: $primary !important;
             text-decoration: underline !important;
         }
     }
