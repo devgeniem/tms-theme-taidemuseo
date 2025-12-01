@@ -22,12 +22,12 @@ class ArtworkGroup {
      * ArtworkGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_filter(
+        \add_filter(
             'acf/load_value/name=additional_information',
             [ $this, 'prefill_additional_info' ],
             10,
@@ -38,7 +38,7 @@ class ArtworkGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $field_group = ( new Group( 'Taideteoksen lisätiedot' ) )
                 ->set_key( 'fg_artwork_fields' );
@@ -79,7 +79,7 @@ class ArtworkGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_details_tab( string $key ) : Field\Tab {
+    protected function get_details_tab( string $key ): Field\Tab {
         $strings = [
             'tab'                    => 'Lisätiedot',
             'images'                 => [
@@ -115,17 +115,17 @@ class ArtworkGroup {
             ->set_placement( 'left' );
 
         $images_field = ( new Field\Gallery( $strings['images']['title'] ) )
-            ->set_key( "${key}_images" )
+            ->set_key( "{$key}_images" )
             ->set_name( 'images' )
             ->set_instructions( $strings['images']['instructions'] );
 
         $year_field = ( new Field\Text( $strings['year']['title'] ) )
-            ->set_key( "${key}_year" )
+            ->set_key( "{$key}_year" )
             ->set_name( 'year' )
             ->set_instructions( $strings['year']['instructions'] );
 
         $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
-            ->set_key( "${key}_additional_information" )
+            ->set_key( "{$key}_additional_information" )
             ->set_name( 'additional_information' )
             ->set_layout( 'block' )
             ->set_button_label( $strings['additional_information']['button'] );
@@ -133,13 +133,13 @@ class ArtworkGroup {
         $additional_info_title = ( new Field\Text(
             $strings['additional_information']['item']['label']['title']
         ) )
-            ->set_key( "${key}_additional_information_title" )
+            ->set_key( "{$key}_additional_information_title" )
             ->set_name( 'additional_information_title' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['label']['instructions'] );
 
         $additional_info_text = ( new Field\Textarea( $strings['additional_information']['item']['value']['title'] ) )
-            ->set_key( "${key}_additional_information_text" )
+            ->set_key( "{$key}_additional_information_text" )
             ->set_name( 'additional_information_text' )
             ->set_new_lines( 'br' )
             ->set_wrapper_width( 50 )
