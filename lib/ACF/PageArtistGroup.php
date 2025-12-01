@@ -21,12 +21,12 @@ class PageArtistGroup {
      * PageGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/group/fg_page_components/rules',
             Closure::fromCallable( [ $this, 'alter_component_rules' ] )
         );
@@ -35,7 +35,7 @@ class PageArtistGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $group_title = 'Arkiston asetukset';
 
@@ -63,14 +63,14 @@ class PageArtistGroup {
             ];
 
             $description_field = ( new Field\Wysiwyg( $strings['description']['title'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->disable_media_upload()
                 ->set_tabs( 'visual' )
                 ->set_instructions( $strings['description']['instructions'] );
 
             $artist_category_field = ( new Field\Taxonomy( $strings['artist_categories']['title'] ) )
-                ->set_key( "${key}_artist_categories" )
+                ->set_key( "{$key}_artist_categories" )
                 ->set_name( 'artist_categories' )
                 ->set_taxonomy( ArtistCategory::SLUG )
                 ->set_return_format( 'object' )
@@ -78,7 +78,7 @@ class PageArtistGroup {
                 ->set_instructions( $strings['artist_categories']['instructions'] );
 
             $field_group->add_fields(
-                apply_filters(
+                \apply_filters(
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $description_field,
@@ -87,7 +87,7 @@ class PageArtistGroup {
                 )
             );
 
-            $field_group = apply_filters(
+            $field_group = \apply_filters(
                 'tms/acf/group/' . $field_group->get_key(),
                 $field_group
             );
@@ -106,7 +106,7 @@ class PageArtistGroup {
      *
      * @return array
      */
-    protected function alter_component_rules( array $rules ) : array {
+    protected function alter_component_rules( array $rules ): array {
         $rules[] = [
             'param'    => 'page_template',
             'operator' => '!=',

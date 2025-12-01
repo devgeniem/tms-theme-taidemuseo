@@ -17,7 +17,7 @@ class AlterPageFrontPageGroup {
      * PageGroup constructor.
      */
     public function __construct() {
-        add_filter( 'tms/acf/field/fg_front_page_components_components/layouts',
+        \add_filter( 'tms/acf/field/fg_front_page_components_components/layouts',
             [ $this, 'replace_base_theme_hero' ],
             10,
             1

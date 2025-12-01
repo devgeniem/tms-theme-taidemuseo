@@ -68,19 +68,19 @@ class ArtworkSettingsTab extends Tab {
 
         try {
             $info_repeater_field = ( new Field\Repeater( $strings['artwork_additional_info']['title'] ) )
-                ->set_key( "${key}_artwork_additional_info" )
+                ->set_key( "{$key}_artwork_additional_info" )
                 ->set_name( 'artwork_additional_info' )
                 ->set_instructions( $strings['artwork_additional_info']['instructions'] );
 
             $text_field = ( new Field\Text( $strings['artwork_additional_info_text']['title'] ) )
-                ->set_key( "${key}_artwork_additional_info_text" )
+                ->set_key( "{$key}_artwork_additional_info_text" )
                 ->set_name( 'artwork_additional_info_text' )
                 ->set_instructions( $strings['artwork_additional_info_text']['instructions'] );
 
             $info_repeater_field->add_field( $text_field );
 
             $artwork_list_page_field = ( new Field\PostObject( $strings['artwork_archive_page']['title'] ) )
-                ->set_key( "${key}artwork_archive_page" )
+                ->set_key( "{$key}artwork_archive_page" )
                 ->set_name( 'artwork_archive_page' )
                 ->set_post_types( [ PostType\Page::SLUG ] )
                 ->set_return_format( 'id' )

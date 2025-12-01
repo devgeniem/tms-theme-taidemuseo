@@ -17,7 +17,7 @@ class AlterQuoteData {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/block/quote/data',
             [ $this, 'alter_data' ],
             20,
@@ -32,7 +32,7 @@ class AlterQuoteData {
      *
      * @return array
      */
-    public function alter_data( array $data ) : array {
+    public function alter_data( array $data ): array {
         try {
             $data['classes']['quote']  = [
                 is_singular( [
