@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.13.1] - 2025-12-09
+
 - TMS-1223: Fix double quote problem from components bg-color field
 
 ## [1.13.0] - 2025-10-01
