@@ -12,17 +12,6 @@
         .icon {
             fill: $white !important;
         }
-
-        &:hover,
-        &.is-hovered,
-        &:focus,
-        &.is-focused {
-            background-color: $white !important;
-
-            .icon {
-                fill: $black !important;
-            }
-        }
     }
 
     .icon {
