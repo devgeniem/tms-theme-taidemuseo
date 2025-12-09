@@ -18,79 +18,79 @@ class LayoutInfoBadge {
      */
     public function __construct() {
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_image_banner/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/image_banner/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_call_to_action/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/call_to_action/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/block/image/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/image/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/block/image_banner/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/image_banner/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/block/link_list/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/link_list/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/block/video/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/video/data',
             [ $this, 'alter_format' ],
             10
@@ -102,7 +102,7 @@ class LayoutInfoBadge {
      *
      * @param string $key Layout key.
      */
-    public function get_fields( string $key ) : ?Field\Group {
+    public function get_fields( string $key ): ?Field\Group {
         $group   = null;
         $strings = [
             'group' => [
@@ -125,11 +125,11 @@ class LayoutInfoBadge {
 
         try {
             $group = ( new Field\Group( $strings['group']['label'] ) )
-                ->set_key( "${key}_layout_badge" )
+                ->set_key( "{$key}_layout_badge" )
                 ->set_name( 'layout_badge' );
 
             $align_field = ( new Field\Select( $strings['align']['label'] ) )
-                ->set_key( "${key}_layout_badge_align" )
+                ->set_key( "{$key}_layout_badge_align" )
                 ->set_name( 'layout_badge_align' )
                 ->set_choices( [
                     'before' => 'Vasen',
@@ -140,7 +140,7 @@ class LayoutInfoBadge {
                 ->set_instructions( $strings['align']['instructions'] );
 
             $text_field = ( new Field\Textarea( $strings['text']['label'] ) )
-                ->set_key( "${key}_layout_badge_text" )
+                ->set_key( "{$key}_layout_badge_text" )
                 ->set_name( 'layout_badge_text' )
                 ->set_rows( 3 )
                 ->set_maxlength( 30 )
@@ -149,7 +149,7 @@ class LayoutInfoBadge {
                 ->set_instructions( $strings['text']['instructions'] );
 
             $bg_color_field_field = ( new Field\Select( $strings['background_color']['label'] ) )
-                ->set_key( "${key}_layout_badge_background_color" )
+                ->set_key( "{$key}_layout_badge_background_color" )
                 ->set_name( 'layout_badge_background_color' )
                 ->set_choices( [
                     'black' => 'Musta',
@@ -175,7 +175,7 @@ class LayoutInfoBadge {
      * @param array  $fields Array of ACF fields.
      * @param string $key    Layout key.
      */
-    public function alter_fields( array $fields, string $key ) : array {
+    public function alter_fields( array $fields, string $key ): array {
         try {
             if ( str_ends_with( $key, 'call_to_action' ) ) {
                 $fields_to_add = $this->get_fields( $key );
@@ -199,7 +199,7 @@ class LayoutInfoBadge {
      *
      * @return array
      */
-    public function alter_format( array $layout ) : array {
+    public function alter_format( array $layout ): array {
 
         if ( ( ! empty( $layout['acf_fc_layout'] ) && $layout['acf_fc_layout'] === 'call_to_action' ) && ! empty( $layout['rows'] ) ) { // phpcs:ignore
 
@@ -246,7 +246,7 @@ class LayoutInfoBadge {
                 ],
             ] );
 
-            $layout[ "${align}_main_content" ] = $badge_html;
+            $layout[ "{$align}_main_content" ] = $badge_html;
 
         }
 

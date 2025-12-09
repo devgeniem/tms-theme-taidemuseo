@@ -16,13 +16,13 @@ class AlterSettingsGroup {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/group/fg_site_settings/fields',
             [ $this, 'remove_theme_color_setting' ],
             100
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/group/fg_site_settings/fields',
             Closure::fromCallable( [ $this, 'register_theme_tabs' ] ),
             10,
@@ -55,7 +55,7 @@ class AlterSettingsGroup {
      *
      * @return array
      */
-    protected function register_theme_tabs( array $fields, string $key ) : array {
+    protected function register_theme_tabs( array $fields, string $key ): array {
         try {
             $fields[] = new Fields\Settings\ArtworkSettingsTab( '', $key );
             $fields[] = new Fields\Settings\ArtistSettingsTab( '', $key );

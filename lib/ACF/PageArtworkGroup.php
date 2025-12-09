@@ -63,14 +63,14 @@ class PageArtworkGroup {
             ];
 
             $description_field = ( new Field\Wysiwyg( $strings['description']['title'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->disable_media_upload()
                 ->set_tabs( 'visual' )
                 ->set_instructions( $strings['description']['instructions'] );
 
             $artwork_types_field = ( new Field\Taxonomy( $strings['artwork_types']['title'] ) )
-                ->set_key( "${key}_artwork_types" )
+                ->set_key( "{$key}_artwork_types" )
                 ->set_name( 'artwork_types' )
                 ->set_taxonomy( ArtworkType::SLUG )
                 ->set_return_format( 'object' )

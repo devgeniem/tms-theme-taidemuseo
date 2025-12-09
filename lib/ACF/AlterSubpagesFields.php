@@ -14,14 +14,14 @@ class AlterSubpagesFields {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/block/subpages/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_subpages/fields',
             [ $this, 'alter_fields' ],
             10,
@@ -36,7 +36,7 @@ class AlterSubpagesFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
         try {
             $fields['background_color']
                 ->set_choices( [

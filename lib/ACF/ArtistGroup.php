@@ -21,12 +21,12 @@ class ArtistGroup {
      * ArtistGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_filter(
+        \add_filter(
             'acf/load_value/name=additional_information',
             [ $this, 'prefill_additional_info' ],
             10,
@@ -37,7 +37,7 @@ class ArtistGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $field_group = ( new Group( 'Taiteilijan lisätiedot' ) )
                 ->set_key( 'fg_artist_fields' );
@@ -59,7 +59,7 @@ class ArtistGroup {
                 )
             );
 
-            $field_group = apply_filters(
+            $field_group = \apply_filters(
                 'tms/acf/group/' . $field_group->get_key(),
                 $field_group
             );
@@ -79,7 +79,7 @@ class ArtistGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_details_tab( string $key ) : Field\Tab {
+    protected function get_details_tab( string $key ): Field\Tab {
         $strings = [
             'tab'                    => 'Lisätiedot',
             'first_name'             => [
@@ -131,61 +131,61 @@ class ArtistGroup {
             ->set_placement( 'left' );
 
         $first_name_field = ( new Field\Text( $strings['first_name']['title'] ) )
-            ->set_key( "${key}_first_name" )
+            ->set_key( "{$key}_first_name" )
             ->set_name( 'first_name' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['first_name']['instructions'] );
 
         $last_name_field = ( new Field\Text( $strings['last_name']['title'] ) )
-            ->set_key( "${key}_last_name" )
+            ->set_key( "{$key}_last_name" )
             ->set_name( 'last_name' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
         $birth_year_field = ( new Field\Number( $strings['birth_year']['title'] ) )
-            ->set_key( "${key}_birth_year" )
+            ->set_key( "{$key}_birth_year" )
             ->set_name( 'birth_year' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['birth_year']['instructions'] );
 
         $death_year_field = ( new Field\Number( $strings['death_year']['title'] ) )
-            ->set_key( "${key}_death_year" )
+            ->set_key( "{$key}_death_year" )
             ->set_name( 'death_year' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['death_year']['instructions'] );
 
         $selection_year_field = ( new Field\Number( $strings['selection_year']['title'] ) )
-            ->set_key( "${key}_selection_year" )
+            ->set_key( "{$key}_selection_year" )
             ->set_name( 'selection_year' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['selection_year']['instructions'] );
 
         $short_description_field = ( new Field\Textarea( $strings['short_description']['title'] ) )
-            ->set_key( "${key}_short_description" )
+            ->set_key( "{$key}_short_description" )
             ->set_name( 'short_description' )
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['short_description']['instructions'] );
 
         $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
-            ->set_key( "${key}_additional_information" )
+            ->set_key( "{$key}_additional_information" )
             ->set_name( 'additional_information' )
             ->set_layout( 'block' )
             ->set_button_label( $strings['additional_information']['button'] );
 
         $additional_info_title = ( new Field\Text( $strings['additional_information']['item']['label']['title'] ) )
-            ->set_key( "${key}_additional_information_title" )
+            ->set_key( "{$key}_additional_information_title" )
             ->set_name( 'additional_information_title' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['label']['instructions'] );
 
         $additional_info_text = ( new Field\Textarea( $strings['additional_information']['item']['value']['title'] ) )
-            ->set_key( "${key}_additional_information_text" )
+            ->set_key( "{$key}_additional_information_text" )
             ->set_name( 'additional_information_text' )
             ->set_new_lines( 'br' )
             ->set_wrapper_width( 50 )
@@ -214,7 +214,7 @@ class ArtistGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_artwork_tab( string $key ) : Field\Tab {
+    protected function get_artwork_tab( string $key ): Field\Tab {
         $strings = [
             'tab'     => 'Teokset',
             'artwork' => [
@@ -227,7 +227,7 @@ class ArtistGroup {
             ->set_placement( 'left' );
 
         $artwork_field = ( new Field\PostObject( $strings['artwork']['title'] ) )
-            ->set_key( "${key}_artwork" )
+            ->set_key( "{$key}_artwork" )
             ->set_name( 'artwork' )
             ->set_post_types( [ PostType\Artwork::SLUG ] )
             ->allow_multiple()
