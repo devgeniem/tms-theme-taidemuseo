@@ -28,9 +28,6 @@
     }
 
     .slick-arrow {
-        .icon {
-            fill: $white !important; // sass-lint:disable-line no-important
-        }
         &:hover {
             background-color: $white;
             .icon {

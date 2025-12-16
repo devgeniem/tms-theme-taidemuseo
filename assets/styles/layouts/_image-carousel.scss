@@ -20,31 +20,26 @@
         }
     }
 
-        .slick-arrow {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
+    .slick-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
-        .slick-prev {
-            left: 0.5rem;
-            padding: 0 !important;
-        }
+    .slick-prev {
+        left: 0.5rem;
+        padding: 0 !important;
+    }
 
-        .slick-next {
-            right: 0.5rem;
-            padding: 0 !important;
-        }
+    .slick-next {
+        right: 0.5rem;
+        padding: 0 !important;
+    }
 
 
     &__modal-control {
 
         &.slick-arrow {
-            background-color: transparent;
             border: none;
-
-            .icon {
-                fill: $white;
-            }
         }
     }
 
