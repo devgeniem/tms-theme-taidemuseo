@@ -17,12 +17,9 @@ $button-secondary-border-color: $button-primary-border-color;
     &:focus,
     &.is-focused {
         box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
-        color: $primary !important;
+        color: $primary-invert !important;
 
         &:active {
-            background-color: $black !important;
-            color: $white !important;
-            outline: none !important;
 
             .icon {
                 fill: currentColor !important;
@@ -40,15 +37,6 @@ $button-secondary-border-color: $button-primary-border-color;
         border-color: $button-primary-border-color !important;
         outline: .15rem dotted $black !important;
         outline-offset: .25rem !important;
-    }
-
-    &.is-primary {
-        &.is-outlined {
-            &:hover,
-            &:focus {
-                border-color: $primary !important;
-            }
-        }
     }
 
     &.is-primary.is-inverted,
@@ -75,30 +63,11 @@ $button-secondary-border-color: $button-primary-border-color;
         .icon {
             fill: currentColor !important;
         }
-
-        &:hover,
-        &.is-hovered,
-        &:focus,
-        &.is-focused {
-            border-color: $color-taide-tiili !important;
-            background-color: $color-taide-tiili !important;
-            color: $primary-invert !important;
-
-            .icon {
-                fill: currentColor !important;
-            }
-        }
     }
 
     &.is-outlined {
         border-color: $white !important;
         background-color: transparent !important;
         color: $white !important;
-
-        &:hover,
-        &:focus {
-            background-color: $white !important;
-            color: $black !important;
-        }
     }
 }

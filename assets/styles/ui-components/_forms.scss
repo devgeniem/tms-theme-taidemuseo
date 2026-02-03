@@ -1,5 +1,4 @@
 form {
-    
     select,
     input,
     textarea {
@@ -40,13 +39,6 @@ select {
             background-color: white;
         }
 
-        &:hover,
-        &:focus {
-            &:after {
-                background-color: black;
-            }
-        }
-
         &:active {
             &:after {
                 background-color: white;
@@ -55,8 +47,10 @@ select {
     }
 
     button[type="submit"] {
+        background-color: $black !important;
+        color: $white !important;
 
-        &:after { 
+        &:after {
             mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="M2.13436 0L0.365646 1.76877L6.09688 7.5L0.365646 13.2312L2.13436 15L9.63436 7.5L2.13436 0Z"/></svg>');
             mask-size: cover;
             mask-repeat: no-repeat;
@@ -81,7 +75,7 @@ select {
 
 .gfield_checkbox {
 
-    label {      
+    label {
         &::before {
             margin-top: 0.25rem;
         }
@@ -104,12 +98,12 @@ select {
 
 .gform_button_select_files,
 .gform_delete_file {
+    background-color: $black !important;
+    color: $white !important;
 
     &:hover,
-    &:focus {
-        border-color: $black !important;
-        background-color: $white !important;
-        color: $black !important;
+    &:focus,
+    &:active {
         outline: 0.15rem dotted $black !important;
         outline-offset: 0.25rem !important;
     }

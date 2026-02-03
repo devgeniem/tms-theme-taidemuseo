@@ -13,13 +13,9 @@
                 fill: $primary !important; // sass-lint:disable-line no-important
             }
         }
-        &:hover{
-            background-color: $black !important;
-            color: $white !important;
+        &:hover {
+            color: $primary !important;
             outline: 0;
-            .icon {
-                fill: $white !important;
-            }
         }
     }
 
@@ -32,9 +28,6 @@
     }
 
     .slick-arrow {
-        .icon {
-            fill: $white !important; // sass-lint:disable-line no-important
-        }
         &:hover {
             background-color: $white;
             .icon {
