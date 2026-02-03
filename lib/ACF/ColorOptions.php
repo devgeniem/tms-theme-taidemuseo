@@ -18,59 +18,59 @@ class ColorOptions {
      */
     public function __construct() {
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_articles/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/articles/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/blog_articles/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_textblock/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/textblock/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_image_carousel/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/image_carousel/data',
             [ $this, 'alter_format' ],
             10
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_call_to_action/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/call_to_action/data',
             [ $this, 'alter_format' ],
             10
@@ -83,7 +83,7 @@ class ColorOptions {
      *
      * @param string $key Layout key.
      */
-    public function get_fields( string $key ) : ?Field\Group {
+    public function get_fields( string $key ): ?Field\Group {
         $group   = null;
         $strings = [
             'group' => [
@@ -102,17 +102,17 @@ class ColorOptions {
 
         try {
             $group = ( new Field\Group( $strings['group']['label'] ) )
-                ->set_key( "${key}_color_options" )
+                ->set_key( "{$key}_color_options" )
                 ->set_name( 'color_options' );
 
             $bg_color_field = ( new Field\Color( $strings['background_color']['label'] ) )
-                ->set_key( "${key}_color_options_bg_color" )
+                ->set_key( "{$key}_color_options_bg_color" )
                 ->set_name( 'bg_color' )
                 ->set_wrapper_width( 60 )
                 ->set_instructions( $strings['background_color']['instructions'] );
 
             $text_color_field = ( new Field\Select( $strings['text_color']['label'] ) )
-                ->set_key( "${key}_color_options_text_color" )
+                ->set_key( "{$key}_color_options_text_color" )
                 ->set_name( 'text_color' )
                 ->set_choices( [
                     'black' => 'Musta',
@@ -138,7 +138,7 @@ class ColorOptions {
      * @param array  $fields Array of ACF fields.
      * @param string $key    Layout key.
      */
-    public function alter_fields( array $fields, string $key ) : array {
+    public function alter_fields( array $fields, string $key ): array {
         try {
 
             if ( str_ends_with( $key, 'call_to_action' ) ) {
@@ -168,7 +168,7 @@ class ColorOptions {
      *
      * @return array
      */
-    public function alter_format( array $layout ) : array {
+    public function alter_format( array $layout ): array {
 
         try {
 
@@ -177,7 +177,7 @@ class ColorOptions {
 
                     if ( ! empty( $row['color_options']['bg_color'] ) ) {
                         $bg_color                           = $row['color_options']['bg_color'];
-                        $layout['rows'][ $key ]['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
+                        $layout['rows'][ $key ]['bg_style'] = sprintf( 'style=background-color:%s;', $bg_color );
                     }
 
                     if ( ! empty( $row['color_options']['text_color'] ) ) {
@@ -193,7 +193,7 @@ class ColorOptions {
 
                 if ( ! empty( $layout['color_options']['bg_color'] ) ) {
                     $bg_color           = $layout['color_options']['bg_color'];
-                    $layout['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
+                    $layout['bg_style'] = sprintf( 'style=background-color:%s;', $bg_color );
                 }
 
                 if ( ! empty( $layout['color_options']['text_color'] ) ) {

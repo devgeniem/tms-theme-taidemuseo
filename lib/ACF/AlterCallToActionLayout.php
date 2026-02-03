@@ -16,14 +16,14 @@ class AlterCallToActionLayout {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_call_to_action/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/layout/call_to_action/data',
             [ $this, 'alter_format' ],
             20
@@ -38,7 +38,7 @@ class AlterCallToActionLayout {
      *
      * @return array
      */
-    public function alter_fields( array $fields, string $key ) : array {
+    public function alter_fields( array $fields, string $key ): array {
         $strings = [
             'round_image' => [
                 'label'        => 'Pyöreä kuva',
@@ -52,14 +52,14 @@ class AlterCallToActionLayout {
 
         try {
             $round_image_field = ( new Field\TrueFalse( $strings['round_image']['label'] ) )
-                ->set_key( "${key}_round_image" )
+                ->set_key( "{$key}_round_image" )
                 ->set_name( 'round_image' )
                 ->use_ui()
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['round_image']['instructions'] );
 
             $aspect_ratio_field = ( new Field\TrueFalse( $strings['wide_img']['label'] ) )
-                ->set_key( "${key}_wide_img" )
+                ->set_key( "{$key}_wide_img" )
                 ->set_name( 'wide_img' )
                 ->use_ui()
                 ->set_wrapper_width( 33 )
@@ -86,7 +86,7 @@ class AlterCallToActionLayout {
      *
      * @return array
      */
-    public function alter_format( array $layout ) : array {
+    public function alter_format( array $layout ): array {
 
         if ( empty( $layout['rows'] ) ) {
             return $layout;

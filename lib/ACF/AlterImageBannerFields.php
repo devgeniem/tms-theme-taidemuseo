@@ -14,7 +14,7 @@ class AlterImageBannerFields {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/layout/_image_banner/fields',
             [ $this, 'alter_fields' ],
             10,
@@ -29,7 +29,7 @@ class AlterImageBannerFields {
      *
      * @return array
      */
-    public function alter_fields( array $fields ) : array {
+    public function alter_fields( array $fields ): array {
         try {
             $fields['align']
             ->set_choices( [

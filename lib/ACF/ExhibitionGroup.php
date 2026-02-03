@@ -24,12 +24,12 @@ class ExhibitionGroup {
      * ExhibitionGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_action(
+        \add_action(
             'acf/update_value/key=fg_exhibition_fields_start_date',
             Closure::fromCallable( [ $this, 'update_year_meta_field' ] ),
             10,
@@ -40,7 +40,7 @@ class ExhibitionGroup {
     /**
      * Register fields
      */
-    protected function register_fields() : void {
+    protected function register_fields(): void {
         try {
             $field_group = ( new Group( 'Näyttelyn lisätiedot' ) )
                 ->set_key( 'fg_exhibition_fields' );
@@ -53,7 +53,7 @@ class ExhibitionGroup {
                 ->set_position( 'normal' );
 
             $field_group->add_fields(
-                apply_filters(
+                \apply_filters(
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $this->get_details_tab( $field_group->get_key() ),
@@ -61,7 +61,7 @@ class ExhibitionGroup {
                 )
             );
 
-            $field_group = apply_filters(
+            $field_group = \apply_filters(
                 'tms/acf/group/' . $field_group->get_key(),
                 $field_group
             );
@@ -92,7 +92,7 @@ class ExhibitionGroup {
      * @return Field\Tab
      * @throws Exception In case of invalid option.
      */
-    protected function get_details_tab( string $key ) : Field\Tab {
+    protected function get_details_tab( string $key ): Field\Tab {
 
         $file_types_list = implode( ', ', $this->allowed_filetypes );
 
@@ -243,7 +243,7 @@ class ExhibitionGroup {
             return $value;
         }
 
-        update_post_meta( $post_id, 'exhibition_year', substr( $value, 0, 4 ) );
+        \update_post_meta( $post_id, 'exhibition_year', substr( $value, 0, 4 ) );
 
         return $value;
     }

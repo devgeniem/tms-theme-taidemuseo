@@ -68,19 +68,19 @@ class ArtistSettingsTab extends Tab {
 
         try {
             $info_repeater_field = ( new Field\Repeater( $strings['artist_additional_info']['title'] ) )
-                ->set_key( "${key}_artist_additional_info" )
+                ->set_key( "{$key}_artist_additional_info" )
                 ->set_name( 'artist_additional_info' )
                 ->set_instructions( $strings['artist_additional_info']['instructions'] );
 
             $text_field = ( new Field\Text( $strings['artist_additional_info_text']['title'] ) )
-                ->set_key( "${key}_artist_additional_info_text" )
+                ->set_key( "{$key}_artist_additional_info_text" )
                 ->set_name( 'artist_additional_info_text' )
                 ->set_instructions( $strings['artist_additional_info_text']['instructions'] );
 
             $info_repeater_field->add_field( $text_field );
 
             $artist_list_page_field = ( new Field\PostObject( $strings['artist_archive_page']['title'] ) )
-                ->set_key( "${key}artist_archive_page" )
+                ->set_key( "{$key}artist_archive_page" )
                 ->set_name( 'artist_archive_page' )
                 ->set_post_types( [ PostType\Page::SLUG ] )
                 ->set_return_format( 'id' )
