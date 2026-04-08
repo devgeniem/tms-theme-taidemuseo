@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1260: Add sr-only text for opening image-blocks modal
+
 ## [1.14.0] - 2026-02-03
 
 - TMS-1164: Remove color changing for button hover-styles
