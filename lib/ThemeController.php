@@ -15,7 +15,6 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
      */
     protected function init_classes(): void {
         $classes = [
-            IndexController::class,
             Assets::class,
             ACFController::class,
             PostTypeController::class,

@@ -19,12 +19,12 @@
         {/api_image_url}
 
         <h2 class="entry__title h4 mt-0 mb-5">
-            <a href="{permalink}" class="{?txt_color_class}{txt_color_class|s}{:else}has-text-black{/txt_color_class}">
+            <a href="{permalink}" class="{txt_color_class|s}">
                 {post_title|s}
             </a>
         </h2>
 
-        <div class="entry__excerpt mt-5 mb-5 has-text-small {?txt_color_class}{txt_color_class|s}{:else}has-text-black{/txt_color_class}">
+        <div class="entry__excerpt mt-5 mb-5 has-text-small {txt_color_class|s}">
             <span>{@strtodate value=post_date /}</span>
             {excerpt|s}
         </div>
